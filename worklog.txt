@@ -6,3 +6,7 @@ Logs:
 | Start | End |
 August 29
 2:30pm -> 4:20pm (1h50m)
+# initial commit of html to plain text
+# version 1 and version 2 of entity and relationship extract
+... --> 5:00
+# curriculum 01 and 02 for v1 development and nlp technical foundation
