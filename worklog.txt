@@ -1,0 +1,8 @@
+Attempt to maintain this for separation of work tasks and personal developments for public release or curriculum development.
+
+Curriculum is a deliverable but the tools used to generate deliverables are beyond the ask. Will attempt to log the existing tools others may use and explain/contrast the differences between manual methods and hybrid-automated methods.
+
+Logs:
+| Start | End |
+August 29
+2:30pm -> 
