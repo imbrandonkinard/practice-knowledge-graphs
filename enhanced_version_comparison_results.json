@@ -1,0 +1,167 @@
+{
+  "v1": {
+    "entities": {
+      "count": 70,
+      "types": [
+        "GOAL",
+        "AGENCY",
+        "PROGRAM",
+        "LOCATION"
+      ],
+      "type_count": 4,
+      "texts": [
+        "farm to school program",
+        "hdoa",
+        "department of agriculture",
+        "department of education",
+        "hawaii",
+        "farm to school coordinator",
+        "public schools",
+        "doe",
+        "locally sourced",
+        "state facilities",
+        "thirty per cent",
+        "2030"
+      ],
+      "text_count": 12,
+      "avg_confidence": 0.0
+    },
+    "relations": {
+      "count": 7,
+      "types": [],
+      "type_count": 0,
+      "sources": [],
+      "source_count": 0,
+      "patterns": [
+        "farm to school program moved department of education"
+      ],
+      "pattern_count": 1,
+      "avg_confidence": 0.9
+    },
+    "quality": 4.9
+  },
+  "v2": {
+    "entities": {
+      "count": 66,
+      "types": [
+        "STATUTE",
+        "AGENCY",
+        "GOAL",
+        "REPORTING",
+        "PURPOSE",
+        "PROGRAM"
+      ],
+      "type_count": 6,
+      "texts": [
+        "department of education",
+        "state of hawaii",
+        "enrich the local food system",
+        "minimum percentage",
+        "30%",
+        "locally sourced",
+        "expand the relationships",
+        "thirty per cent",
+        "twenty days prior to the convening of each regular session, beginning with the regular session",
+        "submit an annual report",
+        "section 141-11",
+        "hdoa",
+        "doe",
+        "meals program",
+        "accelerate garden and farm-based education",
+        "hawaii revised statutes",
+        "annual report",
+        "improve student health",
+        "farm to school program",
+        "legislature",
+        "department of agriculture",
+        "develop an educated agricultural workforce",
+        "chapter 302",
+        "h.b. no. 767",
+        "2030",
+        "reporting requirement"
+      ],
+      "text_count": 26,
+      "avg_confidence": 0.9
+    },
+    "relations": {
+      "count": 9,
+      "types": [
+        "PROGRAM_MOVE",
+        "GOAL_SETTING",
+        "REPORTING",
+        "COLLABORATION"
+      ],
+      "type_count": 4,
+      "sources": [
+        "enhanced_patterns"
+      ],
+      "source_count": 1,
+      "patterns": [
+        "department of education established target minimum percentage locally sourced",
+        "department of education set goal 30% locally sourced by 2030",
+        "farm to school program moved to department of education",
+        "farm to school program moved from department of agriculture",
+        "department of education must submit annual report to legislature",
+        "farm to school coordinator works with stakeholders"
+      ],
+      "pattern_count": 6,
+      "avg_confidence": 0.9
+    },
+    "quality": 5.6
+  },
+  "differences": {
+    "entities": {
+      "count_difference": -4,
+      "count_percentage": -5.7,
+      "type_difference": 2,
+      "new_types": [
+        "PURPOSE",
+        "REPORTING",
+        "STATUTE"
+      ],
+      "new_items": [
+        "annual report",
+        "meals program",
+        "improve student health",
+        "accelerate garden and farm-based education",
+        "legislature",
+        "state of hawaii",
+        "enrich the local food system",
+        "minimum percentage",
+        "develop an educated agricultural workforce",
+        "30%"
+      ],
+      "confidence_difference": 0.9,
+      "improvement_summary": "+-4 entities (+2 new types)"
+    },
+    "relations": {
+      "count_difference": 2,
+      "count_percentage": 28.6,
+      "type_difference": 4,
+      "new_types": [
+        "PROGRAM_MOVE",
+        "GOAL_SETTING",
+        "REPORTING",
+        "COLLABORATION"
+      ],
+      "new_items": [
+        "department of education established target minimum percentage locally sourced",
+        "department of education set goal 30% locally sourced by 2030",
+        "farm to school program moved to department of education",
+        "farm to school program moved from department of agriculture",
+        "department of education must submit annual report to legislature",
+        "farm to school coordinator works with stakeholders"
+      ],
+      "confidence_difference": 0.0,
+      "improvement_summary": "+2 relations (+4 new types)"
+    },
+    "quality": 0.6999999999999993
+  },
+  "improvements": {
+    "entity_count": -4,
+    "relation_count": 2,
+    "entity_types": 3,
+    "relation_types": 4,
+    "quality_points": 0.6999999999999993
+  }
+}

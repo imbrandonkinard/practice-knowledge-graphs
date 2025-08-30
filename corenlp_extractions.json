@@ -1,0 +1,629 @@
+{
+  "entities": [
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 133,
+      "end_char": 155,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 296,
+      "end_char": 318,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 670,
+      "end_char": 692,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 975,
+      "end_char": 997,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 1371,
+      "end_char": 1393,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 1479,
+      "end_char": 1501,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 1522,
+      "end_char": 1544,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 1946,
+      "end_char": 1968,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 4767,
+      "end_char": 4789,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 4890,
+      "end_char": 4912,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 4933,
+      "end_char": 4955,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 5380,
+      "end_char": 5402,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 5945,
+      "end_char": 5967,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 6031,
+      "end_char": 6053,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school coordinator",
+      "type": "PROGRAM",
+      "start_char": 1395,
+      "end_char": 1421,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school coordinator",
+      "type": "PROGRAM",
+      "start_char": 1990,
+      "end_char": 2016,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school coordinator",
+      "type": "PROGRAM",
+      "start_char": 4791,
+      "end_char": 4817,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "farm to school coordinator",
+      "type": "PROGRAM",
+      "start_char": 5424,
+      "end_char": 5450,
+      "ner": "PROGRAM",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of education",
+      "type": "AGENCY",
+      "start_char": 1040,
+      "end_char": 1063,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of education",
+      "type": "AGENCY",
+      "start_char": 6096,
+      "end_char": 6119,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of education",
+      "type": "AGENCY",
+      "start_char": 6161,
+      "end_char": 6184,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of agriculture",
+      "type": "AGENCY",
+      "start_char": 1007,
+      "end_char": 1032,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of agriculture",
+      "type": "AGENCY",
+      "start_char": 4855,
+      "end_char": 4880,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "department of agriculture",
+      "type": "AGENCY",
+      "start_char": 6063,
+      "end_char": 6088,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "doe",
+      "type": "AGENCY",
+      "start_char": 5991,
+      "end_char": 5994,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "hdoa",
+      "type": "AGENCY",
+      "start_char": 5996,
+      "end_char": 6000,
+      "ner": "AGENCY",
+      "normalized_ner": null
+    },
+    {
+      "text": "thirty per cent",
+      "type": "GOAL",
+      "start_char": 1112,
+      "end_char": 1127,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "thirty per cent",
+      "type": "GOAL",
+      "start_char": 2430,
+      "end_char": 2445,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "2030",
+      "type": "GOAL",
+      "start_char": 1183,
+      "end_char": 1187,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "2030",
+      "type": "GOAL",
+      "start_char": 2358,
+      "end_char": 2362,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "2030",
+      "type": "GOAL",
+      "start_char": 6281,
+      "end_char": 6285,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 617,
+      "end_char": 632,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 1164,
+      "end_char": 1179,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 2496,
+      "end_char": 2511,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 2963,
+      "end_char": 2978,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 3183,
+      "end_char": 3198,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 3317,
+      "end_char": 3332,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 3751,
+      "end_char": 3766,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 4424,
+      "end_char": 4439,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 6253,
+      "end_char": 6268,
+      "ner": "GOAL",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 85,
+      "end_char": 91,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 206,
+      "end_char": 212,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 289,
+      "end_char": 295,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 748,
+      "end_char": 754,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 968,
+      "end_char": 974,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 1214,
+      "end_char": 1220,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 1364,
+      "end_char": 1370,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 1472,
+      "end_char": 1478,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 1939,
+      "end_char": 1945,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 2156,
+      "end_char": 2162,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 4224,
+      "end_char": 4230,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 4415,
+      "end_char": 4421,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 4710,
+      "end_char": 4716,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 4760,
+      "end_char": 4766,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 4883,
+      "end_char": 4889,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 5373,
+      "end_char": 5379,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 5590,
+      "end_char": 5596,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 5938,
+      "end_char": 5944,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "hawaii",
+      "type": "LOCATION",
+      "start_char": 6024,
+      "end_char": 6030,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 641,
+      "end_char": 655,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 1146,
+      "end_char": 1160,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 1742,
+      "end_char": 1756,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 1886,
+      "end_char": 1900,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 2464,
+      "end_char": 2478,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 2931,
+      "end_char": 2945,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 5153,
+      "end_char": 5167,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 5320,
+      "end_char": 5334,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 6221,
+      "end_char": 6235,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "state facilities",
+      "type": "LOCATION",
+      "start_char": 2178,
+      "end_char": 2194,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    },
+    {
+      "text": "state facilities",
+      "type": "LOCATION",
+      "start_char": 5612,
+      "end_char": 5628,
+      "ner": "LOCATION",
+      "normalized_ner": null
+    }
+  ],
+  "relations": [
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "move the hawaii farm to school program from the department of agriculture to the department of education"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "moves the hawaii farm to school program from the department of agriculture to the department of education. establishes a programmatic goal for the department of education"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "goal that at least thirty per cent of food served in public schools be locally sourced by 2030"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "target goal of providing a fixed minimum percentage of locally sourced food in public schools"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "submit an annual report to the legislature"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "coordinator who shall work in collaboration with the appropriate stakeholders"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "coordinator who shall work in collaboration with the appropriate stakeholders"
+    }
+  ],
+  "metadata": {
+    "extraction_method": "stanford_corenlp",
+    "total_entities": 70,
+    "total_relations": 7,
+    "entity_types": [
+      "LOCATION",
+      "GOAL",
+      "AGENCY",
+      "PROGRAM"
+    ],
+    "relation_types": [
+      "moved"
+    ]
+  }
+}

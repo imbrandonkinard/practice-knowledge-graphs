@@ -1,0 +1,54 @@
+HOUSE OF REPRESENTATIVES
+H.B. NO. 767
+THIRTY-FIRST LEGISLATURE, 2021
+H.D. 2
+STATE OF HAWAII
+S.D. 2
+A BILL FOR AN ACT
+RELATING TO THE FARM TO SCHOOL PROGRAM.
+BE IT ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:
+SECTION 1. The legislature finds that a key reason for the creation of the Hawaii farm to school program in 2015 was to improve the health of the State's keiki by encouraging consumption of fresh, locally grown foods, both for their nutritional content and to promote healthy behaviors at an early age.
+The legislature further finds that setting a target goal of providing a fixed minimum percentage of locally sourced food in public schools can bring the farm to school program closer to achieving tangible results for the health of Hawaii's students, including an increased consumption of fresh fruits and vegetables and the potential to minimize diet-related diseases in childhood, such as obesity and diabetes.
+The purpose of this Act is to move the Hawaii farm to school program from the department of agriculture to the department of education and establish a programmatic goal that at least thirty per cent of food served in public schools be locally sourced by 2030.
+SECTION 2. Chapter 302A, Hawaii Revised Statutes, is amended by adding two new sections to subpart C of part II to be appropriately designated and to read as follows:
+"§302A- Hawaii farm to school program; farm to school coordinator. (a) There is established within the department a Hawaii farm to school program. The purpose of the farm to school program shall be to:
+(1) Improve student health;
+(2) Develop an educated agricultural workforce;
+(3) Enrich the local food system through the support and increase of local food procurement for the State's public schools;
+(4) Accelerate garden and farm-based education for the State's public school students; and
+(5) Expand the relationships between public schools and agricultural communities.
+(b) The Hawaii farm to school program shall be headed by a farm to school coordinator who shall work in collaboration with the appropriate stakeholders to address the issues of supply, demand, procurement, and consumption of Hawaii-grown foods in state facilities, primarily education facilities, and take reasonable steps to incorporate more agriculture and nutrition education in schools.
+§302A- Farm to school meals. (a) By 2030, the department shall meet the local farm to school meal goal that thirty per cent of food served in public schools shall consist of locally sourced products, as measured by the percentage of the total cost of food.
+(b) The department shall submit an annual report to the legislature no later than twenty days prior to the convening of each regular session, beginning with the regular session of 2022, containing the following information:
+(1) The status of the department's progress in meeting the local farm to school meal goal;
+(2) The percentage of food served in public schools that consists of locally sourced products, by county, as measured by the percentage of the total cost of food;
+(3) The costs associated with the farm to school meals program and any savings realized;
+(4) A list of all large purchases of locally sourced products and the identity of the seller;
+(5) A list of meals on a school menu consisting of the largest percentage of locally sourced products, as measured by the percentage of the total cost of food;
+(6) The percentage of fresh food served, by county, as measured by the percentage of the total cost of food;
+(7) The percentage of processed food served, by county, as measured by the percentage of the total cost of food;
+(8) A description of the training conducted to prepare cafeteria staff for cooking meals from scratch; and
+(9) The percentage of locally sourced products purchased from the department's largest distributors, as measured by the percentage of the total cost of food.
+(c) For the purposes of this section:
+"Fresh local agricultural products" means fruits, vegetables, nuts, coffee, eggs, poultry and poultry products, livestock and livestock products, milk and milk products, aquacultural and maricultural products, and horticultural products that are one hundred per cent grown, raised, and harvested in Hawaii.
+"Local value-added processed, agricultural, or food products" means at least fifty-one per cent of the product's primary agricultural product shall be grown, raised, and harvested in Hawaii.
+"Locally sourced products" means fresh local agricultural products or local value-added processed, agricultural, or food products.
+"Primary agricultural product" means the major agricultural product in a processed or value-added agricultural or food product."
+SECTION 3. Section 141-11, Hawaii Revised Statutes, is repealed.
+["[§141-11] Hawaii farm to school program; farm to school coordinator. (a) There is established within the department of agriculture a Hawaii farm to school program. The purpose of the farm to school program shall be to:
+(1) Improve student health;
+(2) Develop an educated agricultural workforce;
+(3) Enrich the local food system through the support and increase of local food procurement for the State's public schools and other institutions;
+(4) Accelerate garden and farm-based education for the State's public school students; and
+(5) Expand the relationships between public schools and agricultural communities.
+(b) The Hawaii farm to school program shall be headed by a farm to school coordinator who shall work in collaboration with the appropriate stakeholders to address the issues of supply, demand, procurement, and consumption of Hawaii-grown foods in state facilities, primarily education facilities, and take reasonable steps to incorporate more agriculture and nutrition education in schools."]
+SECTION 4. Statutory material to be repealed is bracketed and stricken. New statutory material is underscored.
+SECTION 5. This Act shall take effect on July 1, 2021.
+Report Title:
+Hawaii Farm to School Program; Farm to School Meals; DOE; HDOA
+Description:
+Moves the Hawaii farm to school program from the Department of Agriculture to the Department of Education. Establishes a programmatic goal for the Department of Education that at least 30% of food served in public schools shall consist of locally sourced products by 2030. Creates an annual reporting requirement. (SD2)
+
+==================================================
+Saving extracted text to 'extracted_bill.txt'...
+Extraction complete!
