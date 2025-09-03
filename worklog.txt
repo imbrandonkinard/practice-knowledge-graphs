@@ -4,9 +4,12 @@ Curriculum is a deliverable but the tools used to generate deliverables are beyo
 
 Logs:
 | Start | End |
-August 29
+29 August 2025
 2:30pm -> 4:20pm (1h50m)
 # initial commit of html to plain text
 # version 1 and version 2 of entity and relationship extract
 ... --> 5:00
 # curriculum 01 and 02 for v1 development and nlp technical foundation
+
+2 September 2025
+8:35pm -> 
