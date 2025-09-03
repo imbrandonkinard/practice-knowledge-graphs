@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Entity Classification Interface</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    .interface-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .text-panel {
+      background-color: #fafafa;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 5px solid #3498db;
+      font-family: 'Courier New', monospace;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .control-panel {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      height: fit-content;
+    }
+
+    .section-header {
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 20px 0 10px 0;
+      font-size: 1.1em;
+    }
+
+    /* Entity Type Styling */
+    .entity {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+    }
+
+    .entity:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .entity.selected {
+      border-color: #ff6b6b;
+      background-color: #ffe0e0;
+    }
+
+    .program {
+      background-color: #e3f2fd;
+      color: #1565c0;
+      border-color: #2196f3;
+    }
+
+    .agency {
+      background-color: #e8f5e8;
+      color: #2e7d32;
+      border-color: #4caf50;
+    }
+
+    .goal {
+      background-color: #fff3e0;
+      color: #ef6c00;
+      border-color: #ff9800;
+    }
+
+    .reporting {
+      background-color: #fce4ec;
+      color: #c2185b;
+      border-color: #e91e63;
+    }
+
+    .statute {
+      background-color: #f3e5f5;
+      color: #7b1fa2;
+      border-color: #9c27b0;
+    }
+
+    .purpose {
+      background-color: #ffebee;
+      color: #d32f2f;
+      border-color: #f44336;
+    }
+
+    .person {
+      background-color: #e0f2f1;
+      color: #00695c;
+      border-color: #009688;
+    }
+
+    .food {
+      background-color: #f1f8e9;
+      color: #558b2f;
+      border-color: #8bc34a;
+    }
+
+    .legal {
+      background-color: #e8eaf6;
+      color: #3f51b5;
+      border-color: #5c6bc0;
+    }
+
+    .position {
+      background-color: #fff8e1;
+      color: #f57f17;
+      border-color: #ffc107;
+    }
+
+    /* Selection Interface */
+    .selection-interface {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      min-width: 400px;
+      display: none;
+    }
+
+    .selection-interface.show {
+      display: block;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #2980b9;
+    }
+
+    .btn-secondary {
+      background-color: #95a5a6;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #7f8c8d;
+    }
+
+    .btn-success {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background-color: #229954;
+    }
+
+    .btn-danger {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #c0392b;
+    }
+
+    /* Control Panel Styles */
+    .control-section {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #dee2e6;
+    }
+
+    .control-section h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+
+    .entity-type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .entity-type-btn {
+      padding: 8px 12px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .entity-type-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .entity-type-btn.active {
+      border-color: #3498db;
+      background-color: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .annotations-list {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      background: white;
+    }
+
+    .annotation-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      margin-bottom: 5px;
+      background: #f8f9fa;
+      border-radius: 4px;
+      border-left: 4px solid #3498db;
+    }
+
+    .annotation-text {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .annotation-type {
+      font-size: 12px;
+      color: #666;
+      margin-left: 10px;
+    }
+
+    .annotation-actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .btn-small {
+      padding: 4px 8px;
+      font-size: 12px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .btn-edit {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    .btn-delete {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 10px;
+      background: white;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3498db;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .interface-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .control-panel {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+
+      .text-panel {
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .selection-interface {
+        min-width: 300px;
+        margin: 20px;
+      }
+    }
+
+    /* Instructions */
+    .instructions {
+      background-color: #e8f4fd;
+      border: 1px solid #bee5eb;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .instructions h3 {
+      margin-top: 0;
+      color: #0c5460;
+    }
+
+    .instructions ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      margin-bottom: 5px;
+    }
+
+    /* Export Section */
+    .export-section {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .export-format {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .export-format label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🏷️ Interactive Entity Classification Interface</h1>
+
+    <div class="instructions">
+      <h3>📋 How to Use This Interface</h3>
+      <ol>
+        <li><strong>Select Text:</strong> Click and drag to select any text in the bill</li>
+        <li><strong>Choose Entity Type:</strong> Select from existing types or create a new one</li>
+        <li><strong>Add Details:</strong> Provide additional context or sub-types if needed</li>
+        <li><strong>Save Annotation:</strong> Click "Save Annotation" to add it to your collection</li>
+        <li><strong>Export Results:</strong> Download your annotations for use in prompts</li>
+      </ol>
+    </div>
+
+    <div class="interface-layout">
+      <div class="text-panel" id="billText">
+        <div class="section-header">Section 1: Legislative Findings</div>
+
+        <p><strong>HOUSE OF REPRESENTATIVES</strong><br>
+          <span class="entity statute">H.B. NO. 767</span><br>
+          <strong>THIRTY-FIRST LEGISLATURE, 2021</strong><br>
+          <strong>H.D. 2</strong><br>
+          <span class="entity agency">STATE OF HAWAII</span><br>
+          <strong>S.D. 2</strong><br>
+          <strong>A BILL FOR AN ACT</strong><br>
+          <strong>RELATING TO THE <span class="entity program">FARM TO SCHOOL PROGRAM</span>.</strong><br>
+          <strong>BE IT ENACTED BY THE <span class="entity agency">LEGISLATURE</span> OF THE <span
+              class="entity agency">STATE OF HAWAII</span>:</strong>
+        </p>
+
+        <p><strong>SECTION 1.</strong> The <span class="entity agency">legislature</span> finds that a key reason for
+          the creation of the Hawaii <span class="entity program">farm to school program</span> in 2015 was to <span
+            class="entity purpose">improve the health</span> of the State's keiki by encouraging consumption of <span
+            class="entity food">fresh, locally grown foods</span>, both for their nutritional content and to promote
+          healthy behaviors at an early age.</p>
+
+        <p>The <span class="entity agency">legislature</span> further finds that setting a target goal of providing a
+          fixed <span class="entity goal">minimum percentage</span> of <span class="entity food">locally sourced
+            food</span> in public schools can bring the <span class="entity program">farm to school program</span>
+          closer to achieving tangible results for the health of Hawaii's students, including an increased consumption
+          of <span class="entity food">fresh fruits and vegetables</span> and the potential to minimize diet-related
+          diseases in childhood, such as obesity and diabetes.</p>
+
+        <p>The purpose of this Act is to move the Hawaii <span class="entity program">farm to school program</span>
+          from the <span class="entity agency">department of agriculture</span> to the <span
+            class="entity agency">department of education</span> and establish a programmatic goal that at least <span
+            class="entity goal">thirty per cent</span> of food served in public schools be <span
+            class="entity food">locally sourced</span> by <span class="entity goal">2030</span>.</p>
+
+        <div class="section-header">Section 2: Statutory Amendments</div>
+
+        <p><strong>SECTION 2.</strong> <span class="entity legal">Chapter 302A</span>, <span class="entity legal">Hawaii
+            Revised Statutes</span>, is amended by adding two new sections to subpart C of
+          part II to be appropriately designated and to read as follows:</p>
+
+        <p><strong>"§302A- Hawaii <span class="entity program">farm to school program</span>; <span
+              class="entity position">farm to school coordinator</span>.</strong> (a) There is established within the
+          department a Hawaii <span class="entity program">farm to school program</span>. The purpose of the <span
+            class="entity program">farm to school program</span> shall be to:</p>
+
+        <p>(1) <span class="entity purpose">Improve student health</span>;<br>
+          (2) <span class="entity purpose">Develop an educated agricultural workforce</span>;<br>
+          (3) <span class="entity purpose">Enrich the local food system</span> through the support and increase of
+          local food procurement for the State's public schools;<br>
+          (4) <span class="entity purpose">Accelerate garden and farm-based education</span> for the State's public
+          school students; and<br>
+          (5) <span class="entity purpose">Expand the relationships</span> between public schools and agricultural
+          communities.</p>
+
+        <p>(b) The Hawaii <span class="entity program">farm to school program</span> shall be headed by a <span
+            class="entity position">farm to school coordinator</span> who shall work in collaboration with the
+          appropriate stakeholders to address the issues of supply, demand, procurement, and consumption of <span
+            class="entity food">Hawaii-grown foods</span> in state facilities, primarily education facilities, and take
+          reasonable steps to incorporate more agriculture and nutrition education in schools.</p>
+
+        <p><strong>§302A- Farm to school meals.</strong> (a) By <span class="entity goal">2030</span>, the department
+          shall meet the local <span class="entity program">farm to school meal goal</span> that <span
+            class="entity goal">thirty per cent</span> of food served in public schools shall consist of <span
+            class="entity food">locally sourced products</span>, as measured by the percentage of the total cost of
+          food.</p>
+
+        <p>(b) The department shall <span class="entity reporting">submit an <span class="entity reporting">annual
+              report</span></span> to the <span class="entity agency">legislature</span> no later than twenty days
+          prior to the convening of each regular session, beginning with the regular session of 2022, containing the
+          following information:</p>
+
+        <p>(1) The status of the department's progress in meeting the local <span class="entity program">farm to school
+            meal goal</span>;<br>
+          (2) The percentage of food served in public schools that consists of <span class="entity food">locally
+            sourced products</span>, by county, as measured by the percentage of the total cost of food;<br>
+          (3) The costs associated with the <span class="entity program">farm to school <span
+              class="entity program">meals
+              program</span></span> and any savings realized;<br>
+          (4) A list of all large purchases of <span class="entity food">locally sourced products</span> and the
+          identity of the seller;<br>
+          (5) A list of meals on a school menu consisting of the largest percentage of <span class="entity food">locally
+            sourced products</span>, as measured by the percentage of the total cost of food;</p>
+
+        <div class="section-header">Report Title and Description</div>
+
+        <p><strong>Report Title:</strong><br>
+          Hawaii <span class="entity program">Farm to School Program</span>; <span class="entity program">Farm to School
+            Meals</span>; <span class="entity agency">DOE</span>; <span class="entity agency">HDOA</span></p>
+
+        <p><strong>Description:</strong><br>
+          Moves the Hawaii <span class="entity program">farm to school program</span> from the <span
+            class="entity agency">Department of Agriculture</span> to the <span class="entity agency">Department of
+            Education</span>. Establishes a programmatic goal for the <span class="entity agency">Department of
+            Education</span> that at least <span class="entity goal">30%</span> of food served in public schools shall
+          consist of <span class="entity food">locally sourced products</span> by <span class="entity goal">2030</span>.
+          Creates an <span class="entity reporting">annual <span class="entity reporting">reporting
+              requirement</span></span>. (SD2)</p>
+      </div>
+
+      <div class="control-panel">
+        <div class="control-section">
+          <h3>🎯 Entity Types</h3>
+          <div class="entity-type-grid">
+            <div class="entity-type-btn" data-type="program">PROGRAM</div>
+            <div class="entity-type-btn" data-type="agency">AGENCY</div>
+            <div class="entity-type-btn" data-type="goal">GOAL</div>
+            <div class="entity-type-btn" data-type="reporting">REPORTING</div>
+            <div class="entity-type-btn" data-type="statute">STATUTE</div>
+            <div class="entity-type-btn" data-type="purpose">PURPOSE</div>
+            <div class="entity-type-btn" data-type="person">PERSON</div>
+            <div class="entity-type-btn" data-type="food">FOOD</div>
+            <div class="entity-type-btn" data-type="legal">LEGAL</div>
+            <div class="entity-type-btn" data-type="position">POSITION</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="customType">Custom Type:</label>
+            <input type="text" id="customType" placeholder="Enter new entity type">
+          </div>
+        </div>
+
+        <div class="control-section">
+          <h3>📊 Statistics</h3>
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-number" id="totalAnnotations">0</div>
+              <div class="stat-label">Total</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="uniqueTypes">0</div>
+              <div class="stat-label">Types</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="textSpans">0</div>
+              <div class="stat-label">Spans</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <h3>📝 Annotations</h3>
+          <div class="annotations-list" id="annotationsList">
+            <p style="text-align: center; color: #666; font-style: italic;">No annotations yet. Select text to get
+              started!</p>
+          </div>
+        </div>
+
+        <div class="export-section">
+          <h3>💾 Export Annotations</h3>
+          <p>Download your annotations for use in prompts and further analysis.</p>
+          <div class="export-format">
+            <label><input type="radio" name="exportFormat" value="json" checked> JSON</label>
+            <label><input type="radio" name="exportFormat" value="csv"> CSV</label>
+            <label><input type="radio" name="exportFormat" value="prompt"> Prompt</label>
+          </div>
+          <button class="btn btn-success" onclick="exportAnnotations()">Export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selection Interface Modal -->
+  <div class="overlay" id="overlay"></div>
+  <div class="selection-interface" id="selectionInterface">
+    <h3>🏷️ Classify Selected Text</h3>
+    <div class="form-group">
+      <label for="selectedText">Selected Text:</label>
+      <textarea id="selectedText" readonly></textarea>
+    </div>
+    <div class="form-group">
+      <label for="entityType">Entity Type:</label>
+      <select id="entityType">
+        <option value="">Select entity type...</option>
+        <option value="program">PROGRAM</option>
+        <option value="agency">AGENCY</option>
+        <option value="goal">GOAL</option>
+        <option value="reporting">REPORTING</option>
+        <option value="statute">STATUTE</option>
+        <option value="purpose">PURPOSE</option>
+        <option value="person">PERSON</option>
+        <option value="food">FOOD</option>
+        <option value="legal">LEGAL</option>
+        <option value="position">POSITION</option>
+        <option value="custom">Custom Type</option>
+      </select>
+    </div>
+    <div class="form-group" id="customTypeGroup" style="display: none;">
+      <label for="customEntityType">Custom Entity Type:</label>
+      <input type="text" id="customEntityType" placeholder="Enter custom type">
+    </div>
+    <div class="form-group">
+      <label for="subType">Sub-Type (Optional):</label>
+      <input type="text" id="subType" placeholder="e.g., fresh foods, locally grown">
+    </div>
+    <div class="form-group">
+      <label for="context">Additional Context:</label>
+      <textarea id="context" placeholder="Any additional notes or context..."></textarea>
+    </div>
+    <div class="button-group">
+      <button class="btn btn-secondary" onclick="cancelSelection()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveAnnotation()">Save Annotation</button>
+    </div>
+  </div>
+
+  <script>
+    let annotations = [];
+    let selectedText = '';
+    let selectedRange = null;
+
+    // Initialize the interface
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeTextSelection();
+      updateStatistics();
+    });
+
+    function initializeTextSelection() {
+      const billText = document.getElementById('billText');
+
+      // Add mouse event listeners for text selection
+      billText.addEventListener('mouseup', handleTextSelection);
+      billText.addEventListener('touchend', handleTextSelection);
+
+      // Prevent default entity click behavior
+      const entities = document.querySelectorAll('.entity');
+      entities.forEach(entity => {
+        entity.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+
+    function handleTextSelection(e) {
+      const selection = window.getSelection();
+      const text = selection.toString().trim();
+
+      if (text.length > 0) {
+        selectedText = text;
+        selectedRange = selection.getRangeAt(0);
+        showSelectionInterface();
+      }
+    }
+
+    function showSelectionInterface() {
+      document.getElementById('selectedText').value = selectedText;
+      document.getElementById('overlay').classList.add('show');
+      document.getElementById('selectionInterface').classList.add('show');
+
+      // Reset form
+      document.getElementById('entityType').value = '';
+      document.getElementById('customEntityType').value = '';
+      document.getElementById('subType').value = '';
+      document.getElementById('context').value = '';
+      document.getElementById('customTypeGroup').style.display = 'none';
+    }
+
+    function cancelSelection() {
+      document.getElementById('overlay').classList.remove('show');
+      document.getElementById('selectionInterface').classList.remove('show');
+      window.getSelection().removeAllRanges();
+    }
+
+    function saveAnnotation() {
+      const entityType = document.getElementById('entityType').value;
+      const customType = document.getElementById('customEntityType').value;
+      const subType = document.getElementById('subType').value;
+      const context = document.getElementById('context').value;
+
+      if (!entityType) {
+        alert('Please select an entity type.');
+        return;
+      }
+
+      const finalType = entityType === 'custom' ? customType : entityType;
+
+      if (!finalType) {
+        alert('Please enter a custom entity type.');
+        return;
+      }
+
+      // Create annotation object
+      const annotation = {
+        id: Date.now(),
+        text: selectedText,
+        type: finalType,
+        subType: subType || null,
+        context: context || null,
+        timestamp: new Date().toISOString(),
+        startOffset: selectedRange.startOffset,
+        endOffset: selectedRange.endOffset
+      };
+
+      // Add to annotations array
+      annotations.push(annotation);
+
+      // Update UI
+      updateAnnotationsList();
+      updateStatistics();
+      highlightSelectedText(finalType);
+
+      // Close interface
+      cancelSelection();
+    }
+
+    function highlightSelectedText(entityType) {
+      if (selectedRange) {
+        const span = document.createElement('span');
+        span.className = `entity ${entityType}`;
+        span.textContent = selectedText;
+        span.setAttribute('data-annotation-id', annotations[annotations.length - 1].id);
+
+        try {
+          selectedRange.deleteContents();
+          selectedRange.insertNode(span);
+        } catch (e) {
+          console.error('Error highlighting text:', e);
+        }
+      }
+    }
+
+    function updateAnnotationsList() {
+      const list = document.getElementById('annotationsList');
+
+      if (annotations.length === 0) {
+        list.innerHTML = '<p style="text-align: center; color: #666; font-style: italic;">No annotations yet. Select text to get started!</p>';
+        return;
+      }
+
+      list.innerHTML = annotations.map(annotation => `
+        <div class="annotation-item">
+          <div>
+            <div class="annotation-text">"${annotation.text}"</div>
+            <div class="annotation-type">${annotation.type}${annotation.subType ? ` (${annotation.subType})` : ''}</div>
+          </div>
+          <div class="annotation-actions">
+            <button class="btn-small btn-edit" onclick="editAnnotation(${annotation.id})">Edit</button>
+            <button class="btn-small btn-delete" onclick="deleteAnnotation(${annotation.id})">Delete</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateStatistics() {
+      document.getElementById('totalAnnotations').textContent = annotations.length;
+      document.getElementById('uniqueTypes').textContent = new Set(annotations.map(a => a.type)).size;
+      document.getElementById('textSpans').textContent = new Set(annotations.map(a => a.text)).size;
+    }
+
+    function editAnnotation(id) {
+      const annotation = annotations.find(a => a.id === id);
+      if (annotation) {
+        // Pre-fill the form with existing data
+        document.getElementById('selectedText').value = annotation.text;
+        document.getElementById('entityType').value = annotation.type;
+        document.getElementById('subType').value = annotation.subType || '';
+        document.getElementById('context').value = annotation.context || '';
+
+        // Show interface
+        document.getElementById('overlay').classList.add('show');
+        document.getElementById('selectionInterface').classList.add('show');
+
+        // Store the annotation ID for updating
+        document.getElementById('selectionInterface').setAttribute('data-edit-id', id);
+      }
+    }
+
+    function deleteAnnotation(id) {
+      if (confirm('Are you sure you want to delete this annotation?')) {
+        annotations = annotations.filter(a => a.id !== id);
+        updateAnnotationsList();
+        updateStatistics();
+
+        // Remove highlight from text
+        const span = document.querySelector(`[data-annotation-id="${id}"]`);
+        if (span) {
+          span.outerHTML = span.textContent;
+        }
+      }
+    }
+
+    function exportAnnotations() {
+      const format = document.querySelector('input[name="exportFormat"]:checked').value;
+      let content = '';
+      let filename = '';
+      let mimeType = '';
+
+      switch (format) {
+        case 'json':
+          content = JSON.stringify(annotations, null, 2);
+          filename = 'entity_annotations.json';
+          mimeType = 'application/json';
+          break;
+
+        case 'csv':
+          const headers = ['Text', 'Type', 'Sub-Type', 'Context', 'Timestamp'];
+          const csvContent = [
+            headers.join(','),
+            ...annotations.map(a => [
+              `"${a.text}"`,
+              a.type,
+              a.subType || '',
+              `"${a.context || ''}"`,
+              a.timestamp
+            ].join(','))
+          ].join('\n');
+          content = csvContent;
+          filename = 'entity_annotations.csv';
+          mimeType = 'text/csv';
+          break;
+
+        case 'prompt':
+          const promptContent = `# Entity Classification Results
+
+Based on the legislative text analysis, here are the identified entities:
+
+${annotations.map(a => `- **${a.text}** (${a.type}${a.subType ? ` - ${a.subType}` : ''})${a.context ? ` - ${a.context}` : ''}`).join('\n')}
+
+## Entity Type Summary:
+${Object.entries(annotations.reduce((acc, a) => {
+            acc[a.type] = (acc[a.type] || 0) + 1;
+            return acc;
+          }, {})).map(([type, count]) => `- ${type}: ${count} entities`).join('\n')}
+
+## Recommendations for NER Enhancement:
+1. Add custom patterns for identified entity types
+2. Consider hierarchical relationships (e.g., food types)
+3. Implement context-aware entity recognition
+4. Add confidence scoring based on manual annotations`;
+
+          content = promptContent;
+          filename = 'entity_analysis_prompt.md';
+          mimeType = 'text/markdown';
+          break;
+      }
+
+      // Download file
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Handle custom type selection
+    document.getElementById('entityType').addEventListener('change', function () {
+      const customGroup = document.getElementById('customTypeGroup');
+      if (this.value === 'custom') {
+        customGroup.style.display = 'block';
+      } else {
+        customGroup.style.display = 'none';
+      }
+    });
+
+    // Handle entity type button clicks
+    document.querySelectorAll('.entity-type-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        // Remove active class from all buttons
+        document.querySelectorAll('.entity-type-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // Set the entity type in the form if interface is open
+        const interface = document.getElementById('selectionInterface');
+        if (interface.classList.contains('show')) {
+          document.getElementById('entityType').value = this.dataset.type;
+        }
+      });
+    });
+
+    // Handle custom type input
+    document.getElementById('customType').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        const customType = this.value.trim();
+        if (customType) {
+          // Add to entity type options
+          const select = document.getElementById('entityType');
+          const option = document.createElement('option');
+          option.value = customType.toLowerCase().replace(/\s+/g, '_');
+          option.textContent = customType.toUpperCase();
+          select.appendChild(option);
+
+          // Clear input
+          this.value = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
