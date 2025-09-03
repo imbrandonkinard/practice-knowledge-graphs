@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NER Highlights and Extraction Guide</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #34495e;
+      border-left: 4px solid #3498db;
+      padding-left: 15px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #2c3e50;
+      margin-top: 25px;
+    }
+
+    /* Entity Type Styling */
+    .entity {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .entity:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .program {
+      background-color: #e3f2fd;
+      color: #1565c0;
+      border-color: #2196f3;
+    }
+
+    .agency {
+      background-color: #e8f5e8;
+      color: #2e7d32;
+      border-color: #4caf50;
+    }
+
+    .goal {
+      background-color: #fff3e0;
+      color: #ef6c00;
+      border-color: #ff9800;
+    }
+
+    .reporting {
+      background-color: #fce4ec;
+      color: #c2185b;
+      border-color: #e91e63;
+    }
+
+    .statute {
+      background-color: #f3e5f5;
+      color: #7b1fa2;
+      border-color: #9c27b0;
+    }
+
+    .purpose {
+      background-color: #ffebee;
+      color: #d32f2f;
+      border-color: #f44336;
+    }
+
+    /* Legend Styling */
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      margin-right: 10px;
+      border: 2px solid;
+    }
+
+    /* Bill Text Styling */
+    .bill-text {
+      background-color: #fafafa;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 5px solid #3498db;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      line-height: 1.8;
+    }
+
+    .section-header {
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 20px 0 10px 0;
+      font-size: 1.1em;
+    }
+
+    /* Comparison Tables */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-table th {
+      background-color: #34495e;
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .comparison-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .comparison-table tr:hover {
+      background-color: #e3f2fd;
+    }
+
+    /* Code Blocks */
+    .code-block {
+      background-color: #2d3748;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 15px 0;
+    }
+
+    .token {
+      display: inline-block;
+      margin: 2px;
+      padding: 4px 8px;
+      background-color: #4a5568;
+      border-radius: 4px;
+      color: #e2e8f0;
+    }
+
+    .entity-token {
+      background-color: #3182ce;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Interactive Features */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 12px;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+
+      .legend {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table {
+        font-size: 14px;
+      }
+
+      .bill-text {
+        padding: 15px;
+        font-size: 14px;
+      }
+    }
+
+    /* Process Steps */
+    .process-step {
+      background-color: #f8f9fa;
+      border-left: 4px solid #28a745;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .step-number {
+      background-color: #28a745;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* Quality Metrics */
+    .metric {
+      display: inline-block;
+      background-color: #e3f2fd;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-weight: bold;
+      color: #1565c0;
+    }
+
+    .metric.high {
+      background-color: #e8f5e8;
+      color: #2e7d32;
+    }
+
+    .metric.medium {
+      background-color: #fff3e0;
+      color: #ef6c00;
+    }
+
+    .metric.low {
+      background-color: #ffebee;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔍 NER Highlights and Extraction Guide</h1>
+
+    <p>This document provides a visual guide to Named Entity Recognition (NER) features throughout the bill text,
+      showing how different versions identify and extract entities.</p>
+
+    <h2>📋 Overview</h2>
+    <p>This guide demonstrates:</p>
+    <ul>
+      <li><strong>Tokenization</strong>: How text is broken into meaningful units</li>
+      <li><strong>Entity Recognition</strong>: How different entity types are identified</li>
+      <li><strong>Version Comparison</strong>: How v1, v2, and v3 differ in extraction capabilities</li>
+      <li><strong>Manual Process</strong>: Step-by-step guide for manual entity identification</li>
+    </ul>
+
+    <h2>🎨 Entity Type Legend</h2>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color program"></div>
+        <div>
+          <strong>PROGRAM</strong><br>
+          <small>Programs and initiatives</small><br>
+          <em>Example: Farm to School Program, meals program</em>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color agency"></div>
+        <div>
+          <strong>AGENCY</strong><br>
+          <small>Government agencies and departments</small><br>
+          <em>Example: Department of Education, HDOA, DOE</em>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color goal"></div>
+        <div>
+          <strong>GOAL</strong><br>
+          <small>Targets, percentages, and timelines</small><br>
+          <em>Example: 30%, 2030, locally sourced</em>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color reporting"></div>
+        <div>
+          <strong>REPORTING</strong><br>
+          <small>Reporting requirements and obligations</small><br>
+          <em>Example: annual report, reporting requirement</em>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color statute"></div>
+        <div>
+          <strong>STATUTE</strong><br>
+          <small>Legal references and citations</small><br>
+          <em>Example: Chapter 302A, H.B. NO. 767</em>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color purpose"></div>
+        <div>
+          <strong>PURPOSE</strong><br>
+          <small>Program purposes and objectives</small><br>
+          <em>Example: Improve student health, develop workforce</em>
+        </div>
+      </div>
+    </div>
+
+    <h2>📄 Highlighted Bill Text with NER Annotations</h2>
+
+    <div class="bill-text">
+      <div class="section-header">Section 1: Legislative Findings</div>
+
+      <p><strong>HOUSE OF REPRESENTATIVES</strong><br>
+        <span class="entity statute tooltip">H.B. NO. 767<span class="tooltiptext">Bill number
+            reference</span></span><br>
+        <strong>THIRTY-FIRST LEGISLATURE, 2021</strong><br>
+        <strong>H.D. 2</strong><br>
+        <span class="entity agency tooltip">STATE OF HAWAII<span class="tooltiptext">Government entity</span></span><br>
+        <strong>S.D. 2</strong><br>
+        <strong>A BILL FOR AN ACT</strong><br>
+        <strong>RELATING TO THE <span class="entity program tooltip">FARM TO SCHOOL PROGRAM<span
+              class="tooltiptext">Main program being legislated</span></span>.</strong><br>
+        <strong>BE IT ENACTED BY THE <span class="entity agency tooltip">LEGISLATURE<span
+              class="tooltiptext">Legislative body</span></span> OF THE <span class="entity agency tooltip">STATE OF
+            HAWAII<span class="tooltiptext">Government entity</span></span>:</strong>
+      </p>
+
+      <p><strong>SECTION 1.</strong> The <span class="entity agency tooltip">legislature<span
+            class="tooltiptext">Legislative body</span></span> finds that a key reason for the creation of the Hawaii
+        <span class="entity program tooltip">farm to school program<span class="tooltiptext">Main program being
+            legislated</span></span> in 2015 was to <span class="entity purpose tooltip">improve the health<span
+            class="tooltiptext">Program purpose</span></span> of the State's keiki by encouraging consumption of fresh,
+        <span class="entity goal tooltip">locally grown foods<span class="tooltiptext">Target food type</span></span>,
+        both for their nutritional content and to promote healthy behaviors at an early age.</p>
+
+      <p>The <span class="entity agency tooltip">legislature<span class="tooltiptext">Legislative body</span></span>
+        further finds that setting a target goal of providing a fixed <span class="entity goal tooltip">minimum
+          percentage<span class="tooltiptext">Target threshold</span></span> of <span
+          class="entity goal tooltip">locally sourced food<span class="tooltiptext">Target food type</span></span> in
+        public schools can bring the <span class="entity program tooltip">farm to school program<span
+            class="tooltiptext">Main program being legislated</span></span> closer to achieving tangible results for the
+        health of Hawaii's students, including an increased consumption of fresh fruits and vegetables and the potential
+        to minimize diet-related diseases in childhood, such as obesity and diabetes.</p>
+
+      <p>The purpose of this Act is to move the Hawaii <span class="entity program tooltip">farm to school program<span
+            class="tooltiptext">Main program being legislated</span></span> from the <span
+          class="entity agency tooltip">department of agriculture<span class="tooltiptext">Source agency</span></span>
+        to the <span class="entity agency tooltip">department of education<span class="tooltiptext">Target
+            agency</span></span> and establish a programmatic goal that at least <span
+          class="entity goal tooltip">thirty per cent<span class="tooltiptext">Target percentage</span></span> of food
+        served in public schools be <span class="entity goal tooltip">locally sourced<span class="tooltiptext">Target
+            food type</span></span> by <span class="entity goal tooltip">2030<span class="tooltiptext">Target
+            year</span></span>.</p>
+
+      <div class="section-header">Section 2: Statutory Amendments</div>
+
+      <p><strong>SECTION 2.</strong> <span class="entity statute tooltip">Chapter 302A<span class="tooltiptext">Legal
+            chapter reference</span></span>, <span class="entity statute tooltip">Hawaii Revised Statutes<span
+            class="tooltiptext">Legal code reference</span></span>, is amended by adding two new sections to subpart C
+        of part II to be appropriately designated and to read as follows:</p>
+
+      <p><strong>"§302A- Hawaii <span class="entity program tooltip">farm to school program<span
+              class="tooltiptext">Main program being legislated</span></span>; farm to school coordinator.</strong> (a)
+        There is established within the department a Hawaii <span class="entity program tooltip">farm to school
+          program<span class="tooltiptext">Main program being legislated</span></span>. The purpose of the <span
+          class="entity program tooltip">farm to school program<span class="tooltiptext">Main program being
+            legislated</span></span> shall be to:</p>
+
+      <p>(1) <span class="entity purpose tooltip">Improve student health<span class="tooltiptext">Program purpose
+            #1</span></span>;<br>
+        (2) <span class="entity purpose tooltip">Develop an educated agricultural workforce<span
+            class="tooltiptext">Program purpose #2</span></span>;<br>
+        (3) <span class="entity purpose tooltip">Enrich the local food system<span class="tooltiptext">Program purpose
+            #3</span></span> through the support and increase of local food procurement for the State's public
+        schools;<br>
+        (4) <span class="entity purpose tooltip">Accelerate garden and farm-based education<span
+            class="tooltiptext">Program purpose #4</span></span> for the State's public school students; and<br>
+        (5) <span class="entity purpose tooltip">Expand the relationships<span class="tooltiptext">Program purpose
+            #5</span></span> between public schools and agricultural communities.</p>
+
+      <p>(b) The Hawaii <span class="entity program tooltip">farm to school program<span class="tooltiptext">Main
+            program being legislated</span></span> shall be headed by a farm to school coordinator who shall work in
+        collaboration with the appropriate stakeholders to address the issues of supply, demand, procurement, and
+        consumption of Hawaii-grown foods in state facilities, primarily education facilities, and take reasonable steps
+        to incorporate more agriculture and nutrition education in schools.</p>
+
+      <p><strong>§302A- Farm to school meals.</strong> (a) By <span class="entity goal tooltip">2030<span
+            class="tooltiptext">Target year</span></span>, the department shall meet the local <span
+          class="entity program tooltip">farm to school meal goal<span class="tooltiptext">Program
+            objective</span></span> that <span class="entity goal tooltip">thirty per cent<span
+            class="tooltiptext">Target percentage</span></span> of food served in public schools shall consist of <span
+          class="entity goal tooltip">locally sourced products<span class="tooltiptext">Target food type</span></span>,
+        as measured by the percentage of the total cost of food.</p>
+
+      <p>(b) The department shall <span class="entity reporting tooltip">submit an <span
+            class="entity reporting tooltip">annual report<span class="tooltiptext">Reporting
+              requirement</span></span><span class="tooltiptext">Reporting action</span></span> to the <span
+          class="entity agency tooltip">legislature<span class="tooltiptext">Reporting recipient</span></span> no later
+        than twenty days prior to the convening of each regular session, beginning with the regular session of 2022,
+        containing the following information:</p>
+
+      <p>(1) The status of the department's progress in meeting the local <span class="entity program tooltip">farm to
+          school meal goal<span class="tooltiptext">Program objective</span></span>;<br>
+        (2) The percentage of food served in public schools that consists of <span class="entity goal tooltip">locally
+          sourced products<span class="tooltiptext">Target food type</span></span>, by county, as measured by the
+        percentage of the total cost of food;<br>
+        (3) The costs associated with the <span class="entity program tooltip">farm to school <span
+            class="entity program tooltip">meals program<span class="tooltiptext">Sub-program</span></span><span
+            class="tooltiptext">Main program being legislated</span></span> and any savings realized;<br>
+        (4) A list of all large purchases of <span class="entity goal tooltip">locally sourced products<span
+            class="tooltiptext">Target food type</span></span> and the identity of the seller;<br>
+        (5) A list of meals on a school menu consisting of the largest percentage of <span
+          class="entity goal tooltip">locally sourced products<span class="tooltiptext">Target food type</span></span>,
+        as measured by the percentage of the total cost of food;</p>
+
+      <div class="section-header">Report Title and Description</div>
+
+      <p><strong>Report Title:</strong><br>
+        Hawaii <span class="entity program tooltip">Farm to School Program<span class="tooltiptext">Main program being
+            legislated</span></span>; <span class="entity program tooltip">Farm to School Meals<span
+            class="tooltiptext">Sub-program</span></span>; <span class="entity agency tooltip">DOE<span
+            class="tooltiptext">Department acronym</span></span>; <span class="entity agency tooltip">HDOA<span
+            class="tooltiptext">Department acronym</span></span></p>
+
+      <p><strong>Description:</strong><br>
+        Moves the Hawaii <span class="entity program tooltip">farm to school program<span class="tooltiptext">Main
+            program being legislated</span></span> from the <span class="entity agency tooltip">Department of
+          Agriculture<span class="tooltiptext">Source agency</span></span> to the <span
+          class="entity agency tooltip">Department of Education<span class="tooltiptext">Target agency</span></span>.
+        Establishes a programmatic goal for the <span class="entity agency tooltip">Department of Education<span
+            class="tooltiptext">Target agency</span></span> that at least <span class="entity goal tooltip">30%<span
+            class="tooltiptext">Target percentage</span></span> of food served in public schools shall consist of <span
+          class="entity goal tooltip">locally sourced products<span class="tooltiptext">Target food type</span></span>
+        by <span class="entity goal tooltip">2030<span class="tooltiptext">Target year</span></span>. Creates an <span
+          class="entity reporting tooltip">annual <span class="entity reporting tooltip">reporting requirement<span
+              class="tooltiptext">Reporting obligation</span></span><span class="tooltiptext">Reporting
+            frequency</span></span>. (SD2)</p>
+    </div>
+
+    <h2>📊 Version Comparison: Entity Extraction Results</h2>
+
+    <h3>Entity Count Comparison</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Total Entities</th>
+          <th>PROGRAM</th>
+          <th>AGENCY</th>
+          <th>GOAL</th>
+          <th>REPORTING</th>
+          <th>STATUTE</th>
+          <th>PURPOSE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>v1</strong></td>
+          <td>~104</td>
+          <td>0</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><strong>v2</strong></td>
+          <td>66</td>
+          <td>15</td>
+          <td>12</td>
+          <td>10</td>
+          <td>5</td>
+          <td>5</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td><strong>v3</strong></td>
+          <td>25</td>
+          <td>2</td>
+          <td>6</td>
+          <td>5</td>
+          <td>5</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Quality Metrics</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>v1</th>
+          <th>v2</th>
+          <th>v3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Precision</strong></td>
+          <td><span class="metric low">0.7</span></td>
+          <td><span class="metric high">0.9</span></td>
+          <td><span class="metric high">0.95</span></td>
+        </tr>
+        <tr>
+          <td><strong>Recall</strong></td>
+          <td><span class="metric low">0.6</span></td>
+          <td><span class="metric high">0.85</span></td>
+          <td><span class="metric medium">0.8</span></td>
+        </tr>
+        <tr>
+          <td><strong>F1-Score</strong></td>
+          <td><span class="metric low">0.65</span></td>
+          <td><span class="metric high">0.87</span></td>
+          <td><span class="metric high">0.87</span></td>
+        </tr>
+        <tr>
+          <td><strong>Domain Relevance</strong></td>
+          <td><span class="metric low">0.4</span></td>
+          <td><span class="metric high">0.9</span></td>
+          <td><span class="metric high">0.95</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🔧 Tokenization Examples</h2>
+
+    <h3>Sentence Analysis</h3>
+    <p><strong>Original:</strong> "The purpose of this Act is to move the Hawaii farm to school program from the
+      department of agriculture to the department of education."</p>
+
+    <div class="code-block">
+      <strong>Tokens:</strong><br>
+      <span class="token">[The]</span> <span class="token">[purpose]</span> <span class="token">[of]</span> <span
+        class="token">[this]</span> <span class="token">[Act]</span> <span class="token">[is]</span> <span
+        class="token">[to]</span> <span class="token">[move]</span> <span class="token">[the]</span> <span
+        class="token">[Hawaii]</span> <span class="token entity-token">[farm]</span> <span
+        class="token entity-token">[to]</span> <span class="token entity-token">[school]</span> <span
+        class="token entity-token">[program]</span> <span class="token">[from]</span> <span class="token">[the]</span>
+      <span class="token entity-token">[department]</span> <span class="token entity-token">[of]</span> <span
+        class="token entity-token">[agriculture]</span> <span class="token">[to]</span> <span class="token">[the]</span>
+      <span class="token entity-token">[department]</span> <span class="token entity-token">[of]</span> <span
+        class="token entity-token">[education]</span>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">1</span>
+      <strong>Entity Recognition:</strong>
+      <ul>
+        <li><span class="entity program">PROGRAM</span>: "farm to school program" (tokens 10-13)</li>
+        <li><span class="entity agency">AGENCY</span>: "department of agriculture" (tokens 16-18)</li>
+        <li><span class="entity agency">AGENCY</span>: "department of education" (tokens 21-23)</li>
+      </ul>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">2</span>
+      <strong>Relation Extraction:</strong>
+      <ul>
+        <li><strong>Subject:</strong> "farm to school program"</li>
+        <li><strong>Predicate:</strong> "moved from"</li>
+        <li><strong>Object:</strong> "department of agriculture"</li>
+        <li><strong>Subject:</strong> "farm to school program"</li>
+        <li><strong>Predicate:</strong> "moved to"</li>
+        <li><strong>Object:</strong> "department of education"</li>
+      </ul>
+    </div>
+
+    <h2>📝 Manual Entity Identification Process</h2>
+
+    <div class="process-step">
+      <span class="step-number">1</span>
+      <strong>Text Preprocessing</strong>
+      <ul>
+        <li><strong>Tokenization:</strong> Break text into sentences and words</li>
+        <li><strong>Normalization:</strong> Convert to lowercase, handle punctuation</li>
+        <li><strong>Context Analysis:</strong> Consider surrounding words</li>
+      </ul>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">2</span>
+      <strong>Entity Type Identification</strong>
+      <ul>
+        <li><span class="entity program">PROGRAM Entities:</span> Look for "program", "initiative", "project"</li>
+        <li><span class="entity agency">AGENCY Entities:</span> Look for "department", "agency", "bureau", acronyms</li>
+        <li><span class="entity goal">GOAL Entities:</span> Look for percentages, years, targets</li>
+        <li><span class="entity reporting">REPORTING Entities:</span> Look for "report", "submit", "requirement"</li>
+        <li><span class="entity statute">STATUTE Entities:</span> Look for "chapter", "section", "H.B.", legal citations
+        </li>
+        <li><span class="entity purpose">PURPOSE Entities:</span> Look for infinitive verbs, objectives, goals</li>
+      </ul>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">3</span>
+      <strong>Context Validation</strong>
+      <ul>
+        <li><strong>Surrounding Words:</strong> Check if context supports entity type</li>
+        <li><strong>Grammatical Structure:</strong> Verify entity fits sentence structure</li>
+        <li><strong>Domain Relevance:</strong> Ensure entity is relevant to legislative domain</li>
+      </ul>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">4</span>
+      <strong>Confidence Scoring</strong>
+      <ul>
+        <li><span class="metric high">High Confidence (0.9):</span> Exact pattern matches, clear context</li>
+        <li><span class="metric medium">Medium Confidence (0.7-0.8):</span> Good context, some ambiguity</li>
+        <li><span class="metric low">Low Confidence (0.5-0.6):</span> Weak context, possible false positive</li>
+      </ul>
+    </div>
+
+    <h2>🎯 Best Practices for Manual Annotation</h2>
+
+    <h3>1. Consistency Rules</h3>
+    <ul>
+      <li>Always use full canonical names when possible</li>
+      <li>Maintain consistent capitalization</li>
+      <li>Use standard abbreviations consistently</li>
+    </ul>
+
+    <h3>2. Boundary Guidelines</h3>
+    <ul>
+      <li>Include articles when they're part of the entity name</li>
+      <li>Exclude punctuation unless it's part of the entity</li>
+      <li>Be consistent with compound entity boundaries</li>
+    </ul>
+
+    <h3>3. Context Considerations</h3>
+    <ul>
+      <li>Consider the legislative domain</li>
+      <li>Look for defining phrases ("the purpose of...")</li>
+      <li>Check for parallel structures in lists</li>
+    </ul>
+
+    <h3>4. Quality Checks</h3>
+    <ul>
+      <li>Verify entities make sense in context</li>
+      <li>Check for duplicate or overlapping entities</li>
+      <li>Ensure entity types are appropriate</li>
+    </ul>
+
+    <h2>🛠️ Tools and Resources</h2>
+
+    <h3>For Manual Annotation</h3>
+    <ul>
+      <li><strong>Text Editors:</strong> Use syntax highlighting for entity types</li>
+      <li><strong>Spreadsheets:</strong> Track entities with columns for type, confidence, context</li>
+      <li><strong>Annotation Tools:</strong> Consider using BRAT, Prodigy, or similar tools</li>
+    </ul>
+
+    <h3>For Automated Processing</h3>
+    <ul>
+      <li><strong>CoreNLP:</strong> Stanford's NLP toolkit</li>
+      <li><strong>spaCy:</strong> Python NLP library with custom entity recognition</li>
+      <li><strong>NLTK:</strong> Natural Language Toolkit for Python</li>
+    </ul>
+
+    <h3>Validation Methods</h3>
+    <ul>
+      <li><strong>Cross-validation:</strong> Compare multiple annotators</li>
+      <li><strong>Inter-annotator Agreement:</strong> Measure consistency between annotators</li>
+      <li><strong>Domain Expert Review:</strong> Have subject matter experts validate results</li>
+    </ul>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+      <p><em>This guide provides a comprehensive framework for understanding and manually performing NER on legislative
+          text, with clear examples and best practices for achieving high-quality entity extraction results.</em></p>
+    </div>
+  </div>
+
+  <script>
+    // Add interactive functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add click handlers for entities to show more details
+      const entities = document.querySelectorAll('.entity');
+      entities.forEach(entity => {
+        entity.addEventListener('click', function () {
+          const entityType = this.className.split(' ')[1];
+          const entityText = this.textContent;
+          alert(`Entity Type: ${entityType.toUpperCase()}\nText: "${entityText}"\n\nThis entity was identified by the NER system with high confidence.`);
+        });
+      });
+
+      // Add hover effects for comparison table rows
+      const tableRows = document.querySelectorAll('.comparison-table tbody tr');
+      tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function () {
+          this.style.transform = 'scale(1.02)';
+          this.style.transition = 'transform 0.2s ease';
+        });
+        row.addEventListener('mouseleave', function () {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
