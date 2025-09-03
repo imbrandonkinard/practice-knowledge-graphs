@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1756895839500,
+    "text": "HOUSE OF REPRESENTATIVES",
+    "type": "agency",
+    "subType": null,
+    "context": null,
+    "timestamp": "2025-09-03T10:37:19.500Z",
+    "startOffset": 0,
+    "endOffset": 24
+  },
+  {
+    "id": 1756895863917,
+    "text": "THIRTY-FIRST LEGISLATURE, 2021",
+    "type": "Session Identifier",
+    "subType": null,
+    "context": null,
+    "timestamp": "2025-09-03T10:37:43.917Z",
+    "startOffset": 0,
+    "endOffset": 30
+  },
+  {
+    "id": 1756895943113,
+    "text": "public schools",
+    "type": "Location",
+    "subType": "Institution",
+    "context": "subset of schools",
+    "timestamp": "2025-09-03T10:39:03.113Z",
+    "startOffset": 4,
+    "endOffset": 18
+  },
+  {
+    "id": 1756895961545,
+    "text": "schools",
+    "type": "Location",
+    "subType": "Institution",
+    "context": null,
+    "timestamp": "2025-09-03T10:39:21.545Z",
+    "startOffset": 7,
+    "endOffset": 14
+  },
+  {
+    "id": 1756895973376,
+    "text": "students",
+    "type": "person",
+    "subType": null,
+    "context": null,
+    "timestamp": "2025-09-03T10:39:33.376Z",
+    "startOffset": 75,
+    "endOffset": 83
+  },
+  {
+    "id": 1756895991742,
+    "text": "minimize diet-related diseases in childhood",
+    "type": "goal",
+    "subType": null,
+    "context": null,
+    "timestamp": "2025-09-03T10:39:51.742Z",
+    "startOffset": 22,
+    "endOffset": 75
+  },
+  {
+    "id": 1756896039720,
+    "text": "§302A",
+    "type": "legal",
+    "subType": "Section",
+    "context": null,
+    "timestamp": "2025-09-03T10:40:39.720Z",
+    "startOffset": 1,
+    "endOffset": 6
+  },
+  {
+    "id": 1756896095327,
+    "text": "agricultural communities",
+    "type": "Interest group",
+    "subType": null,
+    "context": "agricultural communities are a collection of individual person farmers",
+    "timestamp": "2025-09-03T10:41:35.327Z",
+    "startOffset": 28,
+    "endOffset": 62
+  }
+]

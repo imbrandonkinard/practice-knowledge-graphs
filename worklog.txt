@@ -8,8 +8,11 @@ Logs:
 2:30pm -> 4:20pm (1h50m)
 # initial commit of html to plain text
 # version 1 and version 2 of entity and relationship extract
-... --> 5:00
+... --> 5:00pm
 # curriculum 01 and 02 for v1 development and nlp technical foundation
 
 2 September 2025 -> 3 September 2025
 8:35pm -> 12:12am
+# add knowledge graphs for protege and version 3
+... --> 1:04am
+# highlights in html for v3 visuals
