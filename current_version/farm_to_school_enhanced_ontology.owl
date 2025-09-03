@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://example.org/farm-to-school-ontology">
+  <owl:Ontology rdf:about="http://example.org/farm-to-school-ontology">
+    <owl:versionIRI rdf:resource="http://example.org/farm-to-school-ontology/1.0" />
+    <rdfs:comment>Enhanced Farm-to-School Knowledge Graph - Generated on 2025-09-02 22:06:04</rdfs:comment>
+    <rdfs:comment>Knowledge graph for Hawaii Farm-to-School Program legislative analysis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="#Program">
+    <rdfs:label>Program</rdfs:label>
+    <rdfs:comment>Government programs and initiatives</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#GovernmentAgency">
+    <rdfs:label>GovernmentAgency</rdfs:label>
+    <rdfs:comment>Government departments and agencies</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Department">
+    <rdfs:label>Department</rdfs:label>
+    <rdfs:comment>Specific government departments</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Person">
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:comment>Individual people mentioned in legislation</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Location">
+    <rdfs:label>Location</rdfs:label>
+    <rdfs:comment>Geographic entities and places</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Date">
+    <rdfs:label>Date</rdfs:label>
+    <rdfs:comment>Temporal entities and time periods</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Goal">
+    <rdfs:label>Goal</rdfs:label>
+    <rdfs:comment>Policy objectives and targets</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Requirement">
+    <rdfs:label>Requirement</rdfs:label>
+    <rdfs:comment>Legal requirements and obligations</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Report">
+    <rdfs:label>Report</rdfs:label>
+    <rdfs:comment>Reporting requirements and documents</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Food">
+    <rdfs:label>Food</rdfs:label>
+    <rdfs:comment>Food products and categories</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#School">
+    <rdfs:label>School</rdfs:label>
+    <rdfs:comment>Educational institutions</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#LegislativeDocument">
+    <rdfs:label>LegislativeDocument</rdfs:label>
+    <rdfs:comment>Bills, acts, and legal documents</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Section">
+    <rdfs:label>Section</rdfs:label>
+    <rdfs:comment>Sections within legislative documents</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Percentage">
+    <rdfs:label>Percentage</rdfs:label>
+    <rdfs:comment>Percentage values and targets</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MonetaryAmount">
+    <rdfs:label>MonetaryAmount</rdfs:label>
+    <rdfs:comment>Financial amounts and budgets</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Stakeholder">
+    <rdfs:label>Stakeholder</rdfs:label>
+    <rdfs:comment>Organizations and groups affected by policy</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Policy">
+    <rdfs:label>Policy</rdfs:label>
+    <rdfs:comment>Policies and regulations</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Process">
+    <rdfs:label>Process</rdfs:label>
+    <rdfs:comment>Processes and procedures</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Outcome">
+    <rdfs:label>Outcome</rdfs:label>
+    <rdfs:comment>Expected outcomes and results</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#manages">
+    <rdfs:label>manages</rdfs:label>
+    <rdfs:comment>One entity manages another</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#reports_to">
+    <rdfs:label>reports to</rdfs:label>
+    <rdfs:comment>Reporting relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#located_in">
+    <rdfs:label>located in</rdfs:label>
+    <rdfs:comment>Geographic location relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#moved_to">
+    <rdfs:label>moved to</rdfs:label>
+    <rdfs:comment>Transfer or relocation relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#moved_from">
+    <rdfs:label>moved from</rdfs:label>
+    <rdfs:comment>Source of transfer or relocation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#headed_by">
+    <rdfs:label>headed by</rdfs:label>
+    <rdfs:comment>Leadership relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#collaborates_with">
+    <rdfs:label>collaborates with</rdfs:label>
+    <rdfs:comment>Collaboration relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#affects">
+    <rdfs:label>affects</rdfs:label>
+    <rdfs:comment>Impact relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#implements">
+    <rdfs:label>implements</rdfs:label>
+    <rdfs:comment>Implementation relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#establishes">
+    <rdfs:label>establishes</rdfs:label>
+    <rdfs:comment>Creation or establishment relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#requires">
+    <rdfs:label>requires</rdfs:label>
+    <rdfs:comment>Requirement relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#creates">
+    <rdfs:label>creates</rdfs:label>
+    <rdfs:comment>Creation relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#amends">
+    <rdfs:label>amends</rdfs:label>
+    <rdfs:comment>Amendment relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#repeals">
+    <rdfs:label>repeals</rdfs:label>
+    <rdfs:comment>Repeal relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_goal">
+    <rdfs:label>has goal</rdfs:label>
+    <rdfs:comment>Goal relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_deadline">
+    <rdfs:label>has deadline</rdfs:label>
+    <rdfs:comment>Deadline relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#has_target">
+    <rdfs:label>has target</rdfs:label>
+    <rdfs:comment>Target relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#serves">
+    <rdfs:label>serves</rdfs:label>
+    <rdfs:comment>Service relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#procures">
+    <rdfs:label>procures</rdfs:label>
+    <rdfs:comment>Procurement relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#consumes">
+    <rdfs:label>consumes</rdfs:label>
+    <rdfs:comment>Consumption relationship</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#hasConfidence">
+    <rdfs:label>has confidence</rdfs:label>
+    <rdfs:comment>Confidence score for extracted information</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasPercentage">
+    <rdfs:label>has percentage</rdfs:label>
+    <rdfs:comment>Percentage value</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasAmount">
+    <rdfs:label>has amount</rdfs:label>
+    <rdfs:comment>Monetary amount</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasYear">
+    <rdfs:label>has year</rdfs:label>
+    <rdfs:comment>Year value</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasText">
+    <rdfs:label>has text</rdfs:label>
+    <rdfs:comment>Original text content</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasContext">
+    <rdfs:label>has context</rdfs:label>
+    <rdfs:comment>Contextual information</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:about="#farm_to_school_program">
+    <rdf:type rdf:resource="#PROGRAM" />
+    <rdfs:label>farm to school program</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#farm_to_school_coordinator">
+    <rdf:type rdf:resource="#PROGRAM" />
+    <rdfs:label>farm to school coordinator</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#department_of_education">
+    <rdf:type rdf:resource="#AGENCY" />
+    <rdfs:label>department of education</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#department_of_agriculture">
+    <rdf:type rdf:resource="#AGENCY" />
+    <rdfs:label>department of agriculture</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#doe">
+    <rdf:type rdf:resource="#AGENCY" />
+    <rdfs:label>doe</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#hdoa">
+    <rdf:type rdf:resource="#AGENCY" />
+    <rdfs:label>hdoa</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#thirty_per_cent">
+    <rdf:type rdf:resource="#GOAL" />
+    <rdfs:label>thirty per cent</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#entity_2030">
+    <rdf:type rdf:resource="#GOAL" />
+    <rdfs:label>2030</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#locally_sourced">
+    <rdf:type rdf:resource="#GOAL" />
+    <rdfs:label>locally sourced</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#hawaii">
+    <rdf:type rdf:resource="#LOCATION" />
+    <rdfs:label>hawaii</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#public_schools">
+    <rdf:type rdf:resource="#LOCATION" />
+    <rdfs:label>public schools</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#state_facilities">
+    <rdf:type rdf:resource="#LOCATION" />
+    <rdfs:label>state facilities</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#FARM_TO_SCHOOL_PROGRAM">
+    <rdf:type rdf:resource="#Program" />
+    <rdfs:label>FARM TO SCHOOL PROGRAM</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Farm_to_School_Program">
+    <rdf:type rdf:resource="#Program" />
+    <rdfs:label>Farm to School Program</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Hawaii_farm_to_school_program">
+    <rdf:type rdf:resource="#Program" />
+    <rdfs:label>Hawaii farm to school program</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Hawaii_Farm_to_School_Program">
+    <rdf:type rdf:resource="#Program" />
+    <rdfs:label>Hawaii Farm to School Program</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Department_of_Education">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>Department of Education</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Department_of_Agriculture">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>Department of Agriculture</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#DOE">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>DOE</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#HDOA">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>HDOA</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#LEGISLATURE">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>LEGISLATURE</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#legislature">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>legislature</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#STATE_OF_HAWAII">
+    <rdf:type rdf:resource="#GovernmentAgency" />
+    <rdfs:label>STATE OF HAWAII</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#HAWAII">
+    <rdf:type rdf:resource="#Location" />
+    <rdfs:label>HAWAII</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Hawaii">
+    <rdf:type rdf:resource="#Location" />
+    <rdfs:label>Hawaii</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#education_facilities">
+    <rdf:type rdf:resource="#Location" />
+    <rdfs:label>education facilities</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#entity_30">
+    <rdf:type rdf:resource="#Goal" />
+    <rdfs:label>30%</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Locally_sourced">
+    <rdf:type rdf:resource="#Goal" />
+    <rdfs:label>Locally sourced</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#annual_report">
+    <rdf:type rdf:resource="#Requirement" />
+    <rdfs:label>annual report</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#reporting_requirement">
+    <rdf:type rdf:resource="#Requirement" />
+    <rdfs:label>reporting requirement</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#locally_sourced_products">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>locally sourced products</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Locally_sourced_products">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>Locally sourced products</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Fresh_local_agricultural_products">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>Fresh local agricultural products</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#fresh_local_agricultural_products">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>fresh local agricultural products</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#Local_valueadded_processed">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>Local value-added processed</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#local_valueadded_processed">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>local value-added processed</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#fruits">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>fruits</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#vegetables">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>vegetables</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#poultry">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>poultry</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#livestock">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>livestock</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#milk">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>milk</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#eggs">
+    <rdf:type rdf:resource="#Food" />
+    <rdfs:label>eggs</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#procurement">
+    <rdf:type rdf:resource="#Process" />
+    <rdfs:label>procurement</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#consumption">
+    <rdf:type rdf:resource="#Process" />
+    <rdfs:label>consumption</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#training">
+    <rdf:type rdf:resource="#Process" />
+    <rdfs:label>training</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="#garden_and_farmbased_education">
+    <rdf:type rdf:resource="#Process" />
+    <rdfs:label>garden and farm-based education</rdfs:label>
+  </owl:NamedIndividual>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <moved rdf:resource="#department_of_education" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#department_of_education">
+    <reports_to rdf:resource="#legislature" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <has_goal rdf:resource="#thirty_per_cent" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="#farm_to_school_program">
+    <has_deadline rdf:resource="#entity_2030" />
+    <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasConfidence>
+  </rdf:Description>
+</rdf:RDF>
