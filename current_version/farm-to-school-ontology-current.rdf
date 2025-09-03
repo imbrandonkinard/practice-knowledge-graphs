@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/farm-to-school-ontology#"
+     xml:base="http://example.org/farm-to-school-ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.org/farm-to-school-ontology">
+        <owl:versionIRI rdf:resource="http://example.org/farm-to-school-ontology/1.0"/>
+        <rdfs:comment>Enhanced Farm-to-School Knowledge Graph - Generated on 2025-09-02 22:06:04</rdfs:comment>
+        <rdfs:comment>Knowledge graph for Hawaii Farm-to-School Program legislative analysis</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- hasConfidence -->
+
+    <owl:AnnotationProperty rdf:about="hasConfidence"/>
+    
+
+
+    <!-- has_deadline -->
+
+    <owl:AnnotationProperty rdf:about="has_deadline"/>
+    
+
+
+    <!-- has_goal -->
+
+    <owl:AnnotationProperty rdf:about="has_goal"/>
+    
+
+
+    <!-- moved -->
+
+    <owl:AnnotationProperty rdf:about="moved"/>
+    
+
+
+    <!-- reports_to -->
+
+    <owl:AnnotationProperty rdf:about="reports_to"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#affects -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#affects">
+        <rdfs:comment>Impact relationship</rdfs:comment>
+        <rdfs:label>affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#amends -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#amends">
+        <rdfs:comment>Amendment relationship</rdfs:comment>
+        <rdfs:label>amends</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#collaborates_with -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#collaborates_with">
+        <rdfs:comment>Collaboration relationship</rdfs:comment>
+        <rdfs:label>collaborates with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#consumes -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#consumes">
+        <rdfs:comment>Consumption relationship</rdfs:comment>
+        <rdfs:label>consumes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#creates -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#creates">
+        <rdfs:comment>Creation relationship</rdfs:comment>
+        <rdfs:label>creates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#establishes -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#establishes">
+        <rdfs:comment>Creation or establishment relationship</rdfs:comment>
+        <rdfs:label>establishes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#has_deadline -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#has_deadline">
+        <rdfs:comment>Deadline relationship</rdfs:comment>
+        <rdfs:label>has deadline</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#has_goal -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#has_goal">
+        <rdfs:comment>Goal relationship</rdfs:comment>
+        <rdfs:label>has goal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#has_target -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#has_target">
+        <rdfs:comment>Target relationship</rdfs:comment>
+        <rdfs:label>has target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#headed_by -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#headed_by">
+        <rdfs:comment>Leadership relationship</rdfs:comment>
+        <rdfs:label>headed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#implements -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#implements">
+        <rdfs:comment>Implementation relationship</rdfs:comment>
+        <rdfs:label>implements</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#located_in -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#located_in">
+        <rdfs:comment>Geographic location relationship</rdfs:comment>
+        <rdfs:label>located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#manages -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#manages">
+        <rdfs:comment>One entity manages another</rdfs:comment>
+        <rdfs:label>manages</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#moved_from -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#moved_from">
+        <rdfs:comment>Source of transfer or relocation</rdfs:comment>
+        <rdfs:label>moved from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#moved_to -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#moved_to">
+        <rdfs:comment>Transfer or relocation relationship</rdfs:comment>
+        <rdfs:label>moved to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#procures -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#procures">
+        <rdfs:comment>Procurement relationship</rdfs:comment>
+        <rdfs:label>procures</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#repeals -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#repeals">
+        <rdfs:comment>Repeal relationship</rdfs:comment>
+        <rdfs:label>repeals</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#reports_to -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#reports_to">
+        <rdfs:comment>Reporting relationship</rdfs:comment>
+        <rdfs:label>reports to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#requires -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#requires">
+        <rdfs:comment>Requirement relationship</rdfs:comment>
+        <rdfs:label>requires</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#serves -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/farm-to-school-ontology#serves">
+        <rdfs:comment>Service relationship</rdfs:comment>
+        <rdfs:label>serves</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasAmount">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Monetary amount</rdfs:comment>
+        <rdfs:label>has amount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasConfidence">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Confidence score for extracted information</rdfs:comment>
+        <rdfs:label>has confidence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasContext -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasContext">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Contextual information</rdfs:comment>
+        <rdfs:label>has context</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasPercentage">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Percentage value</rdfs:comment>
+        <rdfs:label>has percentage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasText -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasText">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Original text content</rdfs:comment>
+        <rdfs:label>has text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/farm-to-school-ontology#hasYear">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Year value</rdfs:comment>
+        <rdfs:label>has year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#AGENCY -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#AGENCY"/>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Date -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Date">
+        <rdfs:comment>Temporal entities and time periods</rdfs:comment>
+        <rdfs:label>Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Department -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Department">
+        <rdfs:comment>Specific government departments</rdfs:comment>
+        <rdfs:label>Department</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Food -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Food">
+        <rdfs:comment>Food products and categories</rdfs:comment>
+        <rdfs:label>Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#GOAL -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#GOAL"/>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Goal -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Goal">
+        <rdfs:comment>Policy objectives and targets</rdfs:comment>
+        <rdfs:label>Goal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#GovernmentAgency -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#GovernmentAgency">
+        <rdfs:comment>Government departments and agencies</rdfs:comment>
+        <rdfs:label>GovernmentAgency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#LOCATION -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#LOCATION"/>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#LegislativeDocument -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#LegislativeDocument">
+        <rdfs:comment>Bills, acts, and legal documents</rdfs:comment>
+        <rdfs:label>LegislativeDocument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Location -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Location">
+        <rdfs:comment>Geographic entities and places</rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#MonetaryAmount -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#MonetaryAmount">
+        <rdfs:comment>Financial amounts and budgets</rdfs:comment>
+        <rdfs:label>MonetaryAmount</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Outcome -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Outcome">
+        <rdfs:comment>Expected outcomes and results</rdfs:comment>
+        <rdfs:label>Outcome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#PROGRAM -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#PROGRAM"/>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Percentage -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Percentage">
+        <rdfs:comment>Percentage values and targets</rdfs:comment>
+        <rdfs:label>Percentage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Person -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Person">
+        <rdfs:comment>Individual people mentioned in legislation</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Policy -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Policy">
+        <rdfs:comment>Policies and regulations</rdfs:comment>
+        <rdfs:label>Policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Process -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Process">
+        <rdfs:comment>Processes and procedures</rdfs:comment>
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Program -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Program">
+        <rdfs:comment>Government programs and initiatives</rdfs:comment>
+        <rdfs:label>Program</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Report -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Report">
+        <rdfs:comment>Reporting requirements and documents</rdfs:comment>
+        <rdfs:label>Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Requirement -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Requirement">
+        <rdfs:comment>Legal requirements and obligations</rdfs:comment>
+        <rdfs:label>Requirement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#School -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#School">
+        <rdfs:comment>Educational institutions</rdfs:comment>
+        <rdfs:label>School</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Section -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Section">
+        <rdfs:comment>Sections within legislative documents</rdfs:comment>
+        <rdfs:label>Section</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Stakeholder -->
+
+    <owl:Class rdf:about="http://example.org/farm-to-school-ontology#Stakeholder">
+        <rdfs:comment>Organizations and groups affected by policy</rdfs:comment>
+        <rdfs:label>Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#DOE -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#DOE">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>DOE</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Department_of_Agriculture -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Department_of_Agriculture">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>Department of Agriculture</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Department_of_Education -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Department_of_Education">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>Department of Education</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#FARM_TO_SCHOOL_PROGRAM -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#FARM_TO_SCHOOL_PROGRAM">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Program"/>
+        <rdfs:label>FARM TO SCHOOL PROGRAM</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Farm_to_School_Program -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Farm_to_School_Program">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Program"/>
+        <rdfs:label>Farm to School Program</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Fresh_local_agricultural_products -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Fresh_local_agricultural_products">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>Fresh local agricultural products</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#HAWAII -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#HAWAII">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Location"/>
+        <rdfs:label>HAWAII</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#HDOA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#HDOA">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>HDOA</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Hawaii -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Hawaii">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Location"/>
+        <rdfs:label>Hawaii</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Hawaii_Farm_to_School_Program -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Hawaii_Farm_to_School_Program">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Program"/>
+        <rdfs:label>Hawaii Farm to School Program</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Hawaii_farm_to_school_program -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Hawaii_farm_to_school_program">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Program"/>
+        <rdfs:label>Hawaii farm to school program</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#LEGISLATURE -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#LEGISLATURE">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>LEGISLATURE</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Local_valueadded_processed -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Local_valueadded_processed">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>Local value-added processed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Locally_sourced -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Locally_sourced">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Goal"/>
+        <rdfs:label>Locally sourced</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#Locally_sourced_products -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#Locally_sourced_products">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>Locally sourced products</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#STATE_OF_HAWAII -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#STATE_OF_HAWAII">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>STATE OF HAWAII</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#annual_report -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#annual_report">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Requirement"/>
+        <rdfs:label>annual report</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#consumption -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#consumption">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Process"/>
+        <rdfs:label>consumption</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#department_of_agriculture -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#department_of_agriculture">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#AGENCY"/>
+        <rdfs:label>department of agriculture</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#department_of_education -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#department_of_education">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#AGENCY"/>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasConfidence>
+        <reports_to rdf:resource="http://example.org/farm-to-school-ontology#legislature"/>
+        <rdfs:label>department of education</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#doe -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#doe">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#AGENCY"/>
+        <rdfs:label>doe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#education_facilities -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#education_facilities">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Location"/>
+        <rdfs:label>education facilities</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#eggs -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#eggs">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>eggs</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#entity_2030 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#entity_2030">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GOAL"/>
+        <rdfs:label>2030</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#entity_30 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#entity_30">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Goal"/>
+        <rdfs:label>30%</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#farm_to_school_coordinator -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#farm_to_school_coordinator">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#PROGRAM"/>
+        <rdfs:label>farm to school coordinator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#farm_to_school_program -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#farm_to_school_program">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#PROGRAM"/>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasConfidence>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</hasConfidence>
+        <has_deadline rdf:resource="http://example.org/farm-to-school-ontology#entity_2030"/>
+        <has_goal rdf:resource="http://example.org/farm-to-school-ontology#thirty_per_cent"/>
+        <moved rdf:resource="http://example.org/farm-to-school-ontology#department_of_education"/>
+        <rdfs:label>farm to school program</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#fresh_local_agricultural_products -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#fresh_local_agricultural_products">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>fresh local agricultural products</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#fruits -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#fruits">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>fruits</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#garden_and_farmbased_education -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#garden_and_farmbased_education">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Process"/>
+        <rdfs:label>garden and farm-based education</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hawaii -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#hawaii">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#LOCATION"/>
+        <rdfs:label>hawaii</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#hdoa -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#hdoa">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#AGENCY"/>
+        <rdfs:label>hdoa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#legislature -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#legislature">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GovernmentAgency"/>
+        <rdfs:label>legislature</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#livestock -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#livestock">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>livestock</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#local_valueadded_processed -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#local_valueadded_processed">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>local value-added processed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#locally_sourced -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#locally_sourced">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GOAL"/>
+        <rdfs:label>locally sourced</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#locally_sourced_products -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#locally_sourced_products">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>locally sourced products</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#milk -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#milk">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>milk</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#poultry -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#poultry">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>poultry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#procurement -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#procurement">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Process"/>
+        <rdfs:label>procurement</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#public_schools -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#public_schools">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#LOCATION"/>
+        <rdfs:label>public schools</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#reporting_requirement -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#reporting_requirement">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Requirement"/>
+        <rdfs:label>reporting requirement</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#state_facilities -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#state_facilities">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#LOCATION"/>
+        <rdfs:label>state facilities</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#thirty_per_cent -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#thirty_per_cent">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#GOAL"/>
+        <rdfs:label>thirty per cent</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#training -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#training">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Process"/>
+        <rdfs:label>training</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/farm-to-school-ontology#vegetables -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/farm-to-school-ontology#vegetables">
+        <rdf:type rdf:resource="http://example.org/farm-to-school-ontology#Food"/>
+        <rdfs:label>vegetables</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

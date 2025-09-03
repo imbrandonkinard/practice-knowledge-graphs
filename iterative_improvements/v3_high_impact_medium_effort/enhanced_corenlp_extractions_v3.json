@@ -1,0 +1,330 @@
+{
+  "version": "v3_high_impact_medium_effort",
+  "entities": [
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 133,
+      "end_char": 155,
+      "ner": "PROGRAM",
+      "normalized_ner": "farm to school program",
+      "confidence": 0.9,
+      "context": "F HAWAII\nS.D. 2\nA BILL FOR AN ACT\nRELATING TO THE FARM TO SCHOOL PROGRAM.\nBE IT ENACTED BY THE LEGISLATURE OF THE STATE OF"
+    },
+    {
+      "text": "meals program",
+      "type": "PROGRAM",
+      "start_char": 3106,
+      "end_char": 3119,
+      "ner": "PROGRAM",
+      "normalized_ner": "meals program",
+      "confidence": 0.9,
+      "context": "\n(3) The costs associated with the farm to school meals program and any savings realized;\n(4) A list of all large"
+    },
+    {
+      "text": "department of education",
+      "type": "AGENCY",
+      "start_char": 1040,
+      "end_char": 1063,
+      "ner": "AGENCY",
+      "normalized_ner": "department of education",
+      "confidence": 0.9,
+      "context": "program from the department of agriculture to the department of education and establish a programmatic goal that at least t"
+    },
+    {
+      "text": "department of agriculture",
+      "type": "AGENCY",
+      "start_char": 1007,
+      "end_char": 1032,
+      "ner": "AGENCY",
+      "normalized_ner": "department of agriculture",
+      "confidence": 0.9,
+      "context": "o move the Hawaii farm to school program from the department of agriculture to the department of education and establish a pr"
+    },
+    {
+      "text": "legislature",
+      "type": "AGENCY",
+      "start_char": 51,
+      "end_char": 62,
+      "ner": "AGENCY",
+      "normalized_ner": "legislature",
+      "confidence": 0.9,
+      "context": "OUSE OF REPRESENTATIVES\nH.B. NO. 767\nTHIRTY-FIRST LEGISLATURE, 2021\nH.D. 2\nSTATE OF HAWAII\nS.D. 2\nA BILL FOR AN"
+    },
+    {
+      "text": "state of hawaii",
+      "type": "AGENCY",
+      "start_char": 76,
+      "end_char": 91,
+      "ner": "AGENCY",
+      "normalized_ner": "state of hawaii",
+      "confidence": 0.9,
+      "context": ".B. NO. 767\nTHIRTY-FIRST LEGISLATURE, 2021\nH.D. 2\nSTATE OF HAWAII\nS.D. 2\nA BILL FOR AN ACT\nRELATING TO THE FARM TO "
+    },
+    {
+      "text": "thirty per cent",
+      "type": "GOAL",
+      "start_char": 1112,
+      "end_char": 1127,
+      "ner": "GOAL",
+      "normalized_ner": "thirty per cent",
+      "confidence": 0.9,
+      "context": "n and establish a programmatic goal that at least thirty per cent of food served in public schools be locally sourc"
+    },
+    {
+      "text": "30%",
+      "type": "GOAL",
+      "start_char": 6199,
+      "end_char": 6202,
+      "ner": "GOAL",
+      "normalized_ner": "30%",
+      "confidence": 0.9,
+      "context": "oal for the Department of Education that at least 30% of food served in public schools shall consist of"
+    },
+    {
+      "text": "2030",
+      "type": "GOAL",
+      "start_char": 1183,
+      "end_char": 1187,
+      "ner": "GOAL",
+      "normalized_ner": "2030",
+      "confidence": 0.9,
+      "context": "od served in public schools be locally sourced by 2030.\nSECTION 2. Chapter 302A, Hawaii Revised Statutes"
+    },
+    {
+      "text": "locally sourced",
+      "type": "GOAL",
+      "start_char": 617,
+      "end_char": 632,
+      "ner": "GOAL",
+      "normalized_ner": "locally sourced",
+      "confidence": 0.9,
+      "context": "t goal of providing a fixed minimum percentage of locally sourced food in public schools can bring the farm to scho"
+    },
+    {
+      "text": "minimum percentage",
+      "type": "GOAL",
+      "start_char": 595,
+      "end_char": 613,
+      "ner": "GOAL",
+      "normalized_ner": "minimum percentage",
+      "confidence": 0.9,
+      "context": "s that setting a target goal of providing a fixed minimum percentage of locally sourced food in public schools can bri"
+    },
+    {
+      "text": "annual report",
+      "type": "REPORTING",
+      "start_char": 2614,
+      "end_char": 2627,
+      "ner": "REPORTING",
+      "normalized_ner": "annual report",
+      "confidence": 0.9,
+      "context": " cost of food.\n(b) The department shall submit an annual report to the legislature no later than twenty days prio"
+    },
+    {
+      "text": "reporting requirement",
+      "type": "REPORTING",
+      "start_char": 6305,
+      "end_char": 6326,
+      "ner": "REPORTING",
+      "normalized_ner": "reporting requirement",
+      "confidence": 0.9,
+      "context": "cally sourced products by 2030. Creates an annual reporting requirement. (SD2)\n\n========================================="
+    },
+    {
+      "text": "submit an annual report",
+      "type": "REPORTING",
+      "start_char": 2604,
+      "end_char": 2627,
+      "ner": "REPORTING",
+      "normalized_ner": "submit an annual report",
+      "confidence": 0.9,
+      "context": " the total cost of food.\n(b) The department shall submit an annual report to the legislature no later than twenty days prio"
+    },
+    {
+      "text": "twenty days prior to the convening of each regular session, beginning with the regular session",
+      "type": "REPORTING",
+      "start_char": 2661,
+      "end_char": 2755,
+      "ner": "REPORTING",
+      "normalized_ner": "twenty days prior to the convening of each regular session, beginning with the regular session",
+      "confidence": 0.9,
+      "context": "an annual report to the legislature no later than twenty days prior to the convening of each regular session, beginning with the regular session of 2022, containing the following information:\n(1"
+    },
+    {
+      "text": "chapter 302",
+      "type": "STATUTE",
+      "start_char": 1200,
+      "end_char": 1211,
+      "ner": "STATUTE",
+      "normalized_ner": "chapter 302",
+      "confidence": 0.9,
+      "context": "ic schools be locally sourced by 2030.\nSECTION 2. Chapter 302A, Hawaii Revised Statutes, is amended by adding t"
+    },
+    {
+      "text": "section 141-11",
+      "type": "STATUTE",
+      "start_char": 4694,
+      "end_char": 4708,
+      "ner": "STATUTE",
+      "normalized_ner": "section 141-11",
+      "confidence": 0.9,
+      "context": "e-added agricultural or food product.\"\nSECTION 3. Section 141-11, Hawaii Revised Statutes, is repealed.\n[\"[§141-11"
+    },
+    {
+      "text": "hawaii revised statutes",
+      "type": "STATUTE",
+      "start_char": 1214,
+      "end_char": 1237,
+      "ner": "STATUTE",
+      "normalized_ner": "hawaii revised statutes",
+      "confidence": 0.9,
+      "context": "locally sourced by 2030.\nSECTION 2. Chapter 302A, Hawaii Revised Statutes, is amended by adding two new sections to subpart"
+    },
+    {
+      "text": "h.b. no. 767",
+      "type": "STATUTE",
+      "start_char": 25,
+      "end_char": 37,
+      "ner": "STATUTE",
+      "normalized_ner": "h.b. no. 767",
+      "confidence": 0.9,
+      "context": "HOUSE OF REPRESENTATIVES\nH.B. NO. 767\nTHIRTY-FIRST LEGISLATURE, 2021\nH.D. 2\nSTATE OF HA"
+    },
+    {
+      "text": "improve student health",
+      "type": "PURPOSE",
+      "start_char": 1562,
+      "end_char": 1584,
+      "ner": "PURPOSE",
+      "normalized_ner": "improve student health",
+      "confidence": 0.9,
+      "context": "se of the farm to school program shall be to:\n(1) Improve student health;\n(2) Develop an educated agricultural workforce;\n"
+    },
+    {
+      "text": "develop an educated agricultural workforce",
+      "type": "PURPOSE",
+      "start_char": 1590,
+      "end_char": 1632,
+      "ner": "PURPOSE",
+      "normalized_ner": "develop an educated agricultural workforce",
+      "confidence": 0.9,
+      "context": "gram shall be to:\n(1) Improve student health;\n(2) Develop an educated agricultural workforce;\n(3) Enrich the local food system through the sup"
+    },
+    {
+      "text": "enrich the local food system",
+      "type": "PURPOSE",
+      "start_char": 1638,
+      "end_char": 1666,
+      "ner": "PURPOSE",
+      "normalized_ner": "enrich the local food system",
+      "confidence": 0.9,
+      "context": ") Develop an educated agricultural workforce;\n(3) Enrich the local food system through the support and increase of local food pr"
+    },
+    {
+      "text": "accelerate garden and farm-based education",
+      "type": "PURPOSE",
+      "start_char": 1762,
+      "end_char": 1804,
+      "ner": "PURPOSE",
+      "normalized_ner": "accelerate garden and farm-based education",
+      "confidence": 0.9,
+      "context": "d procurement for the State's public schools;\n(4) Accelerate garden and farm-based education for the State's public school students; and\n(5) E"
+    },
+    {
+      "text": "expand the relationships",
+      "type": "PURPOSE",
+      "start_char": 1853,
+      "end_char": 1877,
+      "ner": "PURPOSE",
+      "normalized_ner": "expand the relationships",
+      "confidence": 0.9,
+      "context": "n for the State's public school students; and\n(5) Expand the relationships between public schools and agricultural communiti"
+    }
+  ],
+  "relations": [
+    {
+      "subject": "farm to school program",
+      "predicate": "moved from",
+      "object": "department of agriculture",
+      "confidence": 0.9,
+      "context": "ize diet-related diseases in childhood, such as obesity and diabetes.\nThe purpose of this Act is to move the Hawaii farm to school program from the department of agriculture to the department of education and establish a programmatic goal that at least thirty per cent of food served in public schools be",
+      "relation_type": "PROGRAM_MOVE",
+      "source": "enhanced_patterns"
+    },
+    {
+      "subject": "farm to school program",
+      "predicate": "moved to",
+      "object": "department of education",
+      "confidence": 0.9,
+      "context": "ize diet-related diseases in childhood, such as obesity and diabetes.\nThe purpose of this Act is to move the Hawaii farm to school program from the department of agriculture to the department of education and establish a programmatic goal that at least thirty per cent of food served in public schools be",
+      "relation_type": "PROGRAM_MOVE",
+      "source": "enhanced_patterns"
+    },
+    {
+      "subject": "department of education",
+      "predicate": "set goal",
+      "object": "30% locally sourced by 2030",
+      "confidence": 0.9,
+      "context": "gram from the department of agriculture to the department of education and establish a programmatic goal that at least thirty per cent of food served in public schools be locally sourced by 2030.\nSECTION 2. Chapter 302A, Hawaii Revised Statutes, is amended by adding two new sections to subpart",
+      "relation_type": "GOAL_SETTING",
+      "source": "enhanced_patterns"
+    },
+    {
+      "subject": "department of education",
+      "predicate": "established target",
+      "object": "minimum percentage locally sourced",
+      "confidence": 0.9,
+      "context": "tent and to promote healthy behaviors at an early age.\nThe legislature further finds that setting a target goal of providing a fixed minimum percentage of locally sourced food in public schools can bring the farm to school program closer to achieving tangible results for the health of Hawaii'",
+      "relation_type": "GOAL_SETTING",
+      "source": "enhanced_patterns"
+    },
+    {
+      "subject": "department of education",
+      "predicate": "must submit",
+      "object": "annual report to legislature",
+      "confidence": 0.9,
+      "context": "sourced products, as measured by the percentage of the total cost of food.\n(b) The department shall submit an annual report to the legislature no later than twenty days prior to the convening of each regular session, beginning with the regula",
+      "relation_type": "REPORTING",
+      "source": "enhanced_patterns"
+    },
+    {
+      "subject": "farm to school coordinator",
+      "predicate": "works with",
+      "object": "stakeholders",
+      "confidence": 0.9,
+      "context": "agricultural communities.\n(b) The Hawaii farm to school program shall be headed by a farm to school coordinator who shall work in collaboration with the appropriate stakeholders to address the issues of supply, demand, procurement, and consumption of Hawaii-grown foods in stat",
+      "relation_type": "COLLABORATION",
+      "source": "enhanced_patterns"
+    }
+  ],
+  "metadata": {
+    "extraction_method": "enhanced_corenlp",
+    "total_entities": 66,
+    "total_relations": 9,
+    "entity_types": [
+      "PURPOSE",
+      "AGENCY",
+      "STATUTE",
+      "GOAL",
+      "PROGRAM",
+      "REPORTING"
+    ],
+    "relation_types": [
+      "GOAL_SETTING",
+      "REPORTING",
+      "COLLABORATION",
+      "PROGRAM_MOVE"
+    ],
+    "sources": [
+      "enhanced_patterns"
+    ],
+    "enhancements": [
+      "Enhanced CoreNLP annotators (lemma, openie)",
+      "Custom NER patterns for legislative domain",
+      "Enhanced relation patterns for bill-specific relationships",
+      "Improved confidence scoring",
+      "OpenIE integration for additional relations"
+    ]
+  }
+}

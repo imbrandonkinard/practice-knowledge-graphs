@@ -1,9 +1,9 @@
 VERSION COMPARISON SUMMARY
 ==============================
 
-v1 Quality Score: 4.9/10
-v2 Quality Score: 5.6/10
-Improvement: +0.6999999999999993 points
+v1 Quality Score: 5.6/10
+v2 Quality Score: 3.2/10
+Improvement: +-2.3999999999999995 points
 
-Entity Improvements: +-4 entities, +3 types
-Relation Improvements: +2 relations, +4 types
+Entity Improvements: +-42 entities, +0 types
+Relation Improvements: +-3 relations, +0 types

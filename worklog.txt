@@ -11,5 +11,5 @@ Logs:
 ... --> 5:00
 # curriculum 01 and 02 for v1 development and nlp technical foundation
 
-2 September 2025
-8:35pm -> 
+2 September 2025 -> 3 September 2025
+8:35pm -> 12:12am

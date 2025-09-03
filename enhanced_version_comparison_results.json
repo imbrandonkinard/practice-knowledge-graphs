@@ -1,84 +1,43 @@
 {
   "v1": {
     "entities": {
-      "count": 70,
-      "types": [
-        "GOAL",
-        "AGENCY",
-        "PROGRAM",
-        "LOCATION"
-      ],
-      "type_count": 4,
-      "texts": [
-        "farm to school program",
-        "hdoa",
-        "department of agriculture",
-        "department of education",
-        "hawaii",
-        "farm to school coordinator",
-        "public schools",
-        "doe",
-        "locally sourced",
-        "state facilities",
-        "thirty per cent",
-        "2030"
-      ],
-      "text_count": 12,
-      "avg_confidence": 0.0
-    },
-    "relations": {
-      "count": 7,
-      "types": [],
-      "type_count": 0,
-      "sources": [],
-      "source_count": 0,
-      "patterns": [
-        "farm to school program moved department of education"
-      ],
-      "pattern_count": 1,
-      "avg_confidence": 0.9
-    },
-    "quality": 4.9
-  },
-  "v2": {
-    "entities": {
       "count": 66,
       "types": [
         "STATUTE",
         "AGENCY",
+        "PROGRAM",
         "GOAL",
         "REPORTING",
-        "PURPOSE",
-        "PROGRAM"
+        "PURPOSE"
       ],
       "type_count": 6,
       "texts": [
-        "department of education",
-        "state of hawaii",
-        "enrich the local food system",
-        "minimum percentage",
-        "30%",
-        "locally sourced",
-        "expand the relationships",
-        "thirty per cent",
-        "twenty days prior to the convening of each regular session, beginning with the regular session",
-        "submit an annual report",
-        "section 141-11",
-        "hdoa",
-        "doe",
-        "meals program",
-        "accelerate garden and farm-based education",
-        "hawaii revised statutes",
         "annual report",
-        "improve student health",
-        "farm to school program",
-        "legislature",
+        "thirty per cent",
+        "meals program",
         "department of agriculture",
+        "enrich the local food system",
+        "30%",
+        "hdoa",
+        "submit an annual report",
         "develop an educated agricultural workforce",
+        "accelerate garden and farm-based education",
+        "doe",
+        "department of education",
+        "section 141-11",
+        "hawaii revised statutes",
         "chapter 302",
         "h.b. no. 767",
+        "expand the relationships",
+        "twenty days prior to the convening of each regular session, beginning with the regular session",
+        "legislature",
+        "reporting requirement",
+        "farm to school program",
+        "locally sourced",
         "2030",
-        "reporting requirement"
+        "improve student health",
+        "minimum percentage",
+        "state of hawaii"
       ],
       "text_count": 26,
       "avg_confidence": 0.9
@@ -86,10 +45,10 @@
     "relations": {
       "count": 9,
       "types": [
-        "PROGRAM_MOVE",
         "GOAL_SETTING",
-        "REPORTING",
-        "COLLABORATION"
+        "COLLABORATION",
+        "PROGRAM_MOVE",
+        "REPORTING"
       ],
       "type_count": 4,
       "sources": [
@@ -97,71 +56,111 @@
       ],
       "source_count": 1,
       "patterns": [
-        "department of education established target minimum percentage locally sourced",
-        "department of education set goal 30% locally sourced by 2030",
-        "farm to school program moved to department of education",
         "farm to school program moved from department of agriculture",
-        "department of education must submit annual report to legislature",
-        "farm to school coordinator works with stakeholders"
+        "farm to school program moved to department of education",
+        "department of education set goal 30% locally sourced by 2030",
+        "farm to school coordinator works with stakeholders",
+        "department of education established target minimum percentage locally sourced",
+        "department of education must submit annual report to legislature"
       ],
       "pattern_count": 6,
       "avg_confidence": 0.9
     },
     "quality": 5.6
   },
-  "differences": {
+  "v2": {
     "entities": {
-      "count_difference": -4,
-      "count_percentage": -5.7,
-      "type_difference": 2,
-      "new_types": [
-        "PURPOSE",
+      "count": 24,
+      "types": [
+        "STATUTE",
+        "AGENCY",
+        "PROGRAM",
+        "GOAL",
         "REPORTING",
-        "STATUTE"
+        "PURPOSE"
       ],
-      "new_items": [
+      "type_count": 6,
+      "texts": [
         "annual report",
+        "thirty per cent",
         "meals program",
-        "improve student health",
-        "accelerate garden and farm-based education",
-        "legislature",
-        "state of hawaii",
+        "department of agriculture",
         "enrich the local food system",
-        "minimum percentage",
+        "30%",
+        "submit an annual report",
         "develop an educated agricultural workforce",
-        "30%"
+        "accelerate garden and farm-based education",
+        "department of education",
+        "section 141-11",
+        "hawaii revised statutes",
+        "chapter 302",
+        "h.b. no. 767",
+        "expand the relationships",
+        "twenty days prior to the convening of each regular session, beginning with the regular session",
+        "legislature",
+        "reporting requirement",
+        "farm to school program",
+        "locally sourced",
+        "2030",
+        "improve student health",
+        "minimum percentage",
+        "state of hawaii"
       ],
-      "confidence_difference": 0.9,
-      "improvement_summary": "+-4 entities (+2 new types)"
+      "text_count": 24,
+      "avg_confidence": 0.9
     },
     "relations": {
-      "count_difference": 2,
-      "count_percentage": 28.6,
-      "type_difference": 4,
-      "new_types": [
-        "PROGRAM_MOVE",
+      "count": 6,
+      "types": [
         "GOAL_SETTING",
-        "REPORTING",
-        "COLLABORATION"
+        "COLLABORATION",
+        "PROGRAM_MOVE",
+        "REPORTING"
       ],
-      "new_items": [
-        "department of education established target minimum percentage locally sourced",
-        "department of education set goal 30% locally sourced by 2030",
-        "farm to school program moved to department of education",
+      "type_count": 4,
+      "sources": [
+        "enhanced_patterns"
+      ],
+      "source_count": 1,
+      "patterns": [
         "farm to school program moved from department of agriculture",
-        "department of education must submit annual report to legislature",
-        "farm to school coordinator works with stakeholders"
+        "farm to school program moved to department of education",
+        "department of education set goal 30% locally sourced by 2030",
+        "farm to school coordinator works with stakeholders",
+        "department of education established target minimum percentage locally sourced",
+        "department of education must submit annual report to legislature"
       ],
-      "confidence_difference": 0.0,
-      "improvement_summary": "+2 relations (+4 new types)"
+      "pattern_count": 6,
+      "avg_confidence": 0.9
     },
-    "quality": 0.6999999999999993
+    "quality": 3.2
+  },
+  "differences": {
+    "entities": {
+      "count_difference": -42,
+      "count_percentage": -63.6,
+      "type_difference": 0,
+      "new_types": [],
+      "new_items": [],
+      "confidence_difference": 0.0,
+      "improvement_summary": "+-42 entities (+0 new types)"
+    },
+    "relations": {
+      "count_difference": -3,
+      "count_percentage": -33.3,
+      "type_difference": 0,
+      "new_types": [],
+      "new_items": [],
+      "confidence_difference": 0.0,
+      "improvement_summary": "+-3 relations (+0 new types)"
+    },
+    "quality": -2.3999999999999995
   },
   "improvements": {
-    "entity_count": -4,
-    "relation_count": 2,
-    "entity_types": 3,
-    "relation_types": 4,
-    "quality_points": 0.6999999999999993
+    "entity_count": -42,
+    "relation_count": -3,
+    "entity_types": 0,
+    "relation_types": 0,
+    "quality_points": -2.3999999999999995
   }
 }
