@@ -17,7 +17,8 @@ Logs:
 ... --> 1:04am
 # highlights in html for v3 visuals
 
-3 September 2025
-10:44pm -
+3 September 2025 - 4 September 2025
+10:44pm - 12:32am
 # sync work done in v3 with second bill text
 # todo.txt on tasks (11:46 3 Sept.)
+# update the knowledge graph to include three bills (SB2182, SB666, HB767)

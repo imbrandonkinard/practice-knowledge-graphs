@@ -1,0 +1,858 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#"
+     xml:base="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills">
+        <rdfs:comment>Combined ontology for HB767 (Farm to School), SB2182 (School Gardens), and SB666 (UH Agriculture Education) bills</rdfs:comment>
+        <rdfs:label>Combined Legislative Bills Ontology</rdfs:label>
+    </owl:Ontology>
+    
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <rdfs:comment>Relates a program to its purposes</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <rdfs:comment>Relates a program to its goals</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasCoordinator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <rdfs:comment>Relates a program to its coordinator position</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasFunding">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <rdfs:comment>Relates a program to its funding</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#operatesAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <rdfs:comment>Relates a program to its operating locations</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#serves">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <rdfs:comment>Relates a program to the people it serves</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#managedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <rdfs:comment>Relates a program to the agency that manages it</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#enactedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegislativeBody"/>
+        <rdfs:comment>Relates a bill to the legislative body that enacted it</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#references">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegalSection"/>
+        <rdfs:comment>Relates a bill to legal sections it references</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOfPackage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#BillPackage"/>
+        <rdfs:comment>Relates a bill to a legislative package</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#referencesBill">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:comment>Relates a bill to another bill it references</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#amends">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:comment>Relates a bill to another bill it amends</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#supersedes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:comment>Relates a bill to another bill it supersedes</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasConfidence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Confidence score for entity extraction</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Original text of the entity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Source bill for the entity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Context in which the entity appears</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasFullText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Full text of the bill</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasBillYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Year of the bill</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasMeasureVersion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Measure version of the bill (e.g., H.D. 1, S.D. 1)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasBillNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Bill number (e.g., HB767, SB2182, SB666)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <!-- Base Entity Class -->
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity">
+        <rdfs:comment>Base class for all extracted entities</rdfs:comment>
+    </owl:Class>
+    
+    <!-- Bill Classes -->
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legislative bills</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#BillPackage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Package of related bills</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegislativeReport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legislative reports and documents</rdfs:comment>
+    </owl:Class>
+    
+    <!-- Entity Classes (dynamically generated) -->
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Government agencies and departments</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agestat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Age-related statistics</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationalspace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Educational spaces and facilities</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Educational subjects and topics</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Funding and financial resources</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Goals and objectives</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Health-related goals</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Interestgroup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Interest groups and stakeholders</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legal sections and references</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legislative bodies and chambers</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativemeasure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legislative measures and resolutions</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Locations and places</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Organizations and institutions</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>People and individuals</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Positions and roles</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Occupational roles and professions</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Programs and initiatives</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Purposes and intents</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Reporting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Reporting requirements</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Legislative session identifiers</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Statutory references</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Trainingaction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Training activities and programs</rdfs:comment>
+    </owl:Class>
+
+    <!-- Named Individuals -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasEffectiveDate>
+        <hasBillYear rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasBillYear>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-FIRST LEGISLATURE, 2022</hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 1, 2022</hasEffectiveDate>
+        <hasBillYear rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasBillYear>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-THIRD LEGISLATURE, 2025</hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 31, 2050</hasEffectiveDate>
+        <hasBillYear rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasBillYear>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROGRAM_farmtoschoolprogram_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farm to school program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROGRAM_mealsprogram_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meals program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROGRAM_farmtoschoolprogram_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farm to school program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROGRAM_schoolgardenprogram_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school garden program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGENCY_departmentofeducation_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">department of education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGENCY_departmentofagriculture_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">department of agriculture</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGENCY_legislature_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">legislature</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGENCY_stateofhawaii_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">state of hawaii</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGENCY_departmentofeducation_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">department of education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#GOAL_thirtypercent_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thirty per cent</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#GOAL_30%_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30%</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#GOAL_2030_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2030</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#GOAL_locallysourced_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">locally sourced</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#GOAL_minimumpercentage_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Goal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minimum percentage</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#REPORTING_annualreport_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Reporting"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">annual report</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#REPORTING_reportingrequirement_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Reporting"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reporting requirement</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#REPORTING_submitanannualreport_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Reporting"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submit an annual report</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#REPORTING_twentydayspriortotheconveningofeachregul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Reporting"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">twenty days prior to the convening of each regular session, beginning with the regular session</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#STATUTE_chapter302_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chapter 302</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#STATUTE_section14111_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section 141-11</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#STATUTE_hawaiirevisedstatutes_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hawaii revised statutes</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#STATUTE_hbno767_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">h.b. no. 767</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#STATUTE_sbno2182_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s.b. no. 2182</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PURPOSE_improvestudenthealth_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">improve student health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PURPOSE_developaneducatedagriculturalworkforce_HB7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develop an educated agricultural workforce</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PURPOSE_enrichthelocalfoodsystem_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enrich the local food system</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PURPOSE_accelerategardenandfarmbasededucation_HB76">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accelerate garden and farm-based education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PURPOSE_expandtherelationships_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expand the relationships</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_BODY_houseofrepresentatives_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">house of representatives</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_BODY_legislature_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">legislature</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_BODY_senate_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">senate</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_BODY_legislature_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">legislature</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_BODY_senate_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativebody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">senate</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SESSION_IDENTIFIER_thirtyfirstlegislature2021_HB76">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thirty-first legislature, 2021</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SESSION_IDENTIFIER_regularsession_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regular session</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SESSION_IDENTIFIER_thirtyfirstlegislature2022_SB21">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thirty-first legislature, 2022</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SESSION_IDENTIFIER_thirtythirdlegislature2025_SB66">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thirty-third legislature, 2025</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SESSION_IDENTIFIER_regularsession_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Sessionidentifier"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regular session</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LOCATION_publicschools_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public schools</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LOCATION_statefacilities_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">state facilities</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LOCATION_educationfacilities_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">education facilities</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LOCATION_publicschools_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public schools</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LOCATION_schoolcampuses_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school campuses</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PERSON_students_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">students</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PERSON_keiki_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keiki</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PERSON_farmtoschoolcoordinator_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farm to school coordinator</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PERSON_coordinator_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coordinator</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PERSON_students_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">students</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#INTEREST_GROUP_agriculturalcommunities_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Interestgroup"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agricultural communities</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#INTEREST_GROUP_stakeholders_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Interestgroup"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stakeholders</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HEALTH_GOAL_minimizedietrelateddiseases_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minimize diet-related diseases</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HEALTH_GOAL_improvethehealthofthestate'skeikibyenc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">improve the health of the state's keiki by encouraging consumption of fresh, locally grown foods, both for their nutritional content and to promote health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HEALTH_GOAL_improvestudenthealth_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">improve student health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HEALTH_GOAL_improvelearningmentalandphysicalhealth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.this also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.a national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HEALTH_GOAL_protectingstudenthealth_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Healthgoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protecting student health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGAL_SECTION_§302a_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§302a</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGAL_SECTION_§141_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§141</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGAL_SECTION_section1_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section 1</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGAL_SECTION_section2_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section 2</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGAL_SECTION_section3_HB767">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legalsection"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section 3</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB767</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#POSITION_schoolgardencoordinator_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school garden coordinator</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#POSITION_coordinatorposition_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coordinator position</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#POSITION_fulltimeequivalent_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">full-time equivalent</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#POSITION_10fte_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0 fte</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#POSITION_coordinatorposition_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coordinator position</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#FUNDING_$200000_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$200,000</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#FUNDING_fiscalyear20222023_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fiscal year 2022-2023</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#FUNDING_appropriation_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appropriation</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#FUNDING_generalrevenues_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">general revenues</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#FUNDING_startupresources_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">startup resources</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATIONAL_SPACE_schoolgardens_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationalspace"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school gardens</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATIONAL_SPACE_outdooreducationalspaces_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationalspace"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outdoor educational spaces</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATIONAL_SPACE_farmbasededucation_SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationalspace"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farm-based education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROFESSION_averagefarmer_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">average farmer</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROFESSION_farmer_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farmer</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROFESSION_farmers_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farmers</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROFESSION_agricultureeducators_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agriculture educators</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#PROFESSION_agricultureeducator_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agriculture educator</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ORGANIZATION_universityofhawaii_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">university of hawaii</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ORGANIZATION_universityofhawaiiatmanoa_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">university of hawaii at manoa</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ORGANIZATION_collegeoftropicalagricultureandhumanr">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">college of tropical agriculture and human resilience</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ORGANIZATION_cooperativeextension_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperative extension</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ORGANIZATION_ctahr_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ctahr</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATION_TOPIC_agricultureeducation_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agriculture education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATION_TOPIC_foodsystemseducation_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food systems education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATION_TOPIC_careerandtechnicaleducationpathway">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">career and technical education pathway</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATION_TOPIC_highereducationprograms_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">higher education programs</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EDUCATION_TOPIC_apprenticeships_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Educationtopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apprenticeships</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TRAINING_ACTION_reducedtrainingforagricultureeduca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Trainingaction"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reduced training for agriculture educators</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TRAINING_ACTION_trainingforagricultureeducators_SB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Trainingaction"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">training for agriculture educators</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TRAINING_ACTION_teacherstrainedinagricultureandfoo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Trainingaction"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teachers trained in agriculture and food systems education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TRAINING_ACTION_newfarmertrainingprograms_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Trainingaction"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new farmer training programs</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_MEASURE_srno802015_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativemeasure"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s.r. no. 80 (2015)</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_MEASURE_srno80_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativemeasure"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s.r. no. 80</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LEGISLATIVE_MEASURE_sbno666_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Legislativemeasure"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s.b. no. 666</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGE_STAT_averagefarmerinhawaiiissixtyyearsold_SB66">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agestat"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">average farmer in hawaii is sixty years old</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AGE_STAT_averageageoffarmers_SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Agestat"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">average age of farmers</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <hasSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasSource>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

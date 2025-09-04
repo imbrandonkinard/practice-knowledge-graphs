@@ -18,7 +18,7 @@ def create_combined_ontology():
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills">
-        <rdfs:comment>Combined ontology for HB767 (Farm to School Program) and SB2182 (School Gardens) bills</rdfs:comment>
+        <rdfs:comment>Combined ontology for HB767 (Farm to School Program), SB2182 (School Gardens), and SB666 (UH Agriculture Education) bills</rdfs:comment>
         <rdfs:label>Combined Legislative Bills Ontology</rdfs:label>
     </owl:Ontology>
     
@@ -251,6 +251,32 @@ def create_combined_ontology():
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
         <rdfs:comment>Reporting requirement or obligation</rdfs:comment>
     </owl:Class>
+
+    <!-- New SB666-driven classes -->
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Occupational roles such as farmer, agriculture educator, extension agent</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Organizations such as University of Hawaii, CTAHR, Cooperative Extension</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EducationTopic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Subjects and pathways in education (e.g., agriculture education, CTE)</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TrainingAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Training-related actions (e.g., reduced training, new farmer programs)</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegislativeMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Measures like S.R. No. 80 (2015), H.B. No. N, S.B. No. N</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgeStatistic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Age-related statistics (e.g., average age of farmers)</rdfs:comment>
+    </owl:Class>
     
     <!-- Named Individuals - HB767 (Farm to School Program) -->
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HB767">
@@ -431,6 +457,24 @@ def create_combined_ontology():
         <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
         <rdfs:comment>Indicates that one bill supersedes another bill</rdfs:comment>
     </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Relates an entity to another entity it is part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#relatesTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Entity"/>
+        <rdfs:comment>Relates an entity to another entity it relates to</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#worksFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <rdfs:comment>Relates a person to an organization they work for</rdfs:comment>
+    </owl:ObjectProperty>
 
     <!-- Classes -->
     <owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#BillPackage">
@@ -464,6 +508,10 @@ def create_combined_ontology():
         <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#BillPackage"/>
         <hasPackageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Healthy Schools 2021 Package</hasPackageName>
     </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgricultureEducationPackage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#BillPackage"/>
+        <hasPackageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agriculture Education 2025 Package</hasPackageName>
+    </owl:NamedIndividual>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#DOEAnnualReport2022">
         <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegislativeReport"/>
         <hasReportTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOE Annual Legislative Report 2022</hasReportTitle>
@@ -482,6 +530,11 @@ def create_combined_ontology():
         <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOfPackage"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HealthySchools2021Package"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB666"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOfPackage"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgricultureEducationPackage"/>
+    </owl:Axiom>
 
 
     <!-- Named Individuals - SB666 (UH / Agriculture Education) -->
@@ -490,8 +543,80 @@ def create_combined_ontology():
         <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasBillNumber>
         <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-THIRD LEGISLATURE, 2025</hasSession>
         <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 31, 2050</hasEffectiveDate>
+        <hasBillYear rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2025</hasBillYear>
+        <hasMeasureVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.D. 1</hasMeasureVersion>
         <enactedBy rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TheSenate"/>
+        <!-- SB666 relationships to its entities -->
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#UniversityOfHawaii"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CTAHR"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CooperativeExtension"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgricultureEducation"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TrainingForAgricultureEducators"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ExtensionAgents"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SR80_2015"/>
+        <references rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AverageFarmerAgeStat"/>
     </owl:NamedIndividual>
+
+    <!-- SB666 domain individuals (representative examples) -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#UniversityOfHawaii">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Hawaii</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CTAHR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">College of Tropical Agriculture and Human Resilience</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CooperativeExtension">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Organization"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cooperative Extension</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgricultureEducation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#EducationTopic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agriculture education</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TrainingForAgricultureEducators">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TrainingAction"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">training for agriculture educators</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ExtensionAgents">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Profession"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extension agents</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SR80_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#LegislativeMeasure"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.R. No. 80 (2015)</hasText>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AverageFarmerAgeStat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgeStatistic"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">average farmer is sixty years old</hasText>
+    </owl:NamedIndividual>
+
+    <!-- SB666 Entity Relationships -->
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CTAHR"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#UniversityOfHawaii"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CooperativeExtension"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#partOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CTAHR"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TrainingForAgricultureEducators"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#relatesTo"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#AgricultureEducation"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#ExtensionAgents"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#worksFor"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#CooperativeExtension"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SR80_2015"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#referencesBill"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB666"/>
+    </owl:Axiom>
 
 </rdf:RDF>'''
     
@@ -505,16 +630,27 @@ def main():
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(owl_content)
     
+    # Count actual content in the generated ontology
+    bill_count = owl_content.count('<owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HB')
+    bill_count += owl_content.count('<owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB')
+    class_count = owl_content.count('<owl:Class rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#')
+    property_count = owl_content.count('<owl:ObjectProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#')
+    data_property_count = owl_content.count('<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#')
+    individual_count = owl_content.count('<owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#')
+    
     print(f"Combined ontology created: {output_file}")
     print(f"Ontology includes:")
-    print("- 18 entity classes")
-    print("- 12 object properties")
-    print("- 8 data properties")
-    print("- 25+ named individuals")
-    print("- Comprehensive relationships for both HB767 and SB2182")
+    print(f"- {class_count} entity classes")
+    print(f"- {property_count} object properties")
+    print(f"- {data_property_count} data properties")
+    print(f"- {individual_count} named individuals")
+    print(f"- {bill_count} legislative bills (HB767, SB2182, SB666)")
+    print("- Comprehensive relationships across all three bills")
     print("- Shared entities between bills (Department of Education, Students, Public Schools)")
     print("- Bill-specific entities and relationships")
     print("- Cross-bill connections and dependencies")
+    print("- SB666 agriculture education entities (University of Hawaii, CTAHR, etc.)")
+    print("- Legislative packages (Healthy Schools 2021, Agriculture Education 2025)")
 
 if __name__ == '__main__':
     main()

@@ -207,6 +207,49 @@ class EnhancedEntityPatterns:
                 r"outdoor educational spaces",
                 r"garden programs",
                 r"farm-based education"
+            ],
+
+            # SB666 domain-specific enhancements
+            "PROFESSION": [
+                r"average farmer",
+                r"farmers?",
+                r"agriculture educators?",
+                r"extension agents?",
+                r"food producers?",
+                r"food systems professionals?"
+            ],
+            "ORGANIZATION": [
+                r"university of hawaii( at manoa)?",
+                r"college of tropical agriculture and human resilience",
+                r"cooperative extension",
+                r"department of education",
+                r"cta[hr]r",  # CTAHR variants
+                r"ffa|future farmers of america"
+            ],
+            "EDUCATION_TOPIC": [
+                r"agriculture education",
+                r"food systems education",
+                r"career and technical education pathway",
+                r"higher education programs",
+                r"apprenticeships",
+                r"internships",
+                r"work-based learning programs"
+            ],
+            "TRAINING_ACTION": [
+                r"reduced training for agriculture educators",
+                r"training for agriculture educators",
+                r"teacher[s]? trained in agriculture and food systems education",
+                r"new farmer training programs"
+            ],
+            "LEGISLATIVE_MEASURE": [
+                r"S\.R\.\s*No\.\s*\d+\s*\(\d{4}\)",
+                r"S\.R\.\s*No\.\s*\d+",
+                r"(H|S)\.B\.\s*No\.\s*\d+",
+                r"(H|S)\.R\.\s*No\.\s*\d+"
+            ],
+            "AGE_STAT": [
+                r"average farmer.*?sixty years old",
+                r"average age of farmers"
             ]
         }
     
