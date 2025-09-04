@@ -468,6 +468,13 @@
       "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 20",
       "full_text": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021:\nThe legislature further finds that the increased use of learning gardens and farms on school campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, and strengthening social-emotional well-being.The farm to school program seeks to equitably improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.This also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.A national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health and well-being.\nThe purpose of this Act is to establish and fund the position of school garden coordinator, within the department of education's office of curriculum and instructional design, to provide technical support and startup resources for schools interested in developing a school garden program.\nSECTION 2.There is appropriated out of the general revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coordinator to be placed within the department of education's office of curriculum and instructional design; provided that the funds may also be used for expenses related to the provision of technical support and startup resources for schools interested in developing a school garden program.\nThe sum appropriated shall be expended by the department of education for the purposes of this Act.\n(1)Improving student health;\n(2)Developing an educated agricultural workforce; and\n(3)Accelerating garden and farm-based education for public school students.\nSECTION 3.This Act shall take effect on July 1, 2022.\nReport Title: Department of Education; School Gardens; School Gardens Coordinator;\n Appropriation\nDescription: Establishes a School Garden Coordinator position within\n the Department of Education.Makes an appropriation\n to fund the position and related expenses.(CD1)",
       "full_text_length": 2746,
+      "bill_year": "2022",
+      "bill_number": "SB 2182",
+      "measure_versions": [
+        "S.D. 1",
+        "H.D. 1",
+        "C.D. 1"
+      ],
       "source": "sb2182_v3_0_1_bill_entity"
     }
   ],
@@ -537,28 +544,28 @@
     "total_entities": 42,
     "total_relations": 6,
     "entity_types": [
-      "EDUCATIONAL_SPACE",
-      "AGENCY",
-      "PROGRAM",
-      "GOAL",
-      "LEGISLATIVE_BODY",
+      "LOCATION",
       "PERSON",
-      "POSITION",
-      "SESSION_IDENTIFIER",
-      "LEGAL_SECTION",
       "HEALTH_GOAL",
       "STATUTE",
       "PURPOSE",
-      "BILL",
+      "AGENCY",
+      "SESSION_IDENTIFIER",
+      "GOAL",
       "FUNDING",
-      "LOCATION"
+      "PROGRAM",
+      "EDUCATIONAL_SPACE",
+      "BILL",
+      "POSITION",
+      "LEGISLATIVE_BODY",
+      "LEGAL_SECTION"
     ],
     "relation_types": [
+      "LEGAL_REFERENCE",
       "HEALTH_GOAL",
       "LEADERSHIP",
       "FUNDING",
-      "EDUCATIONAL_BENEFIT",
-      "LEGAL_REFERENCE"
+      "EDUCATIONAL_BENEFIT"
     ],
     "sources": [
       "enhanced_patterns_sb2182_v3_0_1"

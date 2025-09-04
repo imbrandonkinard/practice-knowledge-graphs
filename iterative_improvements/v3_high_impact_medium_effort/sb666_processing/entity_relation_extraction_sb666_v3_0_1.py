@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-SB2182 Version 3.0.1 extraction: Enhanced with manual annotation insights
-- Applies v3.0.1 patterns to SB2182 (School Gardens) bill
+SB666 Version 3.0.1 extraction: Enhanced with manual annotation insights
+- Applies v3.0.1 patterns to SB666 (School Gardens) bill
 - Incorporates new entity types from manual classification
 - Enhanced patterns based on human-identified entities
 - Improved hierarchical entity relationships
 - Better context-aware entity recognition
-Produces enhanced_corenlp_extractions_sb2182_v3_0_1.json with improved accuracy.
+Produces enhanced_corenlp_extractions_sb666_v3_0_1.json with improved accuracy.
 """
 import json
 import re
@@ -227,7 +227,7 @@ class EnhancedEntityPatterns:
                         'normalized_ner': match.group().lower(),
                         'confidence': 0.95,  # High confidence for manual-validated patterns
                         'context': text[max(0, match.start()-50):match.end()+50],
-                        'source': 'enhanced_patterns_sb2182_v3_0_1'
+                        'source': 'enhanced_patterns_sb666_v3_0_1'
                     }
                     entities.append(entity)
         
@@ -337,7 +337,7 @@ class EnhancedRelationPatterns:
                         'confidence': 0.95,
                         'context': text[max(0, match.start()-100):match.end()+100],
                         'relation_type': rel_type,
-                        'source': 'enhanced_patterns_sb2182_v3_0_1'
+                        'source': 'enhanced_patterns_sb666_v3_0_1'
                     }
                     relations.append(relation)
                     
@@ -357,7 +357,7 @@ class EnhancedRelationPatterns:
         return relations
 
 def run(text_file: str, output_file: str):
-    """Run the enhanced v3.0.1 extraction on SB2182"""
+    """Run the enhanced v3.0.1 extraction on SB666"""
     
     # Read the text file
     with open(text_file, 'r', encoding='utf-8') as f:
@@ -378,12 +378,12 @@ def run(text_file: str, output_file: str):
     measure_versions_norm = [f"{mv[0].upper()}.D. {mv[1]}" for mv in measure_versions]
     # Capture bill number like S.B. NO. 2182 or S.B. 2182
     m_billnum = re.search(r"\b([HS])\.B\.?\s*(?:NO\.?\s*)?(\d+)\b", full_text, flags=re.IGNORECASE)
-    bill_number = f"{m_billnum.group(1).upper()}B {m_billnum.group(2)}" if m_billnum else 'SB2182'
+    bill_number = f"{m_billnum.group(1).upper()}B {m_billnum.group(2)}" if m_billnum else 'SB666'
     bill_entity = {
-        'text': 'SB2182',
+        'text': 'SB666',
         'type': 'BILL',
         'ner': 'BILL',
-        'normalized_ner': 'sb2182',
+        'normalized_ner': 'sb666',
         'confidence': 0.99,
         'context': full_text[:500],
         'full_text': full_text,
@@ -391,7 +391,7 @@ def run(text_file: str, output_file: str):
         'bill_year': bill_year,
         'bill_number': bill_number,
         'measure_versions': measure_versions_norm,
-        'source': 'sb2182_v3_0_1_bill_entity'
+        'source': 'sb666_v3_0_1_bill_entity'
     }
     entities.append(bill_entity)
     relations = relation_patterns.extract_enhanced_relations(full_text)
@@ -402,19 +402,19 @@ def run(text_file: str, output_file: str):
     
     # Create enhanced output
     out = {
-        'version': 'sb2182_v3_0_1_enhanced_with_manual_annotations',
+        'version': 'sb666_v3_0_1_enhanced_with_manual_annotations',
         'bill_info': {
-            'bill_number': 'SB2182',
-            'session': 'THIRTY-FIRST LEGISLATURE, 2022',
-            'title': 'RELATING TO SCHOOL GARDENS',
+            'bill_number': 'SB666',
+            'session': 'THIRTY-THIRD LEGISLATURE, 2025',
+            'title': 'RELATING TO THE UNIVERSITY OF HAWAII',
             'chamber': 'THE SENATE',
-            'effective_date': 'July 1, 2022'
+            'effective_date': 'July 31, 2050'
         },
         'entities': entities_processed,
         'relations': relations_processed,
         'sentences': [{'text': full_text}],  # Single sentence for this bill
         'metadata': {
-            'extraction_method': 'enhanced_corenlp_sb2182_v3_0_1',
+            'extraction_method': 'enhanced_corenlp_sb666_v3_0_1',
             'total_entities': len(entities_processed),
             'total_relations': len(relations_processed),
             'entity_types': list(set(e.get('type', '') for e in entities_processed)),
@@ -430,11 +430,11 @@ def run(text_file: str, output_file: str):
                 "New entity types: LEGISLATIVE_BODY, SESSION_IDENTIFIER, LOCATION, PERSON, INTEREST_GROUP, HEALTH_GOAL, LEGAL_SECTION, POSITION, FUNDING, EDUCATIONAL_SPACE",
                 "Enhanced hierarchical entity relationships",
                 "Context-aware entity recognition improvements",
-                "SB2182-specific patterns for school gardens and coordinator positions"
+                "SB666-specific patterns for UH agriculture education and coordinator positions"
             ],
             'manual_annotation_insights': {
                 'new_entity_types': ['LEGISLATIVE_BODY', 'SESSION_IDENTIFIER', 'LOCATION', 'PERSON', 'INTEREST_GROUP', 'HEALTH_GOAL', 'LEGAL_SECTION', 'POSITION', 'FUNDING', 'EDUCATIONAL_SPACE'],
-                'enhanced_patterns': 'Based on manual annotations and SB2182-specific content',
+                'enhanced_patterns': 'Based on manual annotations and SB666-specific content',
                 'improved_accuracy': 'Higher confidence scoring for manually validated patterns',
                 'bill_specific_enhancements': 'Added patterns for school gardens, coordinator positions, and educational spaces'
             }
@@ -445,7 +445,7 @@ def run(text_file: str, output_file: str):
         json.dump(out, f, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
-    text_file = 'extracted_sb2182_final.txt'
-    output_file = 'enhanced_corenlp_extractions_sb2182_v3_0_1.json'
+    text_file = 'extracted_sb666_final.txt'
+    output_file = 'enhanced_corenlp_extractions_sb666_v3_0_1.json'
     run(text_file, output_file)
-    print(f"Enhanced SB2182 v3.0.1 extraction complete. Output: {output_file}")
+    print(f"Enhanced SB666 v3.0.1 extraction complete. Output: {output_file}")

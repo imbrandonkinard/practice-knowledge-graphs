@@ -20,3 +20,4 @@ Logs:
 3 September 2025
 10:44pm -
 # sync work done in v3 with second bill text
+# todo.txt on tasks (11:46 3 Sept.)

@@ -1,0 +1,302 @@
+{
+  "version": "sb666_v3_0_1_enhanced_with_manual_annotations",
+  "bill_info": {
+    "bill_number": "SB666",
+    "session": "THIRTY-THIRD LEGISLATURE, 2025",
+    "title": "RELATING TO THE UNIVERSITY OF HAWAII",
+    "chamber": "THE SENATE",
+    "effective_date": "July 31, 2050"
+  },
+  "entities": [
+    {
+      "text": "legislature",
+      "type": "AGENCY",
+      "start_char": 37,
+      "end_char": 48,
+      "ner": "AGENCY",
+      "normalized_ner": "legislature",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIV",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "state of hawaii",
+      "type": "AGENCY",
+      "start_char": 62,
+      "end_char": 77,
+      "ner": "AGENCY",
+      "normalized_ner": "state of hawaii",
+      "confidence": 0.95,
+      "context": ".B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIVERSITY OF HAWAII.\nBE IT ENACT",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "s.b. no. 666",
+      "type": "STATUTE",
+      "start_char": 11,
+      "end_char": 23,
+      "ner": "STATUTE",
+      "normalized_ner": "s.b. no. 666",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HA",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "senate",
+      "type": "LEGISLATIVE_BODY",
+      "start_char": 4,
+      "end_char": 10,
+      "ner": "LEGISLATIVE_BODY",
+      "normalized_ner": "senate",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. ",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "legislature",
+      "type": "LEGISLATIVE_BODY",
+      "start_char": 37,
+      "end_char": 48,
+      "ner": "LEGISLATIVE_BODY",
+      "normalized_ner": "legislature",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIV",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "thirty-third legislature, 2025",
+      "type": "SESSION_IDENTIFIER",
+      "start_char": 24,
+      "end_char": 54,
+      "ner": "SESSION_IDENTIFIER",
+      "normalized_ner": "thirty-third legislature, 2025",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIVERSITY",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "regular session",
+      "type": "SESSION_IDENTIFIER",
+      "start_char": 1873,
+      "end_char": 1888,
+      "ner": "SESSION_IDENTIFIER",
+      "normalized_ner": "regular session",
+      "confidence": 0.95,
+      "context": "slation, and report to the legislature before the regular sessions of 2017, 2018, and 2019.The working group's fina",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 5719,
+      "end_char": 5726,
+      "ner": "LOCATION",
+      "normalized_ner": "schools",
+      "confidence": 0.95,
+      "context": " grade levels in public, charter, and independent schools;\n(2)Public school students entering and completin",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "students",
+      "type": "PERSON",
+      "start_char": 5621,
+      "end_char": 5629,
+      "ner": "PERSON",
+      "normalized_ner": "students",
+      "confidence": 0.95,
+      "context": "ersity of Hawaii for the purposes of this Act.\n(1)Students exposed to agriculture education at all grade lev",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "school garden coordinator",
+      "type": "PERSON",
+      "start_char": 2088,
+      "end_char": 2099,
+      "ner": "PERSON",
+      "normalized_ner": "coordinator",
+      "confidence": 0.95,
+      "context": "nds the establishment of an agriculture education coordinator position within the university of Hawaii college ",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "section 1",
+      "type": "LEGAL_SECTION",
+      "start_char": 173,
+      "end_char": 182,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 1",
+      "confidence": 0.95,
+      "context": "NACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that the average farmer in ",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "section 6",
+      "type": "LEGAL_SECTION",
+      "start_char": 3509,
+      "end_char": 3518,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 6",
+      "confidence": 0.95,
+      "context": "atter of statewide concern pursuant to article X, section 6, of the Hawaii State Constitution.\nAccordingly, t",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "section 2",
+      "type": "LEGAL_SECTION",
+      "start_char": 3909,
+      "end_char": 3918,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 2",
+      "confidence": 0.95,
+      "context": "ege of tropical agriculture and human resilience.\nSECTION 2.(a)The university of Hawaii at Manoa college of t",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "section 3",
+      "type": "LEGAL_SECTION",
+      "start_char": 5073,
+      "end_char": 5082,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 3",
+      "confidence": 0.95,
+      "context": "niversity of Hawaii for the purposes of this Act.\nSECTION 3.There is appropriated out of the general revenues",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "section 4",
+      "type": "LEGAL_SECTION",
+      "start_char": 6165,
+      "end_char": 6174,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 4",
+      "confidence": 0.95,
+      "context": "d producers and other food systems professionals.\nSECTION 4.This Act shall take effect on July 31, 2050.\nRepo",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "coordinator position",
+      "type": "POSITION",
+      "start_char": 2088,
+      "end_char": 2108,
+      "ner": "POSITION",
+      "normalized_ner": "coordinator position",
+      "confidence": 0.95,
+      "context": "nds the establishment of an agriculture education coordinator position within the university of Hawaii college of tropic",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "full-time equivalent",
+      "type": "POSITION",
+      "start_char": 4107,
+      "end_char": 4127,
+      "ner": "POSITION",
+      "normalized_ner": "full-time equivalent",
+      "confidence": 0.95,
+      "context": "sion agent position on the island of Kauai into a full-time equivalent (1.0 FTE) permanent farm to school extension agen",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "1.0 fte",
+      "type": "POSITION",
+      "start_char": 4129,
+      "end_char": 4136,
+      "ner": "POSITION",
+      "normalized_ner": "1.0 fte",
+      "confidence": 0.95,
+      "context": " the island of Kauai into a full-time equivalent (1.0 FTE) permanent farm to school extension agent positio",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "appropriation",
+      "type": "FUNDING",
+      "start_char": 6264,
+      "end_char": 6277,
+      "ner": "FUNDING",
+      "normalized_ner": "appropriation",
+      "confidence": 0.95,
+      "context": "2050.\nReport Title: UH;\n        CTAHR; Positions; Appropriations\nDescription: Converts\n        two temporary Farm",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "general revenues",
+      "type": "FUNDING",
+      "start_char": 4673,
+      "end_char": 4689,
+      "ner": "FUNDING",
+      "normalized_ner": "general revenues",
+      "confidence": 0.95,
+      "context": " to this Act.\n(c)There is appropriated out of the general revenues of the State of Hawaii the sum of $ or so much th",
+      "source": "enhanced_patterns_sb666_v3_0_1"
+    },
+    {
+      "text": "sb666",
+      "type": "BILL",
+      "ner": "BILL",
+      "normalized_ner": "sb666",
+      "confidence": 0.99,
+      "context": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIVERSITY OF HAWAII.\nBE IT ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that the average farmer in Hawaii is sixty years old and that the State lacks a farming workforce large enough to expand cultivated agricultural lands and food production.The primary cause of the shortage of new farmers in Hawaii over the past several decades is the lack of access to agricultur",
+      "full_text": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIVERSITY OF HAWAII.\nBE IT ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that the average farmer in Hawaii is sixty years old and that the State lacks a farming workforce large enough to expand cultivated agricultural lands and food production.The primary cause of the shortage of new farmers in Hawaii over the past several decades is the lack of access to agriculture education, including reduced training for agriculture educators, resulting in disinterest among youth to pursue careers in agriculture or natural resource management.The legislature further finds that to meet the State's aspirations for increased food security and self-sufficiency, the number of local farms and farmers, and the amount of food produced for local markets, needs to increase significantly.\nThe legislature recognizes that agriculture education is key to developing future farmers and a society that values and understands the vital role of agriculture, food, fiber, and natural resource systems in advancing personal, local, and global well-being.Over the past decade, a vibrant grassroots movement in support of agriculture education has emerged in Hawaii, along with a marked increase in new farmer training programs and student involvement in FFA, formerly known as Future Farmers of America.\nThe legislature also finds that, to encourage continued momentum for agriculture education, the senate passed S.R. No. 80 (2015), requesting the university of Hawaii college of tropical agriculture and human resilience to convene a working group to develop a coordinated framework of support for preschool through post-secondary agriculture education and a plan for implementation, including any proposed legislation, and report to the legislature before the regular sessions of 2017, 2018, and 2019.The working group's final report outlines a coordinated framework of support for agriculture education in Hawaii and recommends the establishment of an agriculture education coordinator position within the university of Hawaii college of tropical agriculture and human resilience to lead the implementation of the recommended framework.The legislature finds that the implementation of the coordinated framework would increase the number of:\nThe implementation of the coordinated framework is also intended to help decrease the average age of farmers in the State and grow the educated agricultural workforce, thereby increasing food security and self-sufficiency, sustainability, and resiliency in Hawaii.\nThe legislature also recognizes that the university of Hawaii college of tropical agriculture and human resilience cooperative extension is a valuable resource for connecting research and innovation to food sovereignty, food security, food production, and environmental and human resilience.The legislature further notes that increasing state investment in agriculture educators, including extension agents of cooperative extension programs, aligns with the working group's coordinated framework of support for agriculture education in the State.\nThe legislature also finds that converting certain temporary agriculture educator positions into permanent positions and establishing an additional full-time agriculture education coordinator position within the university of Hawaii at Manoa college of agriculture and human resilience is a matter of statewide concern pursuant to article X, section 6, of the Hawaii State Constitution.\nAccordingly, the purpose of this Act is to support a coordinated framework for agriculture education by converting certain temporary agriculture educator positions into permanent positionsand establishing a full-time agriculture education coordinator position within the university of Hawaii at Manoa college of tropical agriculture and human resilience.\nSECTION 2.(a)The university of Hawaii at Manoa college of tropical agriculture and human resilience shall convert one temporary farm to school extension agent position on the island of Kauai into a full-time equivalent (1.0 FTE) permanent farm to school extension agent position on the island of Kauai to support agriculture education in the State pursuant to this Act.\n(b)The university of Hawaii at Manoa college of tropical agriculture and human resilience shall convert one temporary farm to school extension agent position on the island of Oahu into a full-time equivalent (1.0 FTE) permanent farm to school extension agent position on the island of Oahu to support agriculture education in the State pursuant to this Act.\n(c)There is appropriated out of the general revenues of the State of Hawaii the sum of $ or so much thereof as may be necessary for fiscal year 2025-2026 and the same sum or so much thereof as may be necessary for fiscal year 2026-2027 to establish and fund the positions authorized by subsections (a) and (b).\n(d)The sumsappropriated pursuant to this section shall be expended by the university of Hawaii for the purposes of this Act.\nSECTION 3.There is appropriated out of the general revenues of the State of Hawaii the sum of $300,000 or so much thereof as may be necessary for fiscal year 2025-2026 and the same sum or so much thereof as may be necessary for fiscal year 2026-2027 for the establishment of one full-time equivalent (1.0 FTE) agriculture education coordinator position within the university of Hawaii at Manoa college of tropical agriculture and human resilience.\nThe sumsappropriated shall be expended by the university of Hawaii for the purposes of this Act.\n(1)Students exposed to agriculture education at all grade levels in public, charter, and independent schools;\n(2)Public school students entering and completing the career and technical education pathway in agriculture, food innovation, and natural resources;\n(3)Students entering and completing higher education programs, apprenticeships, internships, and work-based learning programs in agriculture and food systems;\n(4)Teachers trained in agriculture and food systems education; and\n(5)Local food producers and other food systems professionals.\nSECTION 4.This Act shall take effect on July 31, 2050.\nReport Title: UH;\n        CTAHR; Positions; Appropriations\nDescription: Converts\n        two temporary Farm-to-School extension agent positionswithin the\n      University of Hawaii at Manoa College of Tropical Agriculture and Human Resilienceinto permanent positions.Establishes an Agriculture Education Coordinator\n      position.Appropriates funds.Effective 7/31/2050.(SD1)",
+      "full_text_length": 6595,
+      "bill_year": "2025",
+      "bill_number": "SB 666",
+      "measure_versions": [
+        "S.D. 1"
+      ],
+      "source": "sb666_v3_0_1_bill_entity"
+    }
+  ],
+  "relations": [],
+  "sentences": [
+    {
+      "text": "THE SENATE\nS.B. NO. 666\nTHIRTY-THIRD LEGISLATURE, 2025\nS.D. 1\nSTATE OF HAWAII\nRELATING TO THE UNIVERSITY OF HAWAII.\nBE IT ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that the average farmer in Hawaii is sixty years old and that the State lacks a farming workforce large enough to expand cultivated agricultural lands and food production.The primary cause of the shortage of new farmers in Hawaii over the past several decades is the lack of access to agriculture education, including reduced training for agriculture educators, resulting in disinterest among youth to pursue careers in agriculture or natural resource management.The legislature further finds that to meet the State's aspirations for increased food security and self-sufficiency, the number of local farms and farmers, and the amount of food produced for local markets, needs to increase significantly.\nThe legislature recognizes that agriculture education is key to developing future farmers and a society that values and understands the vital role of agriculture, food, fiber, and natural resource systems in advancing personal, local, and global well-being.Over the past decade, a vibrant grassroots movement in support of agriculture education has emerged in Hawaii, along with a marked increase in new farmer training programs and student involvement in FFA, formerly known as Future Farmers of America.\nThe legislature also finds that, to encourage continued momentum for agriculture education, the senate passed S.R. No. 80 (2015), requesting the university of Hawaii college of tropical agriculture and human resilience to convene a working group to develop a coordinated framework of support for preschool through post-secondary agriculture education and a plan for implementation, including any proposed legislation, and report to the legislature before the regular sessions of 2017, 2018, and 2019.The working group's final report outlines a coordinated framework of support for agriculture education in Hawaii and recommends the establishment of an agriculture education coordinator position within the university of Hawaii college of tropical agriculture and human resilience to lead the implementation of the recommended framework.The legislature finds that the implementation of the coordinated framework would increase the number of:\nThe implementation of the coordinated framework is also intended to help decrease the average age of farmers in the State and grow the educated agricultural workforce, thereby increasing food security and self-sufficiency, sustainability, and resiliency in Hawaii.\nThe legislature also recognizes that the university of Hawaii college of tropical agriculture and human resilience cooperative extension is a valuable resource for connecting research and innovation to food sovereignty, food security, food production, and environmental and human resilience.The legislature further notes that increasing state investment in agriculture educators, including extension agents of cooperative extension programs, aligns with the working group's coordinated framework of support for agriculture education in the State.\nThe legislature also finds that converting certain temporary agriculture educator positions into permanent positions and establishing an additional full-time agriculture education coordinator position within the university of Hawaii at Manoa college of agriculture and human resilience is a matter of statewide concern pursuant to article X, section 6, of the Hawaii State Constitution.\nAccordingly, the purpose of this Act is to support a coordinated framework for agriculture education by converting certain temporary agriculture educator positions into permanent positionsand establishing a full-time agriculture education coordinator position within the university of Hawaii at Manoa college of tropical agriculture and human resilience.\nSECTION 2.(a)The university of Hawaii at Manoa college of tropical agriculture and human resilience shall convert one temporary farm to school extension agent position on the island of Kauai into a full-time equivalent (1.0 FTE) permanent farm to school extension agent position on the island of Kauai to support agriculture education in the State pursuant to this Act.\n(b)The university of Hawaii at Manoa college of tropical agriculture and human resilience shall convert one temporary farm to school extension agent position on the island of Oahu into a full-time equivalent (1.0 FTE) permanent farm to school extension agent position on the island of Oahu to support agriculture education in the State pursuant to this Act.\n(c)There is appropriated out of the general revenues of the State of Hawaii the sum of $ or so much thereof as may be necessary for fiscal year 2025-2026 and the same sum or so much thereof as may be necessary for fiscal year 2026-2027 to establish and fund the positions authorized by subsections (a) and (b).\n(d)The sumsappropriated pursuant to this section shall be expended by the university of Hawaii for the purposes of this Act.\nSECTION 3.There is appropriated out of the general revenues of the State of Hawaii the sum of $300,000 or so much thereof as may be necessary for fiscal year 2025-2026 and the same sum or so much thereof as may be necessary for fiscal year 2026-2027 for the establishment of one full-time equivalent (1.0 FTE) agriculture education coordinator position within the university of Hawaii at Manoa college of tropical agriculture and human resilience.\nThe sumsappropriated shall be expended by the university of Hawaii for the purposes of this Act.\n(1)Students exposed to agriculture education at all grade levels in public, charter, and independent schools;\n(2)Public school students entering and completing the career and technical education pathway in agriculture, food innovation, and natural resources;\n(3)Students entering and completing higher education programs, apprenticeships, internships, and work-based learning programs in agriculture and food systems;\n(4)Teachers trained in agriculture and food systems education; and\n(5)Local food producers and other food systems professionals.\nSECTION 4.This Act shall take effect on July 31, 2050.\nReport Title: UH;\n        CTAHR; Positions; Appropriations\nDescription: Converts\n        two temporary Farm-to-School extension agent positionswithin the\n      University of Hawaii at Manoa College of Tropical Agriculture and Human Resilienceinto permanent positions.Establishes an Agriculture Education Coordinator\n      position.Appropriates funds.Effective 7/31/2050.(SD1)"
+    }
+  ],
+  "metadata": {
+    "extraction_method": "enhanced_corenlp_sb666_v3_0_1",
+    "total_entities": 21,
+    "total_relations": 0,
+    "entity_types": [
+      "BILL",
+      "FUNDING",
+      "PERSON",
+      "POSITION",
+      "SESSION_IDENTIFIER",
+      "AGENCY",
+      "LOCATION",
+      "LEGISLATIVE_BODY",
+      "LEGAL_SECTION",
+      "STATUTE"
+    ],
+    "relation_types": [],
+    "sources": [],
+    "enhancements": [
+      "Enhanced CoreNLP annotators (lemma, openie)",
+      "Custom NER patterns for legislative domain",
+      "Enhanced relation patterns for bill-specific relationships",
+      "Improved confidence scoring",
+      "OpenIE integration for additional relations",
+      "Manual annotation insights integration",
+      "New entity types: LEGISLATIVE_BODY, SESSION_IDENTIFIER, LOCATION, PERSON, INTEREST_GROUP, HEALTH_GOAL, LEGAL_SECTION, POSITION, FUNDING, EDUCATIONAL_SPACE",
+      "Enhanced hierarchical entity relationships",
+      "Context-aware entity recognition improvements",
+      "SB666-specific patterns for UH agriculture education and coordinator positions"
+    ],
+    "manual_annotation_insights": {
+      "new_entity_types": [
+        "LEGISLATIVE_BODY",
+        "SESSION_IDENTIFIER",
+        "LOCATION",
+        "PERSON",
+        "INTEREST_GROUP",
+        "HEALTH_GOAL",
+        "LEGAL_SECTION",
+        "POSITION",
+        "FUNDING",
+        "EDUCATIONAL_SPACE"
+      ],
+      "enhanced_patterns": "Based on manual annotations and SB666-specific content",
+      "improved_accuracy": "Higher confidence scoring for manually validated patterns",
+      "bill_specific_enhancements": "Added patterns for school gardens, coordinator positions, and educational spaces"
+    }
+  }
+}

@@ -115,6 +115,18 @@
         <rdfs:comment>Effective date of the bill</rdfs:comment>
     </owl:DatatypeProperty>
     
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasBillYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Calendar year associated with the bill (disambiguates same-number bills across years)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasMeasureVersion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Measure version labels such as H.D. 1, S.D. 2, C.D. 1</rdfs:comment>
+    </owl:DatatypeProperty>
+    
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#hasAmount">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Funding"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>

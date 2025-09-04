@@ -1,15 +1,4 @@
-#!/usr/bin/env python3
-"""
-Generate combined ontology from both HB767 (Farm to School) and SB2182 (School Gardens) bills
-Creates a comprehensive legislative knowledge graph ontology
-"""
-import json
-from pathlib import Path
-
-def create_combined_ontology():
-    """Create combined OWL ontology for both bills"""
-    
-    owl_content = '''<?xml version="1.0"?>
+<?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#"
      xml:base="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -483,28 +472,14 @@ def create_combined_ontology():
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HealthySchools2021Package"/>
     </owl:Axiom>
 
-</rdf:RDF>'''
-    
-    return owl_content
 
-def main():
-    """Generate combined ontology"""
-    owl_content = create_combined_ontology()
-    
-    output_file = 'combined_legislative_bills_ontology.owl'
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(owl_content)
-    
-    print(f"Combined ontology created: {output_file}")
-    print(f"Ontology includes:")
-    print("- 18 entity classes")
-    print("- 12 object properties")
-    print("- 8 data properties")
-    print("- 25+ named individuals")
-    print("- Comprehensive relationships for both HB767 and SB2182")
-    print("- Shared entities between bills (Department of Education, Students, Public Schools)")
-    print("- Bill-specific entities and relationships")
-    print("- Cross-bill connections and dependencies")
+    <!-- Named Individuals - SB666 (UH / Agriculture Education) -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-THIRD LEGISLATURE, 2025</hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 31, 2050</hasEffectiveDate>
+        <enactedBy rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TheSenate"/>
+    </owl:NamedIndividual>
 
-if __name__ == '__main__':
-    main()
+</rdf:RDF>

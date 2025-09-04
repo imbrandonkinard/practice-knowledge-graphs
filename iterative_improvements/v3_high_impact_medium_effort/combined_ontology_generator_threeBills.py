@@ -483,6 +483,16 @@ def create_combined_ontology():
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#HealthySchools2021Package"/>
     </owl:Axiom>
 
+
+    <!-- Named Individuals - SB666 (UH / Agriculture Education) -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#SB666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB666</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-THIRD LEGISLATURE, 2025</hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 31, 2050</hasEffectiveDate>
+        <enactedBy rdf:resource="http://www.semanticweb.org/legislative/ontologies/2025/combined-bills#TheSenate"/>
+    </owl:NamedIndividual>
+
 </rdf:RDF>'''
     
     return owl_content
@@ -491,7 +501,7 @@ def main():
     """Generate combined ontology"""
     owl_content = create_combined_ontology()
     
-    output_file = 'combined_legislative_bills_ontology.owl'
+    output_file = 'combined_legislative_bills_ontology_threeBills.owl'
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(owl_content)
     

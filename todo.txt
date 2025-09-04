@@ -1,0 +1,17 @@
+# Add SB666, SLH 2025 to the ontology for this current bill. (11:46 3 Sept.)
+
+# INCLUDE THE DRAFT VERSION NUMBERS (11:46 3 Sept.)
+## Got excited about this one because I completely neglected this field. Currently, for testing logics, I am using the latest/last version of the bill. It may be relevant to relate version ontologies from one to the next to see how they change.
+## Perhaps have a classification on amendments introduced. Which committee introduced the amendment(s)?
+## From version to version we are able to identify changes to relevant ontological classifications declared. For example, the nature of the bill being modified with a removal of an action clause such as "appropriates funds" may indicate that the fiscal nature of a bill has been modified. This can impact whether it should or should not be heard by a fiscal committee (FIN/WAM)
+
+# The Hawaiʻi Farm to School Network supports a number of bills every year. We want to include within our ontology the bills that are tracked by the network. This ontology would ideally be expandable without expanding/exploring other organization's legislative reports.
+
+# HAPA has a legilsative report.
+*Implement similar to (1)*
+
+# HIPHI has a legislative report.
+*Implement similar to (1)*
+
+# HFUU has a legislative report.
+*Implement similar to (1)*

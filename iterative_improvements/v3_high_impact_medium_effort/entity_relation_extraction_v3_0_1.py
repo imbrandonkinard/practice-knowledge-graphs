@@ -324,6 +324,15 @@ def run(v3_path: str, v3_0_1_path: str):
         enhanced_relations = relation_patterns.extract_enhanced_relations(full_text)
 
         # Add a top-level BILL entity that carries the full text and is referable
+        # Extract bill metadata: year and measure versions (e.g., H.D. 2, S.D. 1, C.D. 1)
+        m_year = re.search(r"(19|20)\d{2}", full_text)
+        bill_year = m_year.group(0) if m_year else None
+        measure_versions = re.findall(r"\b([HSC])\.D\.\s*(\d+)\b", full_text, flags=re.IGNORECASE)
+        # Normalize versions like H.D. 2
+        measure_versions_norm = [f"{mv[0].upper()}.D. {mv[1]}" for mv in measure_versions]
+        # Try to capture bill number (e.g., H.B. NO. 767 or H.B. 767)
+        m_billnum = re.search(r"\b([HS])\.B\.?\s*(?:NO\.?\s*)?(\d+)\b", full_text, flags=re.IGNORECASE)
+        bill_number = f"{m_billnum.group(1).upper()}B {m_billnum.group(2)}" if m_billnum else None
         bill_entity = {
             'text': 'Bill',
             'type': 'BILL',
@@ -333,6 +342,9 @@ def run(v3_path: str, v3_0_1_path: str):
             'context': full_text[:500],
             'full_text': full_text,
             'full_text_length': len(full_text),
+            'bill_year': bill_year,
+            'bill_number': bill_number,
+            'measure_versions': measure_versions_norm,
             'source': 'v3_0_1_bill_entity'
         }
         enhanced_entities.append(bill_entity)
