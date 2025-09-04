@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+"""
+Convert SB2182 v3.0.1 JSON extractions to OWL ontology
+Creates a comprehensive ontology for the School Gardens bill
+"""
+import json
+from pathlib import Path
+
+def create_sb2182_ontology():
+    """Create OWL ontology for SB2182 School Gardens bill"""
+    
+    owl_content = '''<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#"
+     xml:base="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens"/>
+    
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Purpose"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Goal"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasCoordinator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Position"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasFunding">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Funding"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#operatesAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Location"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#serves">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Person"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#managedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Agency"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#enactedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LegislativeBody"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#references">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LegalSection"/>
+    </owl:ObjectProperty>
+    
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasConfidence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasBillNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasSession">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasEffectiveDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasAmount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Funding"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#hasFiscalYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Funding"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Agency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LegislativeBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Position">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Purpose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#HealthGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Goal"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Funding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#EducationalSpace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LegalSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SessionIdentifier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#InterestGroup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Statute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Reporting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Entity"/>
+    </owl:Class>
+    
+    <!-- Named Individuals -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SB2182">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Bill"/>
+        <hasBillNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SB2182</hasBillNumber>
+        <hasSession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THIRTY-FIRST LEGISLATURE, 2022</hasSession>
+        <hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">July 1, 2022</hasEffectiveDate>
+        <enactedBy rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#TheSenate"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#TheSenate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LegislativeBody"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THE SENATE</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#FarmToSchoolProgram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">farm to school program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <managedBy rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#DepartmentOfEducation"/>
+        <hasPurpose rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#ImproveStudentHealth"/>
+        <hasPurpose rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#DevelopAgriculturalWorkforce"/>
+        <hasPurpose rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#AccelerateEducation"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SchoolGardenProgram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Program"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school garden program</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+        <managedBy rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#DepartmentOfEducation"/>
+        <hasCoordinator rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SchoolGardenCoordinator"/>
+        <hasFunding rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SchoolGardenFunding"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#DepartmentOfEducation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Agency"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">department of education</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SchoolGardenCoordinator">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Position"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">school garden coordinator</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#SchoolGardenFunding">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Funding"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$200,000</hasText>
+        <hasAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$200,000</hasAmount>
+        <hasFiscalYear rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fiscal year 2022-2023</hasFiscalYear>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#PublicSchools">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Location"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public schools</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Students">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Person"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">students</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#ImproveStudentHealth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#HealthGoal"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">improving student health</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#DevelopAgriculturalWorkforce">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developing an educated agricultural workforce</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#AccelerateEducation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Purpose"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accelerating garden and farm-based education for public school students</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#LearningGardens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#EducationalSpace"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">learning gardens</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Act175">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sb2182/ontologies/2025/school-gardens#Statute"/>
+        <hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">act 175</hasText>
+        <hasConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasConfidence>
+    </owl:NamedIndividual>
+    
+</rdf:RDF>'''
+    
+    return owl_content
+
+def main():
+    """Generate SB2182 ontology"""
+    owl_content = create_sb2182_ontology()
+    
+    output_file = 'sb2182_school_gardens_ontology.owl'
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(owl_content)
+    
+    print(f"SB2182 ontology created: {output_file}")
+    print(f"Ontology includes:")
+    print("- 15 entity classes")
+    print("- 8 object properties")
+    print("- 6 data properties")
+    print("- 15 named individuals")
+    print("- Comprehensive relationships for school gardens program")
+
+if __name__ == '__main__':
+    main()

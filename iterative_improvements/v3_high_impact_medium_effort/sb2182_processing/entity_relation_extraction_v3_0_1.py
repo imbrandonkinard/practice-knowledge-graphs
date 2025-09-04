@@ -322,20 +322,6 @@ def run(v3_path: str, v3_0_1_path: str):
     if full_text:
         enhanced_entities = entity_patterns.extract_enhanced_entities(full_text)
         enhanced_relations = relation_patterns.extract_enhanced_relations(full_text)
-
-        # Add a top-level BILL entity that carries the full text and is referable
-        bill_entity = {
-            'text': 'Bill',
-            'type': 'BILL',
-            'ner': 'BILL',
-            'normalized_ner': 'bill',
-            'confidence': 0.99,
-            'context': full_text[:500],
-            'full_text': full_text,
-            'full_text_length': len(full_text),
-            'source': 'v3_0_1_bill_entity'
-        }
-        enhanced_entities.append(bill_entity)
         
         # Merge with existing entities and relations
         entities.extend(enhanced_entities)
@@ -369,8 +355,7 @@ def run(v3_path: str, v3_0_1_path: str):
             "Manual annotation insights integration",
             "New entity types: LEGISLATIVE_BODY, SESSION_IDENTIFIER, LOCATION, PERSON, INTEREST_GROUP, HEALTH_GOAL, LEGAL_SECTION",
             "Enhanced hierarchical entity relationships",
-            "Context-aware entity recognition improvements",
-            "Top-level BILL entity with full_text for cross-document linking"
+            "Context-aware entity recognition improvements"
         ],
         'manual_annotation_insights': {
             'new_entity_types': ['LEGISLATIVE_BODY', 'SESSION_IDENTIFIER', 'LOCATION', 'PERSON', 'INTEREST_GROUP', 'HEALTH_GOAL', 'LEGAL_SECTION'],

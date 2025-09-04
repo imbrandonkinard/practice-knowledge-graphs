@@ -1,0 +1,596 @@
+{
+  "version": "sb2182_v3_0_1_enhanced_with_manual_annotations",
+  "bill_info": {
+    "bill_number": "SB2182",
+    "session": "THIRTY-FIRST LEGISLATURE, 2022",
+    "title": "RELATING TO SCHOOL GARDENS",
+    "chamber": "THE SENATE",
+    "effective_date": "July 1, 2022"
+  },
+  "entities": [
+    {
+      "text": "farm to school program",
+      "type": "PROGRAM",
+      "start_char": 430,
+      "end_char": 452,
+      "ner": "PROGRAM",
+      "normalized_ner": "farm to school program",
+      "confidence": 0.95,
+      "context": "ly implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "school garden program",
+      "type": "PROGRAM",
+      "start_char": 1607,
+      "end_char": 1628,
+      "ner": "PROGRAM",
+      "normalized_ner": "school garden program",
+      "confidence": 0.95,
+      "context": " resources for schools interested in developing a school garden program.\nSECTION 2.There is appropriated out of the gener",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "department of education",
+      "type": "AGENCY",
+      "start_char": 285,
+      "end_char": 308,
+      "ner": "AGENCY",
+      "normalized_ner": "department of education",
+      "confidence": 0.95,
+      "context": "ool garden coordinator position placed within the department of education's office of curriculum and instructional design i",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "legislature",
+      "type": "AGENCY",
+      "start_char": 38,
+      "end_char": 49,
+      "ner": "AGENCY",
+      "normalized_ner": "legislature",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATI",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "state of hawaii",
+      "type": "AGENCY",
+      "start_char": 63,
+      "end_char": 78,
+      "ner": "AGENCY",
+      "normalized_ner": "state of hawaii",
+      "confidence": 0.95,
+      "context": "B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "$200,000",
+      "type": "GOAL",
+      "start_char": 1724,
+      "end_char": 1732,
+      "ner": "GOAL",
+      "normalized_ner": "$200,000",
+      "confidence": 0.95,
+      "context": "eneral revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "fiscal year 2022-2023",
+      "type": "GOAL",
+      "start_char": 1776,
+      "end_char": 1797,
+      "ner": "GOAL",
+      "normalized_ner": "fiscal year 2022-2023",
+      "confidence": 0.95,
+      "context": "00,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "s.b. no. 2182",
+      "type": "STATUTE",
+      "start_char": 11,
+      "end_char": 24,
+      "ner": "STATUTE",
+      "normalized_ner": "s.b. no. 2182",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HA",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "act 175",
+      "type": "STATUTE",
+      "start_char": 466,
+      "end_char": 473,
+      "ner": "STATUTE",
+      "normalized_ner": "act 175",
+      "confidence": 0.95,
+      "context": "of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021:\nThe legislature fur",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "developing an educated agricultural workforce",
+      "type": "PURPOSE",
+      "start_char": 2298,
+      "end_char": 2343,
+      "ner": "PURPOSE",
+      "normalized_ner": "developing an educated agricultural workforce",
+      "confidence": 0.95,
+      "context": "oses of this Act.\n(1)Improving student health;\n(2)Developing an educated agricultural workforce; and\n(3)Accelerating garden and farm-based educat",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "protecting student health",
+      "type": "PURPOSE",
+      "start_char": 647,
+      "end_char": 672,
+      "ner": "PURPOSE",
+      "normalized_ner": "protecting student health",
+      "confidence": 0.95,
+      "context": "campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, a",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "recovering and advancing academic achievement",
+      "type": "PURPOSE",
+      "start_char": 674,
+      "end_char": 719,
+      "ner": "PURPOSE",
+      "normalized_ner": "recovering and advancing academic achievement",
+      "confidence": 0.95,
+      "context": "lays a central role in protecting student health, recovering and advancing academic achievement, and strengthening social-emotional well-being.Th",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "strengthening social-emotional well-being",
+      "type": "PURPOSE",
+      "start_char": 725,
+      "end_char": 766,
+      "ner": "PURPOSE",
+      "normalized_ner": "strengthening social-emotional well-being",
+      "confidence": 0.95,
+      "context": "ecovering and advancing academic achievement, and strengthening social-emotional well-being.The farm to school program seeks to equitably imp",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "senate",
+      "type": "LEGISLATIVE_BODY",
+      "start_char": 4,
+      "end_char": 10,
+      "ner": "LEGISLATIVE_BODY",
+      "normalized_ner": "senate",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D.",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "legislature",
+      "type": "LEGISLATIVE_BODY",
+      "start_char": 38,
+      "end_char": 49,
+      "ner": "LEGISLATIVE_BODY",
+      "normalized_ner": "legislature",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATI",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "thirty-first legislature, 2022",
+      "type": "SESSION_IDENTIFIER",
+      "start_char": 25,
+      "end_char": 55,
+      "ner": "SESSION_IDENTIFIER",
+      "normalized_ner": "thirty-first legislature, 2022",
+      "confidence": 0.95,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "public schools",
+      "type": "LOCATION",
+      "start_char": 1572,
+      "end_char": 1579,
+      "ner": "LOCATION",
+      "normalized_ner": "schools",
+      "confidence": 0.95,
+      "context": "ovide technical support and startup resources for schools interested in developing a school garden program.",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "school campuses",
+      "type": "LOCATION",
+      "start_char": 590,
+      "end_char": 605,
+      "ner": "LOCATION",
+      "normalized_ner": "school campuses",
+      "confidence": 0.95,
+      "context": "he increased use of learning gardens and farms on school campuses across the State plays a central role in protecti",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "students",
+      "type": "PERSON",
+      "start_char": 2415,
+      "end_char": 2423,
+      "ner": "PERSON",
+      "normalized_ner": "students",
+      "confidence": 0.95,
+      "context": "garden and farm-based education for public school students.\nSECTION 3.This Act shall take effect on July 1, ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "children",
+      "type": "PERSON",
+      "start_char": 877,
+      "end_char": 885,
+      "ner": "PERSON",
+      "normalized_ner": "children",
+      "confidence": 0.95,
+      "context": "ng, mental and physical health, and happiness for children and adults through the increased use of outdoor e",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "school garden coordinator",
+      "type": "PERSON",
+      "start_char": 232,
+      "end_char": 257,
+      "ner": "PERSON",
+      "normalized_ner": "school garden coordinator",
+      "confidence": 0.95,
+      "context": "CTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of educatio",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "adults",
+      "type": "PERSON",
+      "start_char": 890,
+      "end_char": 896,
+      "ner": "PERSON",
+      "normalized_ner": "adults",
+      "confidence": 0.95,
+      "context": "d physical health, and happiness for children and adults through the increased use of outdoor educational ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.this also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.a national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health",
+      "type": "HEALTH_GOAL",
+      "start_char": 813,
+      "end_char": 1324,
+      "ner": "HEALTH_GOAL",
+      "normalized_ner": "improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.this also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.a national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health",
+      "confidence": 0.95,
+      "context": "ing.The farm to school program seeks to equitably improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.This also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.A national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health and well-being.\nThe purpose of this Act is to est",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "protecting student health",
+      "type": "HEALTH_GOAL",
+      "start_char": 647,
+      "end_char": 672,
+      "ner": "HEALTH_GOAL",
+      "normalized_ner": "protecting student health",
+      "confidence": 0.95,
+      "context": "campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, a",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "mental and physical health",
+      "type": "HEALTH_GOAL",
+      "start_char": 831,
+      "end_char": 857,
+      "ner": "HEALTH_GOAL",
+      "normalized_ner": "mental and physical health",
+      "confidence": 0.95,
+      "context": "hool program seeks to equitably improve learning, mental and physical health, and happiness for children and adults through th",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "social-emotional well-being",
+      "type": "HEALTH_GOAL",
+      "start_char": 739,
+      "end_char": 766,
+      "ner": "HEALTH_GOAL",
+      "normalized_ner": "social-emotional well-being",
+      "confidence": 0.95,
+      "context": "advancing academic achievement, and strengthening social-emotional well-being.The farm to school program seeks to equitably imp",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "section 1",
+      "type": "LEGAL_SECTION",
+      "start_char": 180,
+      "end_char": 189,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 1",
+      "confidence": 0.95,
+      "context": "NACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "section 2",
+      "type": "LEGAL_SECTION",
+      "start_char": 1630,
+      "end_char": 1639,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 2",
+      "confidence": 0.95,
+      "context": "interested in developing a school garden program.\nSECTION 2.There is appropriated out of the general revenues",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "section 3",
+      "type": "LEGAL_SECTION",
+      "start_char": 2425,
+      "end_char": 2434,
+      "ner": "LEGAL_SECTION",
+      "normalized_ner": "section 3",
+      "confidence": 0.95,
+      "context": " farm-based education for public school students.\nSECTION 3.This Act shall take effect on July 1, 2022.\nRepor",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "school garden coordinator",
+      "type": "POSITION",
+      "start_char": 232,
+      "end_char": 257,
+      "ner": "POSITION",
+      "normalized_ner": "school garden coordinator",
+      "confidence": 0.95,
+      "context": "CTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of educatio",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "coordinator position",
+      "type": "POSITION",
+      "start_char": 246,
+      "end_char": 266,
+      "ner": "POSITION",
+      "normalized_ner": "coordinator position",
+      "confidence": 0.95,
+      "context": "gislature finds that establishing a school garden coordinator position placed within the department of education's offic",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "full-time equivalent",
+      "type": "POSITION",
+      "start_char": 1806,
+      "end_char": 1826,
+      "ner": "POSITION",
+      "normalized_ner": "full-time equivalent",
+      "confidence": 0.95,
+      "context": "ay be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coo",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "1.0 fte",
+      "type": "POSITION",
+      "start_char": 1828,
+      "end_char": 1835,
+      "ner": "POSITION",
+      "normalized_ner": "1.0 fte",
+      "confidence": 0.95,
+      "context": "scal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coordinator ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "$200,000",
+      "type": "FUNDING",
+      "start_char": 1724,
+      "end_char": 1732,
+      "ner": "FUNDING",
+      "normalized_ner": "$200,000",
+      "confidence": 0.95,
+      "context": "eneral revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "fiscal year 2022-2023",
+      "type": "FUNDING",
+      "start_char": 1776,
+      "end_char": 1797,
+      "ner": "FUNDING",
+      "normalized_ner": "fiscal year 2022-2023",
+      "confidence": 0.95,
+      "context": "00,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "appropriation",
+      "type": "FUNDING",
+      "start_char": 2563,
+      "end_char": 2576,
+      "ner": "FUNDING",
+      "normalized_ner": "appropriation",
+      "confidence": 0.95,
+      "context": "ion; School Gardens; School Gardens Coordinator;\n Appropriation\nDescription: Establishes a School Garden Coordina",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "general revenues",
+      "type": "FUNDING",
+      "start_char": 1673,
+      "end_char": 1689,
+      "ner": "FUNDING",
+      "normalized_ner": "general revenues",
+      "confidence": 0.95,
+      "context": "ogram.\nSECTION 2.There is appropriated out of the general revenues of the State of Hawaii the sum of $200,000 or so ",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "startup resources",
+      "type": "FUNDING",
+      "start_char": 1550,
+      "end_char": 1567,
+      "ner": "FUNDING",
+      "normalized_ner": "startup resources",
+      "confidence": 0.95,
+      "context": "uctional design, to provide technical support and startup resources for schools interested in developing a school gar",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "school gardens",
+      "type": "EDUCATIONAL_SPACE",
+      "start_char": 560,
+      "end_char": 576,
+      "ner": "EDUCATIONAL_SPACE",
+      "normalized_ner": "learning gardens",
+      "confidence": 0.95,
+      "context": "gislature further finds that the increased use of learning gardens and farms on school campuses across the State pla",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "outdoor educational spaces",
+      "type": "EDUCATIONAL_SPACE",
+      "start_char": 926,
+      "end_char": 952,
+      "ner": "EDUCATIONAL_SPACE",
+      "normalized_ner": "outdoor educational spaces",
+      "confidence": 0.95,
+      "context": " children and adults through the increased use of outdoor educational spaces.This also reduces the burden on indoor classrooms",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "farm-based education",
+      "type": "EDUCATIONAL_SPACE",
+      "start_char": 2376,
+      "end_char": 2396,
+      "ner": "EDUCATIONAL_SPACE",
+      "normalized_ner": "farm-based education",
+      "confidence": 0.95,
+      "context": "ultural workforce; and\n(3)Accelerating garden and farm-based education for public school students.\nSECTION 3.This Act sh",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "text": "sb2182",
+      "type": "BILL",
+      "ner": "BILL",
+      "normalized_ner": "sb2182",
+      "confidence": 0.99,
+      "context": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 20",
+      "full_text": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021:\nThe legislature further finds that the increased use of learning gardens and farms on school campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, and strengthening social-emotional well-being.The farm to school program seeks to equitably improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.This also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.A national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health and well-being.\nThe purpose of this Act is to establish and fund the position of school garden coordinator, within the department of education's office of curriculum and instructional design, to provide technical support and startup resources for schools interested in developing a school garden program.\nSECTION 2.There is appropriated out of the general revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coordinator to be placed within the department of education's office of curriculum and instructional design; provided that the funds may also be used for expenses related to the provision of technical support and startup resources for schools interested in developing a school garden program.\nThe sum appropriated shall be expended by the department of education for the purposes of this Act.\n(1)Improving student health;\n(2)Developing an educated agricultural workforce; and\n(3)Accelerating garden and farm-based education for public school students.\nSECTION 3.This Act shall take effect on July 1, 2022.\nReport Title: Department of Education; School Gardens; School Gardens Coordinator;\n Appropriation\nDescription: Establishes a School Garden Coordinator position within\n the Department of Education.Makes an appropriation\n to fund the position and related expenses.(CD1)",
+      "full_text_length": 2746,
+      "source": "sb2182_v3_0_1_bill_entity"
+    }
+  ],
+  "relations": [
+    {
+      "subject": "school gardens",
+      "predicate": "protects",
+      "object": "student health",
+      "confidence": 0.95,
+      "context": "eased use of learning gardens and farms on school campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, and strengthening social-emotional well-being.The f",
+      "relation_type": "HEALTH_GOAL",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "subject": "department of education",
+      "predicate": "establishes position",
+      "object": "school garden coordinator",
+      "confidence": 0.95,
+      "context": "CTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed",
+      "relation_type": "LEADERSHIP",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "subject": "bill",
+      "predicate": "references",
+      "object": "act 175, session laws of hawaii 2021",
+      "confidence": 0.95,
+      "context": " to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021:\nThe legislature further finds that the increased use of learning gardens and farms ",
+      "relation_type": "LEGAL_REFERENCE",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "subject": "state of hawaii",
+      "predicate": "appropriates",
+      "object": "$200,000 for fiscal year 2022-2023",
+      "confidence": 0.95,
+      "context": " startup resources for schools interested in developing a school garden program.\nSECTION 2.There is appropriated out of the general revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coordinator to be placed",
+      "relation_type": "FUNDING",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "subject": "state of hawaii",
+      "predicate": "funds",
+      "object": "school garden coordinator position",
+      "confidence": 0.95,
+      "context": " definitively linked with better health and well-being.\nThe purpose of this Act is to establish and fund the position of school garden coordinator, within the department of education's office of curriculum and instructional design, to provide tec",
+      "relation_type": "FUNDING",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    },
+    {
+      "subject": "school gardens",
+      "predicate": "provides",
+      "object": "hands-on learning opportunities",
+      "confidence": 0.95,
+      "context": "oor educational spaces.This also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.A national study of nearly twen",
+      "relation_type": "EDUCATIONAL_BENEFIT",
+      "source": "enhanced_patterns_sb2182_v3_0_1"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "THE SENATE\nS.B. NO. 2182\nTHIRTY-FIRST LEGISLATURE, 2022\nS.D. 1\nSTATE OF HAWAII\nH.D. 1\nC.D. 1\nRELATING TO SCHOOL\n GARDENS.\nBE IT\n ENACTED BY THE LEGISLATURE OF THE STATE OF HAWAII:\nSECTION 1.The legislature finds that establishing a school garden coordinator position placed within the department of education's office of curriculum and instructional design is needed to successfully implement the following purposes of the Hawaii farm to school program set forth by Act 175, Session Laws of Hawaii 2021:\nThe legislature further finds that the increased use of learning gardens and farms on school campuses across the State plays a central role in protecting student health, recovering and advancing academic achievement, and strengthening social-emotional well-being.The farm to school program seeks to equitably improve learning, mental and physical health, and happiness for children and adults through the increased use of outdoor educational spaces.This also reduces the burden on indoor classrooms while providing fresh air, hands-on learning opportunities, and the health benefits associated with increased access to nature.A national study of nearly twenty thousand participants revealed that spending two or more hours per week in nature, either all at once or cumulatively, is definitively linked with better health and well-being.\nThe purpose of this Act is to establish and fund the position of school garden coordinator, within the department of education's office of curriculum and instructional design, to provide technical support and startup resources for schools interested in developing a school garden program.\nSECTION 2.There is appropriated out of the general revenues of the State of Hawaii the sum of $200,000 or so much thereof as may be necessary for fiscal year 2022-2023 for one full-time equivalent (1.0 FTE) permanent position of school garden coordinator to be placed within the department of education's office of curriculum and instructional design; provided that the funds may also be used for expenses related to the provision of technical support and startup resources for schools interested in developing a school garden program.\nThe sum appropriated shall be expended by the department of education for the purposes of this Act.\n(1)Improving student health;\n(2)Developing an educated agricultural workforce; and\n(3)Accelerating garden and farm-based education for public school students.\nSECTION 3.This Act shall take effect on July 1, 2022.\nReport Title: Department of Education; School Gardens; School Gardens Coordinator;\n Appropriation\nDescription: Establishes a School Garden Coordinator position within\n the Department of Education.Makes an appropriation\n to fund the position and related expenses.(CD1)"
+    }
+  ],
+  "metadata": {
+    "extraction_method": "enhanced_corenlp_sb2182_v3_0_1",
+    "total_entities": 42,
+    "total_relations": 6,
+    "entity_types": [
+      "EDUCATIONAL_SPACE",
+      "AGENCY",
+      "PROGRAM",
+      "GOAL",
+      "LEGISLATIVE_BODY",
+      "PERSON",
+      "POSITION",
+      "SESSION_IDENTIFIER",
+      "LEGAL_SECTION",
+      "HEALTH_GOAL",
+      "STATUTE",
+      "PURPOSE",
+      "BILL",
+      "FUNDING",
+      "LOCATION"
+    ],
+    "relation_types": [
+      "HEALTH_GOAL",
+      "LEADERSHIP",
+      "FUNDING",
+      "EDUCATIONAL_BENEFIT",
+      "LEGAL_REFERENCE"
+    ],
+    "sources": [
+      "enhanced_patterns_sb2182_v3_0_1"
+    ],
+    "enhancements": [
+      "Enhanced CoreNLP annotators (lemma, openie)",
+      "Custom NER patterns for legislative domain",
+      "Enhanced relation patterns for bill-specific relationships",
+      "Improved confidence scoring",
+      "OpenIE integration for additional relations",
+      "Manual annotation insights integration",
+      "New entity types: LEGISLATIVE_BODY, SESSION_IDENTIFIER, LOCATION, PERSON, INTEREST_GROUP, HEALTH_GOAL, LEGAL_SECTION, POSITION, FUNDING, EDUCATIONAL_SPACE",
+      "Enhanced hierarchical entity relationships",
+      "Context-aware entity recognition improvements",
+      "SB2182-specific patterns for school gardens and coordinator positions"
+    ],
+    "manual_annotation_insights": {
+      "new_entity_types": [
+        "LEGISLATIVE_BODY",
+        "SESSION_IDENTIFIER",
+        "LOCATION",
+        "PERSON",
+        "INTEREST_GROUP",
+        "HEALTH_GOAL",
+        "LEGAL_SECTION",
+        "POSITION",
+        "FUNDING",
+        "EDUCATIONAL_SPACE"
+      ],
+      "enhanced_patterns": "Based on manual annotations and SB2182-specific content",
+      "improved_accuracy": "Higher confidence scoring for manually validated patterns",
+      "bill_specific_enhancements": "Added patterns for school gardens, coordinator positions, and educational spaces"
+    }
+  }
+}
