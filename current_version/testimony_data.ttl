@@ -1,0 +1,584 @@
+@prefix : <http://example.org/farm-to-school-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/farm-to-school-ontology> .
+
+#################################################################
+#    New Classes for Testimony Data
+#################################################################
+
+### Testimony Class
+:Testimony rdf:type owl:Class ;
+          rdfs:comment "Legislative testimony provided on bills" ;
+          rdfs:label "Testimony" .
+
+### Organization Class  
+:Organization rdf:type owl:Class ;
+             rdfs:comment "Organizations and institutions that provide testimony" ;
+             rdfs:label "Organization" .
+
+### Position Class
+:Position rdf:type owl:Class ;
+         rdfs:comment "Stance or position taken in testimony" ;
+         rdfs:label "Position" .
+
+### Bill Class
+:Bill rdf:type owl:Class ;
+      rdfs:comment "Legislative bills under consideration" ;
+      rdfs:label "Bill" .
+
+#################################################################
+#    New Object Properties
+#################################################################
+
+### provides_testimony
+:provides_testimony rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relationship between organization/person and testimony" ;
+                   rdfs:label "provides testimony" .
+
+### testifies_on
+:testifies_on rdf:type owl:ObjectProperty ;
+             rdfs:comment "Relationship between testimony and bill" ;
+             rdfs:label "testifies on" .
+
+### has_position
+:has_position rdf:type owl:ObjectProperty ;
+             rdfs:comment "Position taken in testimony" ;
+             rdfs:label "has position" .
+
+### has_source
+:has_source rdf:type owl:ObjectProperty ;
+           rdfs:comment "Source document for testimony" ;
+           rdfs:label "has source" .
+
+#################################################################
+#    New Data Properties
+#################################################################
+
+### hasComments
+:hasComments rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Main comments or rationale from testimony" ;
+            rdfs:label "has comments" .
+
+### hasSourceFile
+:hasSourceFile rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Source file reference" ;
+              rdfs:label "has source file" .
+
+#################################################################
+#    Bills
+#################################################################
+
+:HB767_SD1 rdf:type owl:NamedIndividual ,
+                    :Bill ;
+           rdfs:label "HB767_SD1" .
+
+:SB2182_HD1 rdf:type owl:NamedIndividual ,
+                     :Bill ;
+            rdfs:label "SB2182_HD1" .
+
+:SB666 rdf:type owl:NamedIndividual ,
+                :Bill ;
+       rdfs:label "SB666" .
+
+:SB1548 rdf:type owl:NamedIndividual ,
+                 :Bill ;
+        rdfs:label "SB1548" .
+
+:HB1293 rdf:type owl:NamedIndividual ,
+                 :Bill ;
+        rdfs:label "HB1293" .
+
+#################################################################
+#    Organizations
+#################################################################
+
+:Department_of_Education_Testimony rdf:type owl:NamedIndividual ,
+                                           :Organization ;
+                                  rdfs:label "Department of Education (DOE), Dr. Kishimoto" .
+
+:Department_of_Agriculture_Testimony rdf:type owl:NamedIndividual ,
+                                             :Organization ;
+                                    rdfs:label "Department of Agriculture (DOA), Phyllis Shimabukuro-Geiser" .
+
+:Hawaii_State_Youth_Commission rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                              rdfs:label "Hawai'i State Youth Commission, Shwe Win" .
+
+:Hawaii_Primary_Care_Association rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                 rdfs:label "Hawaii Primary Care Association" .
+
+:Hawaii_Farm_Bureau rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Hawaii Farm Bureau" .
+
+:Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                      rdfs:label "Local Food Coalition" .
+
+:Hawaii_Cattlemens_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawaii Cattlemen's Council" .
+
+:Land_Use_Research_Foundation rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                              rdfs:label "Land Use Research Foundation (LURF)" .
+
+:Hawaii_Alliance_for_Progressive_Action rdf:type owl:NamedIndividual ,
+                                               :Organization ;
+                                        rdfs:label "Hawai'i Alliance for Progressive Action (HAPA)" .
+
+:Hawaii_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm to School Hui, Lydi Bernal" .
+
+:Ulupono_Initiative rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Ulupono Initiative, Micah Munekata" .
+
+:Climate_Protectors_Hawaii rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Climate Protectors Hawai'i, Ted Bohlen" .
+
+:350Hawaii rdf:type owl:NamedIndividual ,
+                   :Organization ;
+           rdfs:label "350Hawaii, Sherry Pollack" .
+
+:Blue_Zones_Project rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Blue Zones Project, Colby Takeda" .
+
+:Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                          :Organization ;
+                   rdfs:label "Ka Ohana O Na Pua, Nancy Redfeather" .
+
+:UH_West_Oahu_Food_Policy_Internship rdf:type owl:NamedIndividual ,
+                                             :Organization ;
+                                      rdfs:label "UH West O'ahu Food+ Policy Internship" .
+
+#################################################################
+#    Positions
+#################################################################
+
+:Support rdf:type owl:NamedIndividual ,
+                 :Position ;
+         rdfs:label "Support" .
+
+:Support_with_Amendment rdf:type owl:NamedIndividual ,
+                               :Position ;
+                        rdfs:label "Support w/ Amendment" .
+
+:Comments rdf:type owl:NamedIndividual ,
+                  :Position ;
+          rdfs:label "Comments" .
+
+:Strong_Support rdf:type owl:NamedIndividual ,
+                       :Position ;
+                rdfs:label "Strong Support" .
+
+:Recommend_Amendments rdf:type owl:NamedIndividual ,
+                             :Position ;
+                      rdfs:label "Recommend Amendments" .
+
+#################################################################
+#    Testimonies - HB767_SD1
+#################################################################
+
+:testimony_HB767_DOE rdf:type owl:NamedIndividual ,
+                            :Testimony ;
+                    :provides_testimony :Department_of_Education_Testimony ;
+                    :testifies_on :HB767_SD1 ;
+                    :has_position :Support ;
+                    :hasComments "Supports moving the program to DOE, wants baseline assessment, requests dedicated funding for coordinator position. Requests resources for managing new goals." ;
+                    :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_DOA rdf:type owl:NamedIndividual ,
+                            :Testimony ;
+                    :provides_testimony :Department_of_Agriculture_Testimony ;
+                    :testifies_on :HB767_SD1 ;
+                    :has_position :Support ;
+                    :hasComments "Supports statutory change; notes coordinator position already exists at DOE since 2018. Defers feasibility of 30% local sourcing goal to DOE." ;
+                    :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Youth_Commission rdf:type owl:NamedIndividual ,
+                                         :Testimony ;
+                                 :provides_testimony :Hawaii_State_Youth_Commission ;
+                                 :testifies_on :HB767_SD1 ;
+                                 :has_position :Support ;
+                                 :hasComments "Highlights carbon footprint concerns, need for sustainability; supports 30% local sourcing goal, access to fresh food." ;
+                                 :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Primary_Care rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Hawaii_Primary_Care_Association ;
+                             :testifies_on :HB767_SD1 ;
+                             :has_position :Support ;
+                             :hasComments "Stresses food insecurity, health benefits, and economic sustainability from local food procurement. Urges passage." ;
+                             :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Farm_Bureau rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :Hawaii_Farm_Bureau ;
+                            :testifies_on :HB767_SD1 ;
+                            :has_position :Support ;
+                            :hasComments "Importance of agriculture education, need for procurement reforms, supports local sourcing, urges support for farm to school." ;
+                            :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                                             :Testimony ;
+                                     :provides_testimony :Local_Food_Coalition ;
+                                     :testifies_on :HB767_SD1 ;
+                                     :has_position :Support ;
+                                     :hasComments "Supports 30% local sourcing goal with annual reporting; notes only 3% is local now. Recommends geographic preference, food hubs, localized strategy." ;
+                                     :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Cattlemens_Council rdf:type owl:NamedIndividual ,
+                                           :Testimony ;
+                                   :provides_testimony :Hawaii_Cattlemens_Council ;
+                                   :testifies_on :HB767_SD1 ;
+                                   :has_position :Support ;
+                                   :hasComments "Highlights local beef, food security, and economic impact. Supports increased local food purchasing for health and habits." ;
+                                   :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_LURF rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Land_Use_Research_Foundation ;
+                     :testifies_on :HB767_SD1 ;
+                     :has_position :Support ;
+                     :hasComments "Notes bill's consistency with IAL laws, supports sustainability, local food, disaster preparedness, and agricultural career development." ;
+                     :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_HAPA rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Hawaii_Alliance_for_Progressive_Action ;
+                     :testifies_on :HB767_SD1 ;
+                     :has_position :Support ;
+                     :hasComments "Advocates for local food system, economic support, cultural foods, reduced carbon emissions. Urges support for program goals and local procurement." ;
+                     :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                           :Testimony ;
+                                   :provides_testimony :Hawaii_Farm_to_School_Hui ;
+                                   :testifies_on :HB767_SD1 ;
+                                   :has_position :Support_with_Amendment ;
+                                   :hasComments "Requests amendment: measure goal by % of total food cost. Stresses need for farm to school coordinator and annual reporting." ;
+                                   :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Ulupono rdf:type owl:NamedIndividual ,
+                                :Testimony ;
+                        :provides_testimony :Ulupono_Initiative ;
+                        :testifies_on :HB767_SD1 ;
+                        :has_position :Support_with_Amendment ;
+                        :hasComments "Notes coordination need at DOE, recommends amending to measure by % of total food cost, documents pilot project successes." ;
+                        :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Climate_Protectors rdf:type owl:NamedIndividual ,
+                                           :Testimony ;
+                                   :provides_testimony :Climate_Protectors_Hawaii ;
+                                   :testifies_on :HB767_SD1 ;
+                                   :has_position :Support ;
+                                   :hasComments "Cites climate change mitigation, food security, health benefits of local food sourcing, support for bill objectives." ;
+                                   :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_350Hawaii rdf:type owl:NamedIndividual ,
+                                  :Testimony ;
+                          :provides_testimony :350Hawaii ;
+                          :testifies_on :HB767_SD1 ;
+                          :has_position :Support ;
+                          :hasComments "Supports local farmers/producers, jobs, climate, and increased fresh produce. Urges passage of bill." ;
+                          :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Blue_Zones rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :Blue_Zones_Project ;
+                           :testifies_on :HB767_SD1 ;
+                           :has_position :Support_with_Amendment ;
+                           :hasComments "Supports 30% local sourcing goal, requests amendment to measure by % of total food cost, notes health and educational benefits of farm-to-school." ;
+                           :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                                           :Testimony ;
+                                   :provides_testimony :Ka_Ohana_O_Na_Pua ;
+                                   :testifies_on :HB767_SD1 ;
+                                   :has_position :Support ;
+                                   :hasComments "Asserts economic benefit for agriculture, health for keiki, and need for DOE kitchen investment and staff development." ;
+                                   :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_UH_West_Oahu rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :UH_West_Oahu_Food_Policy_Internship ;
+                             :testifies_on :HB767_SD1 ;
+                             :has_position :Support ;
+                             :hasComments "Emphasizes food security, food sovereignty, economic impact, urges recirculation of DOE food budget to local producers (~$33M forecast)." ;
+                             :has_source "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+#################################################################
+#    Testimonies - SB2182_HD1
+#################################################################
+
+:Department_of_Health rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Department of Health, Elizabeth Char" .
+
+:Department_of_Budget_and_Finance rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Department of Budget and Finance" .
+
+:Department_of_Education_SB2182 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:The_Outdoor_Circle rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "The Outdoor Circle, Winston Welch" .
+
+:Local_Food_Coalition_SB2182 rdf:type owl:NamedIndividual ,
+                                    :Organization ;
+                             rdfs:label "Local Food Coalition" .
+
+:Hawaii_Farm_Bureau_SB2182 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm Bureau, Brian Miyamoto" .
+
+:Ka_Ohana_O_Na_Pua_SB2182 rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                          rdfs:label "Ka Ohana O Na Pua, Nancy Redfeather" .
+
+:Hawaii_Farm_to_School_Hui_SB2182 rdf:type owl:NamedIndividual ,
+                                          :Organization ;
+                                  rdfs:label "Hawai'i Farm to School Hui, Lydi Bernal" .
+
+:Center_for_Getting_Things_Started rdf:type owl:NamedIndividual ,
+                                          :Organization ;
+                                  rdfs:label "Center for Getting Things Started, Ming Wei Koh" .
+
+:Hawaii_Youth_Food_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Youth Food Council" .
+
+:Farm_to_Keiki rdf:type owl:NamedIndividual ,
+                       :Organization ;
+                rdfs:label "Farm to Keiki, Tiana Kamen" .
+
+:Hawaii_Food_Industry_Association rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Hawai'i Food Industry Association" .
+
+:Food_Policy_Internship rdf:type owl:NamedIndividual ,
+                               :Organization ;
+                        rdfs:label "Food+ Policy Internship" .
+
+:testimony_SB2182_DOH rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Department_of_Health ;
+                     :testifies_on :SB2182_HD1 ;
+                     :has_position :Support ;
+                     :hasComments "Supports establishing a school garden coordinator, details health and academic benefits of gardens, notes hands-on learning increases consumption." ;
+                     :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_DBF rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Department_of_Budget_and_Finance ;
+                     :testifies_on :SB2182_HD1 ;
+                     :has_position :Comments ;
+                     :hasComments "Notes federal COVID-19 related maintenance of effort requirements for education funding; asks to ensure compliance with ESSER/ARP rules." ;
+                     :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_DOE rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Department_of_Education_SB2182 ;
+                     :testifies_on :SB2182_HD1 ;
+                     :has_position :Support ;
+                     :hasComments "Supports school garden coordinator, aligns with Act 175 (2021), supports health, workforce, and garden-based education, requests budget alignment." ;
+                     :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Outdoor_Circle rdf:type owl:NamedIndividual ,
+                                        :Testimony ;
+                                :provides_testimony :The_Outdoor_Circle ;
+                                :testifies_on :SB2182_HD1 ;
+                                :has_position :Strong_Support ;
+                                :hasComments "Advocates for expanding garden education, connecting students to environment, fostering hands-on/ʻāina-based learning." ;
+                                :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                                               :Testimony ;
+                                       :provides_testimony :Local_Food_Coalition_SB2182 ;
+                                       :testifies_on :SB2182_HD1 ;
+                                       :has_position :Support ;
+                                       :hasComments "States critical role of coordinator for farm-to-school implementation, emphasizes equity, engagement, interest in agriculture." ;
+                                       :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Farm_Bureau rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Hawaii_Farm_Bureau_SB2182 ;
+                             :testifies_on :SB2182_HD1 ;
+                             :has_position :Support ;
+                             :hasComments "Highlights agriculture education, business skills, hands-on learning, and need for future farmers. Urges investment in agricultural education." ;
+                             :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                                            :Testimony ;
+                                    :provides_testimony :Ka_Ohana_O_Na_Pua_SB2182 ;
+                                    :testifies_on :SB2182_HD1 ;
+                                    :has_position :Support ;
+                                    :hasComments "Stresses 15+ years of grassroots work, importance of DOE support for garden-based learning, DOE position signals formal backing." ;
+                                    :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                             :Testimony ;
+                                     :provides_testimony :Hawaii_Farm_to_School_Hui_SB2182 ;
+                                     :testifies_on :SB2182_HD1 ;
+                                     :has_position :Strong_Support ;
+                                     :hasComments "Details garden and farm-based education benefits, requests committee to pass bill, outlines statewide network's priorities." ;
+                                     :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Center_for_Getting_Things_Started rdf:type owl:NamedIndividual ,
+                                                            :Testimony ;
+                                                    :provides_testimony :Center_for_Getting_Things_Started ;
+                                                    :testifies_on :SB2182_HD1 ;
+                                                    :has_position :Strong_Support ;
+                                                    :hasComments "Asserts that position is critical for garden/farm-based education, curricular development, teacher training, and equity." ;
+                                                    :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Youth_Food_Council rdf:type owl:NamedIndividual ,
+                                             :Testimony ;
+                                     :provides_testimony :Hawaii_Youth_Food_Council ;
+                                     :testifies_on :SB2182_HD1 ;
+                                     :has_position :Support ;
+                                     :hasComments "Highlights multi-disciplinary learning benefits, connects gardens to health, future workforce, advocates for permanent coordinator position." ;
+                                     :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Farm_to_Keiki rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Farm_to_Keiki ;
+                               :testifies_on :SB2182_HD1 ;
+                               :has_position :Support ;
+                               :hasComments "Affirms impact on achievement and health, notes gardens' need for coordinator to succeed, calls for state funding." ;
+                               :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Food_Industry_Association rdf:type owl:NamedIndividual ,
+                                                    :Testimony ;
+                                            :provides_testimony :Hawaii_Food_Industry_Association ;
+                                            :testifies_on :SB2182_HD1 ;
+                                            :has_position :Support ;
+                                            :hasComments "Emphasizes access, equity, capacity-building, and agricultural workforce development via DOE garden coordinator." ;
+                                            :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Food_Policy_Internship rdf:type owl:NamedIndividual ,
+                                                 :Testimony ;
+                                         :provides_testimony :Food_Policy_Internship ;
+                                         :testifies_on :SB2182_HD1 ;
+                                         :has_position :Support ;
+                                         :hasComments "Cites FoodCorps research, equity, and hands-on learning benefits, asks for capacity increase and garden integration." ;
+                                         :has_source "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+#################################################################
+#    Additional Bills and Testimonies (SB666, SB1548, HB1293)
+#################################################################
+
+# SB666 Organizations
+:Deputy_Attorney_Generals_Office rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                rdfs:label "Deputy Attorney General's Office" .
+
+:UH_Manoa_CTAHR rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "UH Manoa College of Tropical Agriculture (CTAHR)" .
+
+:Hawaii_Public_Health_Institute rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Hawai'i Public Health Institute" .
+
+:Hawaii_Farmers_Union rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Hawai'i Farmers Union" .
+
+:University_of_Hawaii_Professional_Assembly rdf:type owl:NamedIndividual ,
+                                                    :Organization ;
+                                            rdfs:label "University of Hawai'i Professional Assembly" .
+
+:Lydi_Morgan_Bernal rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Lydi Morgan Bernal (Individual)" .
+
+:Monica_Esquivel rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "Monica Esquivel (Individual)" .
+
+# SB666 Testimonies
+:testimony_SB666_DAG rdf:type owl:NamedIndividual ,
+                            :Testimony ;
+                    :provides_testimony :Deputy_Attorney_Generals_Office ;
+                    :testifies_on :SB666 ;
+                    :has_position :Comments ;
+                    :hasComments "Supports bill, requests explicit "statewide concern" language to comply with constitutional requirements on UH autonomy." ;
+                    :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_CTAHR rdf:type owl:NamedIndividual ,
+                              :Testimony ;
+                      :provides_testimony :UH_Manoa_CTAHR ;
+                      :testifies_on :SB666 ;
+                      :has_position :Support_with_Amendment ;
+                      :hasComments "Requests correction: position is on Moloka'i not Kaua'i. Supports coordinator and permanent extension agent positions as workforce investments." ;
+                      :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_PHI rdf:type owl:NamedIndividual ,
+                            :Testimony ;
+                    :provides_testimony :Hawaii_Public_Health_Institute ;
+                    :testifies_on :SB666 ;
+                    :has_position :Support_with_Amendment ;
+                    :hasComments "Cites need to strengthen workforce pipeline, correct position location, and fund coordinator position for bridging gaps in ag education." ;
+                    :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_Farm_Bureau rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :Hawaii_Farm_Bureau ;
+                            :testifies_on :SB666 ;
+                            :has_position :Support ;
+                            :hasComments "Notes average farmer age crisis, significance of ag education, supports permanent funding for positions as step towards food sustainability." ;
+                            :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_Farmers_Union rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :Hawaii_Farmers_Union ;
+                              :testifies_on :SB666 ;
+                              :has_position :Support ;
+                              :hasComments "Stresses essential role of extension agents, permanence for successful support, and need for statewide ag education coordination." ;
+                              :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_UH_Assembly rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :University_of_Hawaii_Professional_Assembly ;
+                            :testifies_on :SB666 ;
+                            :has_position :Support_with_Amendment ;
+                            :hasComments "Requests recurring funding for extension agent positions, supports passage with UH amendments." ;
+                            :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_Lydi_Bernal rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :Lydi_Morgan_Bernal ;
+                            :testifies_on :SB666 ;
+                            :has_position :Strong_Support ;
+                            :hasComments "Cites positions' criticality for farm to school program success, requests funding for extension agents in every DOE district." ;
+                            :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                                           :Testimony ;
+                                   :provides_testimony :Ka_Ohana_O_Na_Pua ;
+                                   :testifies_on :SB666 ;
+                                   :has_position :Support ;
+                                   :hasComments "Notes positions help achieve coordinated, statewide student access to ag/food systems education, and meet farm-to-school purposes (Act 175)." ;
+                                   :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+:testimony_SB666_Monica_Esquivel rdf:type owl:NamedIndividual ,
+                                        :Testimony ;
+                                :provides_testimony :Monica_Esquivel ;
+                                :testifies_on :SB666 ;
+                                :has_position :Support ;
+                                :hasComments "Calls for permanence for existing well-performing positions to accelerate expansion, supports coordinator, stresses practical impact." ;
+                                :has_source "SB666_TESTIMONY_HRE_01-30-25.pdf" .

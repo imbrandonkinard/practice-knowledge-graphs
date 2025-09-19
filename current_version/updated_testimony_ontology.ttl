@@ -1,0 +1,665 @@
+@prefix : <http://example.org/farm-to-school-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/farm-to-school-ontology> .
+
+#################################################################
+#    New Classes for Testimony Data
+#################################################################
+
+### Testimony Class
+:Testimony rdf:type owl:Class ;
+          rdfs:comment "Legislative testimony provided on bills" ;
+          rdfs:label "Testimony" .
+
+### Organization Class  
+:Organization rdf:type owl:Class ;
+             rdfs:comment "Organizations and institutions that provide testimony" ;
+             rdfs:label "Organization" .
+
+### Individual Class
+:Individual rdf:type owl:Class ;
+           rdfs:comment "Individual people who provide testimony" ;
+           rdfs:label "Individual" .
+
+### Position Class
+:Position rdf:type owl:Class ;
+         rdfs:comment "Stance or position taken in testimony" ;
+         rdfs:label "Position" .
+
+### Bill Class
+:Bill rdf:type owl:Class ;
+      rdfs:comment "Legislative bills under consideration" ;
+      rdfs:label "Bill" .
+
+### BillVersion Class
+:BillVersion rdf:type owl:Class ;
+            rdfs:comment "Specific versions of legislative bills" ;
+            rdfs:label "Bill Version" .
+
+#################################################################
+#    New Object Properties
+#################################################################
+
+### provides_testimony
+:provides_testimony rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relationship between individual and testimony" ;
+                   rdfs:label "provides testimony" .
+
+### testifies_on
+:testifies_on rdf:type owl:ObjectProperty ;
+             rdfs:comment "Relationship between testimony and bill version" ;
+             rdfs:label "testifies on" .
+
+### has_position
+:has_position rdf:type owl:ObjectProperty ;
+             rdfs:comment "Position taken in testimony" ;
+             rdfs:label "has position" .
+
+### represents_organization
+:represents_organization rdf:type owl:ObjectProperty ;
+                        rdfs:comment "Individual represents an organization in testimony" ;
+                        rdfs:label "represents organization" .
+
+### has_version
+:has_version rdf:type owl:ObjectProperty ;
+            rdfs:comment "Bill has specific version" ;
+            rdfs:label "has version" .
+
+### affiliated_with
+:affiliated_with rdf:type owl:ObjectProperty ;
+                rdfs:comment "Individual is affiliated with organization" ;
+                rdfs:label "affiliated with" .
+
+#################################################################
+#    New Data Properties
+#################################################################
+
+### hasComments
+:hasComments rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Main comments or rationale from testimony" ;
+            rdfs:label "has comments" .
+
+### hasSourceFile
+:hasSourceFile rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Source file reference" ;
+              rdfs:label "has source file" .
+
+### hasFullName
+:hasFullName rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Full name of individual" ;
+            rdfs:label "has full name" .
+
+### hasVersionIdentifier
+:hasVersionIdentifier rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Version identifier for bill" ;
+                     rdfs:label "has version identifier" .
+
+#################################################################
+#    Bills and Bill Versions
+#################################################################
+
+:HB767 rdf:type owl:NamedIndividual ,
+               :Bill ;
+       rdfs:label "HB767" .
+
+:HB767_HD2_SD1 rdf:type owl:NamedIndividual ,
+                       :BillVersion ;
+               :has_version :HB767 ;
+               :hasVersionIdentifier "HD2 SD1" ;
+               rdfs:label "HB767 HD2 SD1" .
+
+:SB2182 rdf:type owl:NamedIndividual ,
+                :Bill ;
+        rdfs:label "SB2182" .
+
+:SB2182_SD1_HD1 rdf:type owl:NamedIndividual ,
+                       :BillVersion ;
+               :has_version :SB2182 ;
+               :hasVersionIdentifier "SD1 HD1" ;
+               rdfs:label "SB2182 SD1 HD1" .
+
+:SB666 rdf:type owl:NamedIndividual ,
+               :Bill ;
+       rdfs:label "SB666" .
+
+:SB1548 rdf:type owl:NamedIndividual ,
+                :Bill ;
+        rdfs:label "SB1548" .
+
+:HB1293 rdf:type owl:NamedIndividual ,
+                :Bill ;
+        rdfs:label "HB1293" .
+
+#################################################################
+#    Organizations
+#################################################################
+
+:Hawaii_Department_of_Education rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Hawaii Department of Education" .
+
+:Hawaii_Department_of_Agriculture rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Hawaii Department of Agriculture" .
+
+:Hawaii_State_Youth_Commission rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                              rdfs:label "Hawaii State Youth Commission" .
+
+:Hawaii_Primary_Care_Association rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                 rdfs:label "Hawaii Primary Care Association" .
+
+:Hawaii_Farm_Bureau rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Hawaii Farm Bureau" .
+
+:Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                      rdfs:label "Local Food Coalition" .
+
+:Hawaii_Cattlemens_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawaii Cattlemen's Council" .
+
+:Land_Use_Research_Foundation rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                              rdfs:label "Land Use Research Foundation" .
+
+:Hawaii_Alliance_for_Progressive_Action rdf:type owl:NamedIndividual ,
+                                               :Organization ;
+                                        rdfs:label "Hawaii Alliance for Progressive Action" .
+
+:Hawaii_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawaii Farm to School Hui" .
+
+:Ulupono_Initiative rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Ulupono Initiative" .
+
+:Climate_Protectors_Hawaii rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Climate Protectors Hawaii" .
+
+:350Hawaii_org rdf:type owl:NamedIndividual ,
+                       :Organization ;
+               rdfs:label "350Hawaii.org" .
+
+:Blue_Zones_Project rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Blue Zones Project" .
+
+:Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                          :Organization ;
+                   rdfs:label "Ka Ohana O Na Pua" .
+
+:Food_Policy_Internship_UHWO rdf:type owl:NamedIndividual ,
+                                    :Organization ;
+                            rdfs:label "Food+ Policy Internship (UHWO)" .
+
+:Hawaii_Department_of_Health rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                             rdfs:label "Hawaii Department of Health" .
+
+:Budget_Finance_Dept rdf:type owl:NamedIndividual ,
+                            :Organization ;
+                    rdfs:label "Budget & Finance Dept." .
+
+:Hawaii_DOE rdf:type owl:NamedIndividual ,
+                    :Organization ;
+            rdfs:label "Hawaii DOE" .
+
+:The_Outdoor_Circle rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "The Outdoor Circle" .
+
+:Center_for_Getting_Things_Started rdf:type owl:NamedIndividual ,
+                                          :Organization ;
+                                  rdfs:label "Center for Getting Things Started" .
+
+:Hawaii_Youth_Food_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawaii Youth Food Council" .
+
+:Farm_to_Keiki rdf:type owl:NamedIndividual ,
+                       :Organization ;
+                rdfs:label "Farm to Keiki" .
+
+:Hawaii_Food_Industry_Association rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Hawaii Food Industry Association" .
+
+:Food_Policy_Internship_2022 rdf:type owl:NamedIndividual ,
+                                    :Organization ;
+                            rdfs:label "Food+ Policy Internship 2022" .
+
+:Dept_of_Attorney_General rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                         rdfs:label "Dept. of Attorney General" .
+
+:UH_Manoa_CTAHR rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "UH Manoa CTAHR" .
+
+:HIPHI_Farm_to_School_Network rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                             rdfs:label "HIPHI/Farm to School Network" .
+
+:Hawaii_Farmers_Union_United rdf:type owl:NamedIndividual ,
+                                    :Organization ;
+                            rdfs:label "Hawaii Farmers Union United" .
+
+:UH_Professional_Assembly rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                         rdfs:label "UH Professional Assembly" .
+
+:Farm_Link_Hawaii rdf:type owl:NamedIndividual ,
+                         :Organization ;
+                 rdfs:label "Farm Link Hawaii" .
+
+:State_Procurement_Office rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                         rdfs:label "State Procurement Office" .
+
+#################################################################
+#    Individuals
+#################################################################
+
+# HB767 Individuals
+:Christina_Kishimoto rdf:type owl:NamedIndividual ,
+                            :Individual ;
+                    :hasFullName "Dr. Christina M. Kishimoto" ;
+                    :affiliated_with :Hawaii_Department_of_Education ;
+                    rdfs:label "Dr. Christina M. Kishimoto" .
+
+:Phyllis_Shimabukuro_Geiser rdf:type owl:NamedIndividual ,
+                                   :Individual ;
+                           :hasFullName "Phyllis Shimabukuro-Geiser" ;
+                           :affiliated_with :Hawaii_Department_of_Agriculture ;
+                           rdfs:label "Phyllis Shimabukuro-Geiser" .
+
+:Shwe_Win rdf:type owl:NamedIndividual ,
+                  :Individual ;
+          :hasFullName "Shwe Win" ;
+          :affiliated_with :Hawaii_State_Youth_Commission ;
+          rdfs:label "Shwe Win" .
+
+:Erik_Abe rdf:type owl:NamedIndividual ,
+                  :Individual ;
+          :hasFullName "Erik K. Abe" ;
+          :affiliated_with :Hawaii_Primary_Care_Association ;
+          rdfs:label "Erik K. Abe" .
+
+:Brian_Miyamoto rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Brian Miyamoto" ;
+               :affiliated_with :Hawaii_Farm_Bureau ;
+               rdfs:label "Brian Miyamoto" .
+
+:John_Garibaldi rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "John Garibaldi" ;
+               :affiliated_with :Local_Food_Coalition ;
+               rdfs:label "John Garibaldi" .
+
+:Nicole_Galase rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Nicole Galase" ;
+               :affiliated_with :Hawaii_Cattlemens_Council ;
+               rdfs:label "Nicole Galase" .
+
+:David_Arakawa rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "David Arakawa" ;
+               :affiliated_with :Land_Use_Research_Foundation ;
+               rdfs:label "David Arakawa" .
+
+:Anne_Frederick rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Anne Frederick" ;
+               :affiliated_with :Hawaii_Alliance_for_Progressive_Action ;
+               rdfs:label "Anne Frederick" .
+
+:Lydi_Bernal rdf:type owl:NamedIndividual ,
+                     :Individual ;
+             :hasFullName "Lydi Bernal" ;
+             :affiliated_with :Hawaii_Farm_to_School_Hui ;
+             rdfs:label "Lydi Bernal" .
+
+:Micah_Munekata rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Micah Munekata" ;
+               :affiliated_with :Ulupono_Initiative ;
+               rdfs:label "Micah Munekata" .
+
+:Ted_Bohlen rdf:type owl:NamedIndividual ,
+                    :Individual ;
+            :hasFullName "Ted Bohlen" ;
+            :affiliated_with :Climate_Protectors_Hawaii ;
+            rdfs:label "Ted Bohlen" .
+
+:Sherry_Pollack rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Sherry Pollack" ;
+               :affiliated_with :350Hawaii_org ;
+               rdfs:label "Sherry Pollack" .
+
+:Colby_Takeda rdf:type owl:NamedIndividual ,
+                      :Individual ;
+              :hasFullName "Colby Takeda" ;
+              :affiliated_with :Blue_Zones_Project ;
+              rdfs:label "Colby Takeda" .
+
+:Nancy_Redfeather rdf:type owl:NamedIndividual ,
+                         :Individual ;
+                 :hasFullName "Nancy Redfeather" ;
+                 :affiliated_with :Ka_Ohana_O_Na_Pua ;
+                 rdfs:label "Nancy Redfeather" .
+
+:Brian_Ioane_Jahn rdf:type owl:NamedIndividual ,
+                         :Individual ;
+                 :hasFullName "Brian 'Ioane' Jahn" ;
+                 :affiliated_with :Food_Policy_Internship_UHWO ;
+                 rdfs:label "Brian 'Ioane' Jahn" .
+
+# Individual testifiers (no organization affiliation)
+:cheryl_B rdf:type owl:NamedIndividual ,
+                  :Individual ;
+          :hasFullName "cheryl B." ;
+          rdfs:label "cheryl B." .
+
+:John_Kawamoto rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "John Kawamoto" ;
+               rdfs:label "John Kawamoto" .
+
+:John_Smith rdf:type owl:NamedIndividual ,
+                    :Individual ;
+            :hasFullName "John D. Smith" ;
+            rdfs:label "John D. Smith" .
+
+:Fern_Holland rdf:type owl:NamedIndividual ,
+                      :Individual ;
+              :hasFullName "Fern Anuenue Holland" ;
+              rdfs:label "Fern Anuenue Holland" .
+
+:Chad_Taniguchi rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Chad Taniguchi" ;
+               rdfs:label "Chad Taniguchi" .
+
+:Stephanie_Mock rdf:type owl:NamedIndividual ,
+                        :Individual ;
+                :hasFullName "Stephanie Mock" ;
+                rdfs:label "Stephanie Mock" .
+
+:Jileen_Russell rdf:type owl:NamedIndividual ,
+                        :Individual ;
+                :hasFullName "Jileen Russell" ;
+                rdfs:label "Jileen Russell" .
+
+:Charla_Naone rdf:type owl:NamedIndividual ,
+                      :Individual ;
+              :hasFullName "Charla Naone" ;
+              rdfs:label "Charla Naone" .
+
+:Janet_Pappas rdf:type owl:NamedIndividual ,
+                      :Individual ;
+              :hasFullName "Janet Pappas" ;
+              rdfs:label "Janet Pappas" .
+
+:Kathy_Becklin rdf:type owl:NamedIndividual ,
+                       :Individual ;
+               :hasFullName "Kathy Becklin" ;
+               rdfs:label "Kathy Becklin" .
+
+:Brian_Jahn rdf:type owl:NamedIndividual ,
+                    :Individual ;
+            :hasFullName "Brian Jahn" ;
+            rdfs:label "Brian Jahn" .
+
+#################################################################
+#    Positions
+#################################################################
+
+:Support rdf:type owl:NamedIndividual ,
+                 :Position ;
+         rdfs:label "Support" .
+
+:Support_Amend rdf:type owl:NamedIndividual ,
+                      :Position ;
+              rdfs:label "Support/Amend" .
+
+:Support_Comment rdf:type owl:NamedIndividual ,
+                        :Position ;
+                rdfs:label "Support/Comment" .
+
+:Strong_Support rdf:type owl:NamedIndividual ,
+                       :Position ;
+                rdfs:label "Strong Support" .
+
+:Comment rdf:type owl:NamedIndividual ,
+                 :Position ;
+         rdfs:label "Comment" .
+
+:Amend_Recommend rdf:type owl:NamedIndividual ,
+                        :Position ;
+                rdfs:label "Amend/Recommend" .
+
+#################################################################
+#    Testimonies - HB767 HD2 SD1
+#################################################################
+
+:testimony_HB767_Christina_Kishimoto rdf:type owl:NamedIndividual ,
+                                            :Testimony ;
+                                    :provides_testimony :Christina_Kishimoto ;
+                                    :testifies_on :HB767_HD2_SD1 ;
+                                    :has_position :Support ;
+                                    :represents_organization :Hawaii_Department_of_Education ;
+                                    :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Phyllis_Shimabukuro_Geiser rdf:type owl:NamedIndividual ,
+                                                    :Testimony ;
+                                            :provides_testimony :Phyllis_Shimabukuro_Geiser ;
+                                            :testifies_on :HB767_HD2_SD1 ;
+                                            :has_position :Support_Comment ;
+                                            :represents_organization :Hawaii_Department_of_Agriculture ;
+                                            :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Shwe_Win rdf:type owl:NamedIndividual ,
+                                 :Testimony ;
+                         :provides_testimony :Shwe_Win ;
+                         :testifies_on :HB767_HD2_SD1 ;
+                         :has_position :Support ;
+                         :represents_organization :Hawaii_State_Youth_Commission ;
+                         :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Erik_Abe rdf:type owl:NamedIndividual ,
+                                 :Testimony ;
+                         :provides_testimony :Erik_Abe ;
+                         :testifies_on :HB767_HD2_SD1 ;
+                         :has_position :Support ;
+                         :represents_organization :Hawaii_Primary_Care_Association ;
+                         :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Brian_Miyamoto rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Brian_Miyamoto ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :represents_organization :Hawaii_Farm_Bureau ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_John_Garibaldi rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :John_Garibaldi ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :represents_organization :Local_Food_Coalition ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Nicole_Galase rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :Nicole_Galase ;
+                              :testifies_on :HB767_HD2_SD1 ;
+                              :has_position :Support ;
+                              :represents_organization :Hawaii_Cattlemens_Council ;
+                              :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_David_Arakawa rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :David_Arakawa ;
+                              :testifies_on :HB767_HD2_SD1 ;
+                              :has_position :Support ;
+                              :represents_organization :Land_Use_Research_Foundation ;
+                              :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Anne_Frederick rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Anne_Frederick ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :represents_organization :Hawaii_Alliance_for_Progressive_Action ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Lydi_Bernal rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :Lydi_Bernal ;
+                            :testifies_on :HB767_HD2_SD1 ;
+                            :has_position :Support_Amend ;
+                            :represents_organization :Hawaii_Farm_to_School_Hui ;
+                            :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Micah_Munekata rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Micah_Munekata ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support_Amend ;
+                               :represents_organization :Ulupono_Initiative ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Ted_Bohlen rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :Ted_Bohlen ;
+                           :testifies_on :HB767_HD2_SD1 ;
+                           :has_position :Support ;
+                           :represents_organization :Climate_Protectors_Hawaii ;
+                           :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Sherry_Pollack rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Sherry_Pollack ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :represents_organization :350Hawaii_org ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Colby_Takeda rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Colby_Takeda ;
+                             :testifies_on :HB767_HD2_SD1 ;
+                             :has_position :Support_Amend ;
+                             :represents_organization :Blue_Zones_Project ;
+                             :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Nancy_Redfeather rdf:type owl:NamedIndividual ,
+                                         :Testimony ;
+                                 :provides_testimony :Nancy_Redfeather ;
+                                 :testifies_on :HB767_HD2_SD1 ;
+                                 :has_position :Support ;
+                                 :represents_organization :Ka_Ohana_O_Na_Pua ;
+                                 :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Brian_Ioane_Jahn rdf:type owl:NamedIndividual ,
+                                         :Testimony ;
+                                 :provides_testimony :Brian_Ioane_Jahn ;
+                                 :testifies_on :HB767_HD2_SD1 ;
+                                 :has_position :Support ;
+                                 :represents_organization :Food_Policy_Internship_UHWO ;
+                                 :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+# Individual testimonies for HB767
+:testimony_HB767_cheryl_B rdf:type owl:NamedIndividual ,
+                                 :Testimony ;
+                         :provides_testimony :cheryl_B ;
+                         :testifies_on :HB767_HD2_SD1 ;
+                         :has_position :Support ;
+                         :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_John_Kawamoto rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :John_Kawamoto ;
+                              :testifies_on :HB767_HD2_SD1 ;
+                              :has_position :Support ;
+                              :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_John_Smith rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :John_Smith ;
+                           :testifies_on :HB767_HD2_SD1 ;
+                           :has_position :Support ;
+                           :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Fern_Holland rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Fern_Holland ;
+                             :testifies_on :HB767_HD2_SD1 ;
+                             :has_position :Support ;
+                             :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Chad_Taniguchi rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Chad_Taniguchi ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Stephanie_Mock rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Stephanie_Mock ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Jileen_Russell rdf:type owl:NamedIndividual ,
+                                       :Testimony ;
+                               :provides_testimony :Jileen_Russell ;
+                               :testifies_on :HB767_HD2_SD1 ;
+                               :has_position :Support ;
+                               :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Charla_Naone rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Charla_Naone ;
+                             :testifies_on :HB767_HD2_SD1 ;
+                             :has_position :Support ;
+                             :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Janet_Pappas rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Janet_Pappas ;
+                             :testifies_on :HB767_HD2_SD1 ;
+                             :has_position :Support ;
+                             :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Kathy_Becklin rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :Kathy_Becklin ;
+                              :testifies_on :HB767_HD2_SD1 ;
+                              :has_position :Support ;
+                              :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Brian_Jahn rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :Brian_Jahn ;
+                           :testifies_on :HB767_HD2_SD1 ;
+                           :has_position :Support ;
+                           :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .

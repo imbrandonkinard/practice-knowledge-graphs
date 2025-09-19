@@ -1,0 +1,240 @@
+@prefix : <http://example.org/farm-to-school-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/farm-to-school-ontology> .
+
+#################################################################
+#    SB1548 Organizations and Testimonies
+#################################################################
+
+:Noel_Shaw rdf:type owl:NamedIndividual ,
+                   :Organization ;
+           rdfs:label "Noel Shaw (Individual)" .
+
+:Farm_Link_Hawaii rdf:type owl:NamedIndividual ,
+                         :Organization ;
+                 rdfs:label "Farm Link Hawai'i, Faun Skyles" .
+
+:Ulupono_Initiative_SB1548 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                          rdfs:label "Ulupono Initiative, Mariah Yoshizu" .
+
+:Jessica_Sobocinski rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                   rdfs:label "Jessica Sobocinski (Individual)" .
+
+:Debbie_Millikan rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "Debbie Millikan (Individual)" .
+
+:State_Procurement_Office rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                         rdfs:label "State Procurement Office, Bonnie Kahakui" .
+
+:Department_of_Education_SB1548 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:Jeannette_Soon_Ludes rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Jeannette Soon-Ludes (Individual)" .
+
+# SB1548 Testimonies
+:testimony_SB1548_Noel_Shaw rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :Noel_Shaw ;
+                           :testifies_on :SB1548 ;
+                           :has_position :Support ;
+                           :hasComments "Advocates for increasing DOE buying power to match other departments, investment in food systems and ag sector." ;
+                           :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Farm_Link rdf:type owl:NamedIndividual ,
+                                   :Testimony ;
+                           :provides_testimony :Farm_Link_Hawaii ;
+                           :testifies_on :SB1548 ;
+                           :has_position :Support ;
+                           :hasComments "Supports increasing small purchase threshold, notes benefits for schools, farmers, and procurement ease for local food goals." ;
+                           :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Ulupono rdf:type owl:NamedIndividual ,
+                                  :Testimony ;
+                          :provides_testimony :Ulupono_Initiative_SB1548 ;
+                          :testifies_on :SB1548 ;
+                          :has_position :Support ;
+                          :hasComments "Supports procurement reforms, notes DOE's buying power, need for supply chain capacity, and farm-to-school goals (30% by 2030)." ;
+                          :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Jessica_Sobocinski rdf:type owl:NamedIndividual ,
+                                            :Testimony ;
+                                    :provides_testimony :Jessica_Sobocinski ;
+                                    :testifies_on :SB1548 ;
+                                    :has_position :Support ;
+                                    :hasComments "States procurement barriers for local food, advocates raising the threshold to facilitate access for producers, supports 30% local by 2030 goal." ;
+                                    :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Debbie_Millikan rdf:type owl:NamedIndividual ,
+                                         :Testimony ;
+                                 :provides_testimony :Debbie_Millikan ;
+                                 :testifies_on :SB1548 ;
+                                 :has_position :Support ;
+                                 :hasComments "Calls for threshold raise, links to 30% local goal, stresses improved student access and support for local farmers." ;
+                                 :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Procurement_Office rdf:type owl:NamedIndividual ,
+                                            :Testimony ;
+                                    :provides_testimony :State_Procurement_Office ;
+                                    :testifies_on :SB1548 ;
+                                    :has_position :Recommend_Amendments ;
+                                    :hasComments "Suggests specific procurement language and warns against parceling; supports increased procurement flexibility." ;
+                                    :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_DOE rdf:type owl:NamedIndividual ,
+                              :Testimony ;
+                      :provides_testimony :Department_of_Education_SB1548 ;
+                      :testifies_on :SB1548 ;
+                      :has_position :Support ;
+                      :hasComments "Supports threshold increase, stresses effect on local food purchasing, recommends specific amounts, supports written justification for vendor shortages." ;
+                      :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+:testimony_SB1548_Jeannette_Soon_Ludes rdf:type owl:NamedIndividual ,
+                                               :Testimony ;
+                                       :provides_testimony :Jeannette_Soon_Ludes ;
+                                       :testifies_on :SB1548 ;
+                                       :has_position :Support ;
+                                       :hasComments "Notes current $25,000 limit is a barrier, calls for $100,000 threshold for easier procurement, supports local food access for students." ;
+                                       :has_source "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+#################################################################
+#    HB1293 Organizations and Testimonies
+#################################################################
+
+:Department_of_Education_HB1293 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:State_Procurement_Office_HB1293 rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                rdfs:label "State Procurement Office, Bonnie Kahakui" .
+
+:Ulupono_Initiative_HB1293 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                          rdfs:label "Ulupono Initiative, Mariah Yoshizu" .
+
+:Hawaii_Farm_Bureau_HB1293 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm Bureau, Brian Miyamoto" .
+
+:Hawaii_Public_Health_Institute_HB1293 rdf:type owl:NamedIndividual ,
+                                               :Organization ;
+                                       rdfs:label "Hawai'i Public Health Institute, Kawika Kahiapo" .
+
+:Erika_Kuhr rdf:type owl:NamedIndividual ,
+                    :Organization ;
+            rdfs:label "Erika Kuhr (Individual)" .
+
+:Danielle_Lee rdf:type owl:NamedIndividual ,
+                      :Organization ;
+              rdfs:label "Danielle Lee (Individual)" .
+
+:Amy_Brinker rdf:type owl:NamedIndividual ,
+                     :Organization ;
+             rdfs:label "Amy Brinker (Individual)" .
+
+# HB1293 Testimonies
+:testimony_HB1293_DOE rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Department_of_Education_HB1293 ;
+                     :testifies_on :HB1293 ;
+                     :has_position :Support ;
+                     :hasComments "Supports threshold and procurement reforms for local purchases, highlights need for flexibility for rural schools, support for purchase of items like poi/limu." ;
+                     :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Procurement_Office rdf:type owl:NamedIndividual ,
+                                            :Testimony ;
+                                    :provides_testimony :State_Procurement_Office_HB1293 ;
+                                    :testifies_on :HB1293 ;
+                                    :has_position :Comments ;
+                                    :hasComments "Offers procurement process improvement recommendations, cautions about parceling." ;
+                                    :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Ulupono rdf:type owl:NamedIndividual ,
+                                  :Testimony ;
+                          :provides_testimony :Ulupono_Initiative_HB1293 ;
+                          :testifies_on :HB1293 ;
+                          :has_position :Support ;
+                          :hasComments "Endorses flexibility and exemption from electronic procurement for purchases < $100,000; supports regionalization for farm-to-school." ;
+                          :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Farm_Bureau rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Hawaii_Farm_Bureau_HB1293 ;
+                             :testifies_on :HB1293 ;
+                             :has_position :Support ;
+                             :hasComments "Calls threshold increase essential for local food procurement, especially for rural schools and new vendors; supports stabilizing market for farmers." ;
+                             :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_PHI rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Hawaii_Public_Health_Institute_HB1293 ;
+                     :testifies_on :HB1293 ;
+                     :has_position :Strong_Support ;
+                     :hasComments "Promotes local procurement, references regional model for learning and accountability recommendations, supports streamlined process for local foods." ;
+                     :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Erika_Kuhr rdf:type owl:NamedIndividual ,
+                                    :Testimony ;
+                            :provides_testimony :Erika_Kuhr ;
+                            :testifies_on :HB1293 ;
+                            :has_position :Support ;
+                            :hasComments "Personal reasons for supporting bill: improve lunch quality, procurement flexibility, empowerment to meet local food goals, support Hawai'i's ag sector." ;
+                            :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Danielle_Lee rdf:type owl:NamedIndividual ,
+                                      :Testimony ;
+                              :provides_testimony :Danielle_Lee ;
+                              :testifies_on :HB1293 ;
+                              :has_position :Support ;
+                              :hasComments "Personal reasons for supporting bill: improve lunch quality, procurement flexibility, empowerment to meet local food goals, support Hawai'i's ag sector." ;
+                              :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+:testimony_HB1293_Amy_Brinker rdf:type owl:NamedIndividual ,
+                                     :Testimony ;
+                             :provides_testimony :Amy_Brinker ;
+                             :testifies_on :HB1293 ;
+                             :has_position :Support ;
+                             :hasComments "Personal reasons for supporting bill: improve lunch quality, procurement flexibility, empowerment to meet local food goals, support Hawai'i's ag sector." ;
+                             :has_source "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+#################################################################
+#    Relationships between Organizations and Existing Entities
+#################################################################
+
+# Connect organizations to existing government agencies
+:Department_of_Education_Testimony :collaborates_with :Department_of_Education .
+:Department_of_Agriculture_Testimony :collaborates_with :Department_of_Agriculture .
+:Department_of_Health :collaborates_with :Department_of_Education .
+:Department_of_Budget_and_Finance :collaborates_with :Department_of_Education .
+:Department_of_Education_SB2182 :collaborates_with :Department_of_Education .
+:Department_of_Education_SB1548 :collaborates_with :Department_of_Education .
+:Department_of_Education_HB1293 :collaborates_with :Department_of_Education .
+
+# Connect organizations to existing programs
+:Hawaii_Farm_to_School_Hui :implements :Farm_to_School_Program .
+:Ulupono_Initiative :collaborates_with :Farm_to_School_Program .
+:Local_Food_Coalition :implements :Farm_to_School_Program .
+:Hawaii_Farm_Bureau :collaborates_with :Farm_to_School_Program .
+
+# Connect testimonies to existing goals
+:testimony_HB767_Local_Food_Coalition :has_goal :entity_30 .
+:testimony_SB1548_Ulupono :has_goal :entity_30 .
+:testimony_SB1548_Jessica_Sobocinski :has_goal :entity_30 .
+:testimony_SB1548_Debbie_Millikan :has_goal :entity_30 .
+
+# Connect bills to existing programs and goals
+:HB767_SD1 :implements :Farm_to_School_Program .
+:SB2182_HD1 :establishes :farm_to_school_coordinator .
+:SB666 :implements :Farm_to_School_Program .
+:SB1548 :affects :procurement .
+:HB1293 :affects :procurement .

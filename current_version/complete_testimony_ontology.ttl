@@ -1,0 +1,430 @@
+@prefix : <http://example.org/farm-to-school-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/farm-to-school-ontology> .
+
+#################################################################
+#    New Classes for Testimony Data
+#################################################################
+
+### Testimony Class
+:Testimony rdf:type owl:Class ;
+          rdfs:comment "Legislative testimony provided on bills" ;
+          rdfs:label "Testimony" .
+
+### Organization Class  
+:Organization rdf:type owl:Class ;
+             rdfs:comment "Organizations and institutions that provide testimony" ;
+             rdfs:label "Organization" .
+
+### Position Class
+:Position rdf:type owl:Class ;
+         rdfs:comment "Stance or position taken in testimony" ;
+         rdfs:label "Position" .
+
+### Bill Class
+:Bill rdf:type owl:Class ;
+      rdfs:comment "Legislative bills under consideration" ;
+      rdfs:label "Bill" .
+
+#################################################################
+#    New Object Properties
+#################################################################
+
+### provides_testimony
+:provides_testimony rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relationship between organization/person and testimony" ;
+                   rdfs:label "provides testimony" .
+
+### testifies_on
+:testifies_on rdf:type owl:ObjectProperty ;
+             rdfs:comment "Relationship between testimony and bill" ;
+             rdfs:label "testifies on" .
+
+### has_position
+:has_position rdf:type owl:ObjectProperty ;
+             rdfs:comment "Position taken in testimony" ;
+             rdfs:label "has position" .
+
+### has_source
+:has_source rdf:type owl:ObjectProperty ;
+           rdfs:comment "Source document for testimony" ;
+           rdfs:label "has source" .
+
+#################################################################
+#    New Data Properties
+#################################################################
+
+### hasComments
+:hasComments rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Main comments or rationale from testimony" ;
+            rdfs:label "has comments" .
+
+### hasSourceFile
+:hasSourceFile rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Source file reference" ;
+              rdfs:label "has source file" .
+
+#################################################################
+#    Bills
+#################################################################
+
+:HB767_SD1 rdf:type owl:NamedIndividual ,
+                    :Bill ;
+           rdfs:label "HB767_SD1" .
+
+:SB2182_HD1 rdf:type owl:NamedIndividual ,
+                     :Bill ;
+            rdfs:label "SB2182_HD1" .
+
+:SB666 rdf:type owl:NamedIndividual ,
+                :Bill ;
+       rdfs:label "SB666" .
+
+:SB1548 rdf:type owl:NamedIndividual ,
+                 :Bill ;
+        rdfs:label "SB1548" .
+
+:HB1293 rdf:type owl:NamedIndividual ,
+                 :Bill ;
+        rdfs:label "HB1293" .
+
+#################################################################
+#    Organizations
+#################################################################
+
+# HB767 Organizations
+:Department_of_Education_Testimony rdf:type owl:NamedIndividual ,
+                                           :Organization ;
+                                  rdfs:label "Department of Education (DOE), Dr. Kishimoto" .
+
+:Department_of_Agriculture_Testimony rdf:type owl:NamedIndividual ,
+                                             :Organization ;
+                                    rdfs:label "Department of Agriculture (DOA), Phyllis Shimabukuro-Geiser" .
+
+:Hawaii_State_Youth_Commission rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                              rdfs:label "Hawai'i State Youth Commission, Shwe Win" .
+
+:Hawaii_Primary_Care_Association rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                 rdfs:label "Hawaii Primary Care Association" .
+
+:Hawaii_Farm_Bureau rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Hawaii Farm Bureau" .
+
+:Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                      rdfs:label "Local Food Coalition" .
+
+:Hawaii_Cattlemens_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawaii Cattlemen's Council" .
+
+:Land_Use_Research_Foundation rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                              rdfs:label "Land Use Research Foundation (LURF)" .
+
+:Hawaii_Alliance_for_Progressive_Action rdf:type owl:NamedIndividual ,
+                                               :Organization ;
+                                        rdfs:label "Hawai'i Alliance for Progressive Action (HAPA)" .
+
+:Hawaii_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm to School Hui, Lydi Bernal" .
+
+:Ulupono_Initiative rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Ulupono Initiative, Micah Munekata" .
+
+:Climate_Protectors_Hawaii rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Climate Protectors Hawai'i, Ted Bohlen" .
+
+:350Hawaii rdf:type owl:NamedIndividual ,
+                   :Organization ;
+           rdfs:label "350Hawaii, Sherry Pollack" .
+
+:Blue_Zones_Project rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Blue Zones Project, Colby Takeda" .
+
+:Ka_Ohana_O_Na_Pua rdf:type owl:NamedIndividual ,
+                          :Organization ;
+                   rdfs:label "Ka Ohana O Na Pua, Nancy Redfeather" .
+
+:UH_West_Oahu_Food_Policy_Internship rdf:type owl:NamedIndividual ,
+                                             :Organization ;
+                                      rdfs:label "UH West O'ahu Food+ Policy Internship" .
+
+# SB2182 Organizations
+:Department_of_Health rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Department of Health, Elizabeth Char" .
+
+:Department_of_Budget_and_Finance rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Department of Budget and Finance" .
+
+:Department_of_Education_SB2182 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:The_Outdoor_Circle rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "The Outdoor Circle, Winston Welch" .
+
+:Local_Food_Coalition_SB2182 rdf:type owl:NamedIndividual ,
+                                    :Organization ;
+                             rdfs:label "Local Food Coalition" .
+
+:Hawaii_Farm_Bureau_SB2182 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm Bureau, Brian Miyamoto" .
+
+:Ka_Ohana_O_Na_Pua_SB2182 rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                          rdfs:label "Ka Ohana O Na Pua, Nancy Redfeather" .
+
+:Hawaii_Farm_to_School_Hui_SB2182 rdf:type owl:NamedIndividual ,
+                                          :Organization ;
+                                  rdfs:label "Hawai'i Farm to School Hui, Lydi Bernal" .
+
+:Center_for_Getting_Things_Started rdf:type owl:NamedIndividual ,
+                                          :Organization ;
+                                  rdfs:label "Center for Getting Things Started, Ming Wei Koh" .
+
+:Hawaii_Youth_Food_Council rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Youth Food Council" .
+
+:Farm_to_Keiki rdf:type owl:NamedIndividual ,
+                       :Organization ;
+                rdfs:label "Farm to Keiki, Tiana Kamen" .
+
+:Hawaii_Food_Industry_Association rdf:type owl:NamedIndividual ,
+                                         :Organization ;
+                                 rdfs:label "Hawai'i Food Industry Association" .
+
+:Food_Policy_Internship rdf:type owl:NamedIndividual ,
+                               :Organization ;
+                        rdfs:label "Food+ Policy Internship" .
+
+# SB666 Organizations
+:Deputy_Attorney_Generals_Office rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                rdfs:label "Deputy Attorney General's Office" .
+
+:UH_Manoa_CTAHR rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "UH Manoa College of Tropical Agriculture (CTAHR)" .
+
+:Hawaii_Public_Health_Institute rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Hawai'i Public Health Institute" .
+
+:Hawaii_Farmers_Union rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Hawai'i Farmers Union" .
+
+:University_of_Hawaii_Professional_Assembly rdf:type owl:NamedIndividual ,
+                                                    :Organization ;
+                                            rdfs:label "University of Hawai'i Professional Assembly" .
+
+:Lydi_Morgan_Bernal rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                    rdfs:label "Lydi Morgan Bernal (Individual)" .
+
+:Monica_Esquivel rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "Monica Esquivel (Individual)" .
+
+# SB1548 Organizations
+:Noel_Shaw rdf:type owl:NamedIndividual ,
+                   :Organization ;
+           rdfs:label "Noel Shaw (Individual)" .
+
+:Farm_Link_Hawaii rdf:type owl:NamedIndividual ,
+                         :Organization ;
+                 rdfs:label "Farm Link Hawai'i, Faun Skyles" .
+
+:Ulupono_Initiative_SB1548 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                          rdfs:label "Ulupono Initiative, Mariah Yoshizu" .
+
+:Jessica_Sobocinski rdf:type owl:NamedIndividual ,
+                           :Organization ;
+                   rdfs:label "Jessica Sobocinski (Individual)" .
+
+:Debbie_Millikan rdf:type owl:NamedIndividual ,
+                        :Organization ;
+                rdfs:label "Debbie Millikan (Individual)" .
+
+:State_Procurement_Office rdf:type owl:NamedIndividual ,
+                                 :Organization ;
+                         rdfs:label "State Procurement Office, Bonnie Kahakui" .
+
+:Department_of_Education_SB1548 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:Jeannette_Soon_Ludes rdf:type owl:NamedIndividual ,
+                             :Organization ;
+                     rdfs:label "Jeannette Soon-Ludes (Individual)" .
+
+# HB1293 Organizations
+:Department_of_Education_HB1293 rdf:type owl:NamedIndividual ,
+                                       :Organization ;
+                               rdfs:label "Department of Education, Keith Hayashi" .
+
+:State_Procurement_Office_HB1293 rdf:type owl:NamedIndividual ,
+                                        :Organization ;
+                                rdfs:label "State Procurement Office, Bonnie Kahakui" .
+
+:Ulupono_Initiative_HB1293 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                          rdfs:label "Ulupono Initiative, Mariah Yoshizu" .
+
+:Hawaii_Farm_Bureau_HB1293 rdf:type owl:NamedIndividual ,
+                                  :Organization ;
+                           rdfs:label "Hawai'i Farm Bureau, Brian Miyamoto" .
+
+:Hawaii_Public_Health_Institute_HB1293 rdf:type owl:NamedIndividual ,
+                                               :Organization ;
+                                       rdfs:label "Hawai'i Public Health Institute, Kawika Kahiapo" .
+
+:Erika_Kuhr rdf:type owl:NamedIndividual ,
+                    :Organization ;
+            rdfs:label "Erika Kuhr (Individual)" .
+
+:Danielle_Lee rdf:type owl:NamedIndividual ,
+                      :Organization ;
+              rdfs:label "Danielle Lee (Individual)" .
+
+:Amy_Brinker rdf:type owl:NamedIndividual ,
+                     :Organization ;
+             rdfs:label "Amy Brinker (Individual)" .
+
+#################################################################
+#    Positions
+#################################################################
+
+:Support rdf:type owl:NamedIndividual ,
+                 :Position ;
+         rdfs:label "Support" .
+
+:Support_with_Amendment rdf:type owl:NamedIndividual ,
+                               :Position ;
+                        rdfs:label "Support w/ Amendment" .
+
+:Comments rdf:type owl:NamedIndividual ,
+                  :Position ;
+          rdfs:label "Comments" .
+
+:Strong_Support rdf:type owl:NamedIndividual ,
+                       :Position ;
+                rdfs:label "Strong Support" .
+
+:Recommend_Amendments rdf:type owl:NamedIndividual ,
+                             :Position ;
+                      rdfs:label "Recommend Amendments" .
+
+#################################################################
+#    Key Testimonies (Sample from each bill)
+#################################################################
+
+# HB767_SD1 Testimonies
+:testimony_HB767_DOE rdf:type owl:NamedIndividual ,
+                            :Testimony ;
+                    :provides_testimony :Department_of_Education_Testimony ;
+                    :testifies_on :HB767_SD1 ;
+                    :has_position :Support ;
+                    :hasComments "Supports moving the program to DOE, wants baseline assessment, requests dedicated funding for coordinator position. Requests resources for managing new goals." ;
+                    :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+:testimony_HB767_Local_Food_Coalition rdf:type owl:NamedIndividual ,
+                                             :Testimony ;
+                                     :provides_testimony :Local_Food_Coalition ;
+                                     :testifies_on :HB767_SD1 ;
+                                     :has_position :Support ;
+                                     :hasComments "Supports 30% local sourcing goal with annual reporting; notes only 3% is local now. Recommends geographic preference, food hubs, localized strategy." ;
+                                     :hasSourceFile "HB767_SD1_TESTIMONY_WAM_04-01-21.pdf" .
+
+# SB2182_HD1 Testimonies
+:testimony_SB2182_DOH rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Department_of_Health ;
+                     :testifies_on :SB2182_HD1 ;
+                     :has_position :Support ;
+                     :hasComments "Supports establishing a school garden coordinator, details health and academic benefits of gardens, notes hands-on learning increases consumption." ;
+                     :hasSourceFile "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+:testimony_SB2182_Farm_to_School_Hui rdf:type owl:NamedIndividual ,
+                                             :Testimony ;
+                                     :provides_testimony :Hawaii_Farm_to_School_Hui_SB2182 ;
+                                     :testifies_on :SB2182_HD1 ;
+                                     :has_position :Strong_Support ;
+                                     :hasComments "Details garden and farm-based education benefits, requests committee to pass bill, outlines statewide network's priorities." ;
+                                     :hasSourceFile "SB2182_HD1_TESTIMONY_FIN_04-05-22.pdf" .
+
+# SB666 Testimonies
+:testimony_SB666_CTAHR rdf:type owl:NamedIndividual ,
+                              :Testimony ;
+                      :provides_testimony :UH_Manoa_CTAHR ;
+                      :testifies_on :SB666 ;
+                      :has_position :Support_with_Amendment ;
+                      :hasComments "Requests correction: position is on Moloka'i not Kaua'i. Supports coordinator and permanent extension agent positions as workforce investments." ;
+                      :hasSourceFile "SB666_TESTIMONY_HRE_01-30-25.pdf" .
+
+# SB1548 Testimonies
+:testimony_SB1548_Ulupono rdf:type owl:NamedIndividual ,
+                                  :Testimony ;
+                          :provides_testimony :Ulupono_Initiative_SB1548 ;
+                          :testifies_on :SB1548 ;
+                          :has_position :Support ;
+                          :hasComments "Supports procurement reforms, notes DOE's buying power, need for supply chain capacity, and farm-to-school goals (30% by 2030)." ;
+                          :hasSourceFile "SB1548_TESTIMONY_EDU_02-07-25.pdf" .
+
+# HB1293 Testimonies
+:testimony_HB1293_PHI rdf:type owl:NamedIndividual ,
+                             :Testimony ;
+                     :provides_testimony :Hawaii_Public_Health_Institute_HB1293 ;
+                     :testifies_on :HB1293 ;
+                     :has_position :Strong_Support ;
+                     :hasComments "Promotes local procurement, references regional model for learning and accountability recommendations, supports streamlined process for local foods." ;
+                     :hasSourceFile "HB1293_TESTIMONY_EDN_02-11-25_.PDF.pdf" .
+
+#################################################################
+#    Relationships between Organizations and Existing Entities
+#################################################################
+
+# Connect organizations to existing government agencies
+:Department_of_Education_Testimony :collaborates_with :Department_of_Education .
+:Department_of_Agriculture_Testimony :collaborates_with :Department_of_Agriculture .
+:Department_of_Health :collaborates_with :Department_of_Education .
+:Department_of_Budget_and_Finance :collaborates_with :Department_of_Education .
+:Department_of_Education_SB2182 :collaborates_with :Department_of_Education .
+:Department_of_Education_SB1548 :collaborates_with :Department_of_Education .
+:Department_of_Education_HB1293 :collaborates_with :Department_of_Education .
+
+# Connect organizations to existing programs
+:Hawaii_Farm_to_School_Hui :implements :Farm_to_School_Program .
+:Ulupono_Initiative :collaborates_with :Farm_to_School_Program .
+:Local_Food_Coalition :implements :Farm_to_School_Program .
+:Hawaii_Farm_Bureau :collaborates_with :Farm_to_School_Program .
+
+# Connect testimonies to existing goals
+:testimony_HB767_Local_Food_Coalition :has_goal :entity_30 .
+:testimony_SB1548_Ulupono :has_goal :entity_30 .
+
+# Connect bills to existing programs and goals
+:HB767_SD1 :implements :Farm_to_School_Program .
+:SB2182_HD1 :establishes :farm_to_school_coordinator .
+:SB666 :implements :Farm_to_School_Program .
+:SB1548 :affects :procurement .
+:HB1293 :affects :procurement .
